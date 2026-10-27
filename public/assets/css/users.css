@@ -1,0 +1,119 @@
+body.app-page {
+    position: relative;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 96% 2%, rgba(185, 235, 213, .65) 0 12%, transparent 12.2%),
+        radial-gradient(circle at 2% 100%, rgba(189, 236, 215, .58) 0 12%, transparent 12.2%),
+        linear-gradient(135deg, #f8fcf9, #e7f4ec) !important;
+    background-attachment: fixed;
+}
+
+body.app-page,
+body.app-page main,
+body.app-page > main {
+    background:
+        radial-gradient(circle at 96% 2%, rgba(185, 235, 213, .65) 0 12%, transparent 12.2%),
+        radial-gradient(circle at 2% 100%, rgba(189, 236, 215, .58) 0 12%, transparent 12.2%),
+        linear-gradient(135deg, #f8fcf9, #e7f4ec) !important;
+}
+
+body.app-page::before,
+body.app-page::after {
+    content: "";
+    position: fixed;
+    z-index: 0;
+    width: 430px;
+    height: 430px;
+    border: 1px solid rgba(73, 169, 128, .22);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+body.app-page::before {
+    right: -180px;
+    top: 100px;
+}
+
+body.app-page::after {
+    left: -250px;
+    bottom: -260px;
+}
+
+body.app-page main {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 96% 2%, rgba(185, 235, 213, .65) 0 12%, transparent 12.2%),
+        radial-gradient(circle at 2% 100%, rgba(189, 236, 215, .58) 0 12%, transparent 12.2%),
+        linear-gradient(135deg, #f8fcf9, #e7f4ec);
+}
+
+body.app-page main::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: 42px;
+    width: 96px;
+    height: 78px;
+    background-image: radial-gradient(#75b89a 2.5px, transparent 2.5px);
+    background-size: 13px 13px;
+    opacity: .7;
+    pointer-events: none;
+}
+
+body.app-page main h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body.app-page .data-table,
+body.app-page .filters,
+body.app-page .flash-message {
+    position: relative;
+    z-index: 1;
+}
+
+body.scholar-announcements-page main {
+    padding: 108px 36px 16px;
+}
+
+@media (max-width: 800px) {
+    body.app-page main {
+        min-height: 100vh;
+        padding: 100px 16px 24px;
+    }
+
+    body.app-page main::before {
+        top: 18px;
+        right: 18px;
+        transform: scale(.75);
+        transform-origin: top right;
+    }
+
+}
+
+@media (max-width: 520px) {
+    body.app-page main {
+        padding: 92px 12px 22px;
+    }
+}
+
+@media (max-width: 800px) {
+    body.scholar-portal main {
+        padding-top: 110px;
+    }
+}
+
+@media (max-width: 520px) {
+    body.scholar-portal main {
+        padding-top: 102px;
+    }
+}

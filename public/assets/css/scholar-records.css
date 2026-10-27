@@ -1,0 +1,1652 @@
+
+
+.start-renewal-card {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding: 26px 30px 20px;
+}
+
+.renewal-form {
+    max-width: 760px;
+}
+
+.renewal-form-row {
+    margin-bottom: 18px;
+}
+
+.renewal-form-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.renewal-records-card {
+    margin-top: 0;
+    padding: 26px 30px 20px;
+}
+
+.renewal-records-table {
+    margin-top: 0;
+}
+
+.scholar-renewal-history-scroll {
+    height: 160px;
+    overflow: auto;
+}
+
+.renewal-records-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.renewal-records-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.scholar-renewal-history-scroll .renewal-records-table th:nth-child(n+2),
+.scholar-renewal-history-scroll .renewal-records-table td:nth-child(n+2) {
+    text-align: center;
+}
+
+.requirement-records-card {
+    margin-top: 0;
+    padding: 26px 30px 20px;
+}
+
+.requirement-records-table {
+    margin-top: 0;
+}
+
+.scholar-requirements-table-scroll {
+    height: 380px;
+    overflow: auto;
+}
+
+.scholar-requirements-table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.requirement-records-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.requirement-records-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.requirement-records-table th:nth-child(n+2),
+.requirement-records-table td:nth-child(n+2) {
+    text-align: center;
+}
+
+.scholar-requirement-row {
+    cursor: pointer;
+}
+
+.scholar-requirement-row:focus-visible {
+    outline: 3px solid rgba(55, 139, 88, 0.2);
+    outline-offset: -3px;
+}
+
+.requirement-row-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #378252;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.requirement-row-action i {
+    font-size: 0.68rem;
+}
+
+html.scholar-requirement-dialog-open,
+body.scholar-requirement-dialog-open {
+    overflow: hidden;
+}
+
+.scholar-requirement-dialog {
+    position: fixed;
+    inset: 0 0 0 auto;
+    flex-direction: column;
+    width: min(640px, 96vw);
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-left: 1px solid #d7e7dc;
+    border-radius: 18px 0 0 18px;
+    background: #f8fbf9;
+    color: #294d3d;
+    box-shadow: 0 24px 70px rgba(16, 48, 34, 0.28);
+    transform: translateX(100%);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scholar-requirement-dialog[open] {
+    display: flex;
+}
+
+.scholar-requirement-dialog.is-open {
+    transform: translateX(0);
+}
+
+.scholar-requirement-dialog::backdrop {
+    background: rgba(17, 36, 27, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+.scholar-requirement-dialog-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 23px 17px;
+    border-bottom: 1px solid #e2ece5;
+    background: #fff;
+}
+
+.scholar-requirement-dialog-eyebrow {
+    color: #718378;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.scholar-requirement-dialog-head h2 {
+    margin: 5px 0 0;
+    color: #245f44;
+    font-size: 1.15rem;
+}
+
+.scholar-requirement-dialog-close {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid #dce9e2;
+    border-radius: 50%;
+    background: #f8fcfa;
+    color: #456a55;
+    cursor: pointer;
+}
+
+.scholar-requirement-dialog-close:hover {
+    background: #eef8f3;
+}
+
+.scholar-requirement-dialog-content {
+    min-height: 0;
+    max-height: calc(100% - 44px);
+    flex: 0 1 auto;
+    margin: 20px 24px 24px;
+    padding: 17px;
+    border: 1px solid rgba(47, 107, 77, 0.16);
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f5faf6, #fbfdfb);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+
+.scholar-requirement-dialog-content-title {
+    margin: 0 0 7px;
+    color: #244838;
+    font-size: 0.92rem;
+}
+
+.scholar-requirement-dialog-content-note {
+    margin: 0 0 13px;
+    color: #718378;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.scholar-requirement-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.scholar-requirement-detail-grid > div {
+    display: grid;
+    min-width: 0;
+    gap: 7px;
+    padding: 11px 12px;
+    border: 1px solid #e4ede7;
+    border-radius: 10px;
+    background: #fbfdfb;
+}
+
+.scholar-requirement-detail-grid > div > span {
+    color: #75897c;
+    font-size: 0.67rem;
+    font-weight: 700;
+}
+
+.scholar-requirement-detail-grid strong {
+    color: #294d3d;
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+}
+
+.scholar-requirement-detail-section {
+    margin-top: 15px;
+    padding: 14px 15px;
+    border: 1px solid #e4ede7;
+    border-radius: 11px;
+    background: #fff;
+}
+
+.scholar-requirement-detail-section h3 {
+    margin: 0 0 7px;
+    color: #365f47;
+    font-size: 0.76rem;
+}
+
+.scholar-requirement-detail-section p {
+    margin: 0;
+    color: #526a5b;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.scholar-requirement-detail-section.is-rejected {
+    border-color: #f0d3d0;
+    background: #fff7f6;
+}
+
+.scholar-requirement-detail-section.is-rejected h3 {
+    color: #9c4e49;
+}
+
+.scholar-requirement-submit-form {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    gap: 9px;
+    margin: 14px 0 0;
+    padding: 14px;
+    border: 1px solid #dce9e1;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #f7fbf8, #fff);
+    box-shadow: 0 3px 10px rgba(24, 61, 43, 0.04);
+}
+
+.scholar-requirement-submit-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3ece6;
+}
+
+.scholar-requirement-submit-icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    border: 1px solid #d7ebde;
+    border-radius: 10px;
+    background: #eaf6ee;
+    color: #2f8056;
+    font-size: 0.95rem;
+}
+
+.scholar-requirement-submit-heading h3 {
+    margin: 0 0 3px;
+    color: #245f44;
+    font-size: 0.88rem;
+}
+
+.scholar-requirement-submit-heading p {
+    margin: 0;
+    color: #718378;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.scholar-requirement-submit-form > label {
+    margin: 2px 0 -5px;
+    color: #365f47;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.scholar-requirement-submit-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.scholar-requirement-link-field {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border: 1px solid #d6e5dc;
+    border-radius: 10px;
+    background: #fff;
+    color: #71907d;
+}
+
+.scholar-requirement-link-field:focus-within {
+    border-color: #58a77a;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(55, 139, 88, 0.13);
+}
+
+.scholar-requirement-link-field > i {
+    flex: 0 0 auto;
+    font-size: 0.78rem;
+}
+
+.scholar-requirement-submit-controls input {
+    min-width: 0;
+    min-height: 40px;
+    padding: 8px 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #294d3d;
+    font-size: 0.78rem;
+}
+
+.scholar-requirement-submit-controls input:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+}
+
+.admin-registration-popout-actions {
+    margin: 18px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.admin-registration-popout-actions .admin-registration-action-form {
+    max-width: none;
+    margin: 0;
+}
+
+.admin-registration-detail-dialog .admin-registration-popout-actions .btn {
+    min-height: 44px;
+    padding: 11px 17px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    gap: 9px;
+}
+
+.admin-registration-detail-dialog .admin-registration-popout-actions .admin-registration-action-form .btn,
+.admin-registration-detail-dialog .admin-registration-popout-actions > .admin-registration-reject-trigger {
+    width: 86px;
+}
+
+.admin-registration-detail-dialog .admin-registration-popout-actions > .admin-registration-reject-trigger {
+    border: 1px solid #b84942;
+    background: #b84942;
+    color: #fff !important;
+}
+
+.admin-registration-detail-dialog .admin-registration-popout-actions > .admin-registration-reject-trigger:hover:not(:disabled),
+.admin-registration-detail-dialog .admin-registration-popout-actions > .admin-registration-reject-trigger:focus-visible {
+    border-color: #a53e38;
+    background: #a53e38;
+    box-shadow: 0 6px 14px rgba(165, 62, 56, 0.2);
+}
+
+.admin-registration-detail-dialog .admin-registration-reject-form > .btn-danger {
+    border: 1px solid #b84942;
+    background: #b84942;
+    color: #fff;
+}
+
+.admin-registration-detail-dialog .admin-registration-reject-form > .btn-danger:hover,
+.admin-registration-detail-dialog .admin-registration-reject-form > .btn-danger:focus-visible {
+    border-color: #a53e38;
+    background: #a53e38;
+    box-shadow: 0 6px 14px rgba(165, 62, 56, 0.2);
+}
+
+.admin-registration-popout-actions .admin-registration-reject-form {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    padding: 16px;
+    border: 1px solid rgba(47, 107, 77, 0.16);
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f5faf6, #fbfdfb);
+}
+
+.admin-registration-reject-form .form-row {
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+.admin-registration-reject-form textarea {
+    min-height: 72px;
+}
+
+@media (max-width: 520px) {
+    .admin-coordinator-detail-actions {
+        flex-wrap: wrap;
+    }
+
+    .admin-coordinator-detail-actions > .form-row {
+        flex-basis: 100%;
+    }
+
+    .admin-coordinator-detail-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .admin-record-dialog.scholar-requirement-dialog.admin-user-detail-dialog,
+    .admin-record-dialog.scholar-requirement-dialog.admin-registration-detail-dialog,
+    .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer {
+        width: min(560px, 100vw);
+        border-radius: 15px 0 0 15px;
+    }
+
+    .admin-record-dialog.scholar-requirement-dialog.admin-user-detail-dialog > .scholar-requirement-dialog-head,
+    .admin-record-dialog.scholar-requirement-dialog.admin-registration-detail-dialog > .scholar-requirement-dialog-head,
+    .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer > .scholar-requirement-dialog-head {
+        padding: 18px 17px 15px;
+    }
+
+    .admin-record-dialog.scholar-requirement-dialog.admin-user-detail-dialog > .admin-user-detail-content,
+    .admin-record-dialog.scholar-requirement-dialog.admin-registration-detail-dialog > .admin-user-detail-content,
+    .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer > .admin-user-detail-content,
+    .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer > .admin-record-drawer-content {
+        padding: 17px;
+    }
+
+    .admin-record-dialog.scholar-requirement-dialog.admin-user-detail-dialog > .admin-user-detail-content,
+    .admin-record-dialog.scholar-requirement-dialog.admin-registration-detail-dialog > .admin-user-detail-content {
+        padding: 0;
+    }
+
+    .admin-registration-popout-actions .admin-registration-reject-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-registration-reject-form > .btn {
+        align-self: flex-end;
+    }
+
+    .scholar-requirement-dialog {
+        width: min(560px, 100vw);
+        border-radius: 16px 0 0 16px;
+    }
+
+    .scholar-requirement-dialog-head {
+        flex: 0 0 auto;
+        padding: 17px 16px 14px;
+    }
+
+    .scholar-requirement-dialog-content {
+        min-height: 0;
+        max-height: calc(100% - 32px);
+        flex: 0 1 auto;
+        margin: 16px 17px;
+        padding: 14px;
+    }
+
+    .scholar-requirement-detail-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scholar-requirement-submit-controls {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scholar-requirement-submit-controls button {
+        width: 100%;
+    }
+
+    .scholar-requirement-submit-form {
+        padding: 15px;
+    }
+}
+
+.coordinator-requirements-card {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 26px 30px 20px;
+}
+
+.coordinator-requirements-card + .coordinator-requirements-card {
+    margin-top: 0;
+}
+
+.coordinator-requirements-table {
+    margin-top: 0;
+}
+
+.coordinator-requirements-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.coordinator-requirements-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.coordinator-requirements-table th:last-child,
+.coordinator-requirements-table td:last-child {
+    text-align: center;
+}
+
+.coordinator-requirements-scholar-name,
+.coordinator-requirements-scholar-id {
+    display: block;
+}
+
+.coordinator-requirements-scholar-name {
+    font-weight: 700;
+}
+
+.coordinator-requirements-scholar-id {
+    margin-top: 3px;
+    color: #819287;
+    font-size: 0.7rem;
+}
+
+.coordinator-requirements-table-scroll {
+    height: 350px;
+    overflow: auto;
+}
+
+.coordinator-requirements-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-assigned-requirements-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.coordinator-scholars-records-card .coordinator-assigned-requirements-scroll {
+    height: 270px;
+    max-height: 270px;
+    overflow: auto;
+}
+
+.coordinator-assigned-requirements-panel {
+    padding: 20px;
+    border: 1px solid rgba(47, 107, 77, 0.16);
+    border-radius: 16px;
+    background: linear-gradient(145deg, #f5faf6, #fbfdfb);
+    box-shadow: 0 10px 26px rgba(35, 73, 54, 0.08);
+}
+
+.coordinator-assigned-requirements-panel > h3 {
+    margin: 0 0 5px;
+    color: #244838;
+    font-size: 1rem;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+}
+
+.coordinator-assigned-requirements-note {
+    margin: 0 0 14px;
+    color: #657b6e;
+    font-size: 0.74rem;
+    line-height: 1.5;
+}
+
+.coordinator-assigned-requirements-panel .coordinator-assigned-requirements-scroll {
+    border: 1px solid #e3eee7;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.coordinator-assigned-requirements-table {
+    min-width: 460px;
+    margin: 0;
+}
+
+.coordinator-assigned-requirements-table th {
+    color: #819287;
+    font-size: 0.66rem;
+    white-space: nowrap;
+}
+
+.coordinator-assigned-requirements-table td {
+    vertical-align: top;
+    color: #425c53;
+    font-size: 0.76rem;
+}
+
+.coordinator-assigned-requirements-table td:first-child {
+    width: 44%;
+    white-space: normal;
+}
+
+.coordinator-assigned-requirements-table td:nth-child(2) {
+    width: 34%;
+    white-space: normal;
+}
+
+.coordinator-assigned-requirements-table td:last-child {
+    width: 22%;
+    white-space: nowrap;
+}
+
+.coordinator-scholars-records-card .coordinator-assigned-requirements-table td:nth-child(2) {
+    width: 22%;
+    white-space: nowrap;
+}
+
+.coordinator-scholars-records-card .coordinator-assigned-requirements-table td:last-child {
+    width: 34%;
+    white-space: normal;
+}
+
+.coordinator-scholars-records-card .coordinator-assigned-requirements-table th:not(:first-child),
+.coordinator-scholars-records-card .coordinator-assigned-requirements-table td:not(:first-child) {
+    text-align: center;
+}
+
+.coordinator-requirement-no-submission {
+    color: #819287;
+    font-size: 0.7rem;
+}
+
+.coordinator-assigned-requirements-table .coordinator-assigned-requirement-row {
+    cursor: pointer;
+}
+
+.coordinator-assigned-requirement-row:focus-visible {
+    outline: 2px solid var(--green-700);
+    outline-offset: -2px;
+}
+
+.coordinator-assigned-requirement-details[hidden] {
+    display: none;
+}
+
+.coordinator-assigned-requirement-details > td {
+    padding: 0 !important;
+    background: #f7faf8;
+    white-space: normal;
+}
+
+.coordinator-assigned-requirements-table .coordinator-assigned-requirement-details > td {
+    width: auto;
+    white-space: normal;
+}
+
+.coordinator-requirement-expanded-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 14px;
+    border-bottom: 1px solid #e4ede7;
+}
+
+.coordinator-requirement-expanded-content > section {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #e4ede7;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.coordinator-requirement-expanded-actions {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.coordinator-requirement-expanded-content h4 {
+    margin: 0 0 7px;
+    color: #365f47;
+    font-size: 0.76rem;
+}
+
+.coordinator-requirement-expanded-content p {
+    margin: 0;
+    color: #526a5b;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.coordinator-requirement-expanded-content .coordinator-requirement-no-submission,
+.coordinator-requirement-expanded-content .requirement-no-action {
+    color: #819287;
+    font-size: 0.72rem;
+}
+
+.coordinator-requirement-expanded-content .coordinator-requirement-rejection-reason {
+    margin: 0 0 8px;
+    padding: 11px 13px;
+    border: 1px solid #f0d3d0;
+    border-radius: 9px;
+    background: #fff7f6;
+    color: #9a4b43;
+}
+
+.coordinator-requirement-actions {
+    display: block;
+}
+
+.coordinator-requirement-actions.has-review-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 8px;
+}
+
+.coordinator-requirement-actions.has-review-actions .requirement-submission-button,
+.coordinator-requirement-actions.has-review-actions .coordinator-requirement-no-submission {
+    grid-column: 1;
+}
+
+.coordinator-requirement-actions.has-review-actions .coordinator-requirement-review-form {
+    grid-column: 2 / 4;
+}
+
+.coordinator-requirement-actions.has-review-actions .requirement-submission-button,
+.coordinator-requirement-actions.has-review-actions .coordinator-requirement-review-form button {
+    width: 100%;
+    height: 42px;
+}
+
+.coordinator-requirement-actions:not(.has-review-actions) .requirement-submission-button {
+    width: calc((100% - 16px) / 3);
+    height: 42px;
+}
+
+.coordinator-requirement-expanded-content .requirement-submission-button {
+    margin: 0;
+    background: #2873b8;
+    color: #fff !important;
+    min-height: 42px;
+    padding: 8px 10px;
+    border-radius: 9px;
+    font-size: 0.72rem;
+}
+
+.coordinator-requirement-expanded-content .requirement-submission-button:hover,
+.coordinator-requirement-expanded-content .requirement-submission-button:focus-visible {
+    background: #1f5f9b;
+}
+
+.requirement-assignment-form {
+    max-width: none;
+}
+
+.requirement-period-field {
+    max-width: 540px;
+}
+
+.requirement-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 22px 0 24px;
+}
+
+.requirement-choice-group {
+    min-width: 0;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid #dcebe2;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #fbfefc 0%, #f3f9f5 100%);
+    box-shadow: 0 8px 20px rgba(37, 74, 59, 0.06);
+}
+
+.requirement-choice-group legend {
+    padding: 0 8px;
+    color: #184a39;
+    font-size: 0.92rem;
+    font-weight: 750;
+}
+
+.requirement-choice-group legend span {
+    display: inline-grid;
+    min-width: 24px;
+    height: 24px;
+    margin-left: 7px;
+    padding: 0 6px;
+    place-items: center;
+    border-radius: 999px;
+    background: #e3f2e8;
+    color: #26734b;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.requirement-choice-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 3px 0 13px;
+}
+
+.scholar-choice-group .requirement-choice-tools {
+    justify-content: space-between;
+}
+
+.requirement-search {
+    position: relative;
+    display: block;
+    width: min(100%, 320px);
+    margin: 0;
+}
+
+.requirement-search > i {
+    position: absolute;
+    top: 50%;
+    left: 11px;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.requirement-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px 10px 36px;
+    border-color: #dce9e0;
+    border-radius: 11px;
+    background: #fff;
+    font-size: 0.78rem;
+}
+
+.assigned-requirements-search {
+    width: min(100%, 223px);
+}
+
+.assigned-requirements-search input {
+    min-height: 41px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 0.82rem;
+}
+
+.requirement-search input:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.assigned-requirements-search {
+    margin: 0;
+}
+
+.assigned-requirements-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    flex: 1 1 auto;
+}
+
+.requirement-select-all {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #dfeee5, #d7efe1);
+    color: var(--green-800);
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.requirement-select-all:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(30, 83, 63, 0.12);
+}
+
+.requirement-select-all:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+    box-shadow: none;
+}
+
+.requirement-choice-list {
+    display: grid;
+    gap: 9px;
+    height: 250px;
+    overflow-y: auto;
+    align-content: start;
+    padding: 2px 7px 2px 2px;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+.requirement-choice-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.requirement-choice-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.requirement-choice-list::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(54, 109, 81, 0.4);
+}
+
+.requirement-choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid #e0ebe4;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.94);
+    cursor: pointer;
+    transition: border-color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.requirement-choice[hidden] {
+    display: none;
+}
+
+.requirement-choice:hover {
+    border-color: #b7d8c5;
+    background: #f4fbf7;
+    box-shadow: 0 4px 12px rgba(37, 74, 59, 0.06);
+}
+
+.requirement-choice:has(input[type="checkbox"]:checked) {
+    border-color: #9bc9a9;
+    background: #edf7f0;
+    box-shadow: inset 3px 0 0 #39815a;
+}
+
+.requirement-choice:focus-within {
+    outline: 3px solid rgba(47, 128, 86, 0.2);
+    outline-offset: 2px;
+}
+
+.requirement-choice-locked {
+    background: #f1f4f2;
+    border-color: #e0e6e2;
+    cursor: not-allowed;
+    opacity: 0.68;
+}
+
+.requirement-choice-locked:hover {
+    background: #f1f4f2;
+    border-color: #e0e6e2;
+    box-shadow: none;
+}
+
+.requirement-choice-lock-note {
+    flex: 0 0 auto;
+    margin: 0 0 0 auto;
+    color: #64746a;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.requirement-choice input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 auto;
+    margin: 0;
+    accent-color: var(--green-700);
+}
+
+.requirement-choice > span {
+    min-width: 0;
+    color: #294d3d;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.requirement-choice small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.requirement-choice-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.requirement-choice-student-id {
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.requirement-form-note {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+.requirement-assignment-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.requirement-assign-button {
+    min-height: 42px;
+    min-width: 168px;
+    padding: 9px 14px;
+    border: 1px solid #2f6b4d;
+    border-radius: 9px;
+    background: #2f6b4d;
+    color: #fff;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.requirement-assign-button:hover:not(:disabled),
+.requirement-assign-button:focus-visible {
+    background: #24583e;
+}
+
+.requirement-assign-button:focus-visible {
+    outline: 3px solid rgba(47, 128, 86, 0.28);
+    outline-offset: 3px;
+}
+
+.requirement-assign-button:disabled {
+    border-color: #cbd8cf;
+    background: #e8eee9;
+    color: #86968b;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.requirement-assignment-actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+    box-shadow: none;
+}
+
+.requirement-review-form {
+    display: grid;
+    gap: 8px;
+    width: 220px;
+    max-width: none;
+}
+
+.requirement-review-form select,
+.requirement-review-form textarea {
+    font-size: 0.74rem;
+}
+
+.requirement-review-form textarea {
+    min-height: 68px;
+    padding: 8px 10px;
+}
+
+.requirement-review-form button {
+    justify-self: start;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+}
+
+.coordinator-requirement-review-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.coordinator-requirement-review-form button {
+    display: inline-flex;
+    min-width: 0;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: #fff !important;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.coordinator-requirement-approve-button {
+    background: #2f6b4d;
+}
+
+.coordinator-requirement-approve-button:hover,
+.coordinator-requirement-approve-button:focus-visible {
+    background: #24583e;
+}
+
+.coordinator-requirement-reject-button {
+    background: #b84942;
+}
+
+.coordinator-requirement-reject-button:hover,
+.coordinator-requirement-reject-button:focus-visible {
+    background: #a53e38;
+}
+
+.coordinator-requirement-rejection-form {
+    max-width: none;
+    margin: 20px 0 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+}
+
+.coordinator-requirement-rejection-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: #365f47;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.coordinator-requirement-rejection-form textarea {
+    width: 100%;
+    min-height: 108px;
+    padding: 10px 12px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--green-900);
+    font-size: 0.82rem;
+    resize: vertical;
+}
+
+.coordinator-requirement-rejection-form textarea:focus-visible {
+    border-color: var(--green-700);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(47, 128, 86, 0.12);
+}
+
+.coordinator-requirement-reject-dialog .logout-confirm-icon {
+    border-color: #f0d6d3;
+    background: #fff2f0;
+    color: #b74d45;
+}
+
+.coordinator-requirement-reject-dialog .logout-confirm-submit {
+    background: #b84942;
+}
+
+.coordinator-requirement-reject-dialog .logout-confirm-submit:hover {
+    background: #a53e38;
+}
+
+.coordinator-requirement-reject-dialog .logout-confirm-cancel {
+    border-color: #d6e2d9 !important;
+    background: #fff !important;
+    color: #536b60 !important;
+}
+
+.coordinator-requirement-reject-dialog .logout-confirm-cancel:hover {
+    border-color: #b8d2c1 !important;
+    background: #f1f8f3 !important;
+}
+
+.coordinator-requirement-rejection-form .logout-confirm-actions {
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.requirement-no-action {
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+}
+
+.status-assigned {
+    background: rgba(80, 138, 189, 0.12);
+    color: #2d5e88;
+}
+
+.status-submitted {
+    background: rgba(114, 80, 175, 0.12);
+    color: #6b488d;
+}
+
+.status-pending,
+.status-not_started {
+    background: rgba(201, 154, 39, 0.14);
+    color: #876716;
+}
+
+.status-matched {
+    background: rgba(55, 126, 82, 0.12);
+    color: #215d40;
+}
+
+.status-mismatch,
+.status-not_found {
+    background: rgba(176, 70, 70, 0.12);
+    color: #8c3131;
+}
+
+.status-for_review {
+    background: rgba(201, 154, 39, 0.14);
+    color: #876716;
+}
+
+.status-in_progress {
+    background: rgba(80, 138, 189, 0.12);
+    color: #2d5e88;
+}
+
+.status-approved {
+    background: rgba(55, 126, 82, 0.12);
+    color: #215d40;
+}
+
+.status-resolved,
+.status-completed {
+    background: rgba(55, 126, 82, 0.12);
+    color: #215d40;
+}
+
+.status-active {
+    background: rgba(55, 126, 82, 0.12);
+    color: #215d40;
+}
+
+.status-inactive {
+    background: rgba(176, 70, 70, 0.12);
+    color: #8c3131;
+}
+
+.status-rejected {
+    background: rgba(176, 70, 70, 0.12);
+    color: #8c3131;
+}
+
+.requirement-submission-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 420px;
+}
+
+.scholar-requirement-dialog .scholar-requirement-submit-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    max-width: none;
+}
+
+.scholar-requirement-submit-controls .duty-weekly-submit-button {
+    min-height: 40px;
+    padding: 9px 13px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+}
+
+.scholar-requirement-submit-heading > div {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.scholar-requirement-submit-controls,
+.scholar-requirement-link-field {
+    width: 100%;
+}
+
+.requirement-submission-form input {
+    min-width: 240px;
+    flex: 1 1 200px;
+}
+
+.requirement-link {
+    color: var(--green-700);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.requirement-link:hover {
+    text-decoration: underline;
+}
+
+.requirement-details {
+    color: #425c53;
+}
+
+.requirement-details p {
+    margin: 0 0 10px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.requirement-details p:last-child {
+    margin-bottom: 0;
+}
+
+.requirement-submission-button {
+    margin: 0;
+    font-size: 0.74rem;
+}
+
+.coordinator-submitted-requirement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 14px 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(47, 107, 77, 0.18);
+    border-radius: 12px;
+    background: linear-gradient(120deg, #eef7f1, #f8fbf9);
+    color: #244838;
+    font-size: 0.8rem;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.scholar-quick-links-scroll {
+    height: calc(100vh - 230px);
+    overflow: auto;
+    padding: 2px 8px 8px 2px;
+}
+
+.quick-link-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 24px 22px 20px;
+}
+
+.quick-link-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.quick-link-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(47, 107, 77, 0.1);
+    color: var(--green-700);
+    font-size: 1rem;
+}
+
+.quick-link-head h2 {
+    margin-bottom: 0;
+    color: #244838;
+    font-size: 1.05rem;
+}
+
+.quick-link-desc {
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+.quick-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    margin-top: auto;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--green-700), var(--green-600));
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-link-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(30, 83, 63, 0.12);
+}
+
+.empty-state-card {
+    padding: 26px 22px;
+}
+
+.empty-inline {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.report-submit-card {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 26px 30px 20px;
+}
+
+.scholar-report-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.5fr);
+    align-items: stretch;
+    gap: 20px;
+}
+
+.scholar-reports-page {
+    padding-bottom: 56px;
+}
+
+.scholar-report-layout > .records-card {
+    min-width: 0;
+    margin: 0;
+}
+
+.scholar-report-layout > .report-submit-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-form {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+}
+
+.report-form .form-row {
+    margin-bottom: 18px;
+}
+
+.report-form .form-row label {
+    margin-bottom: 8px;
+    color: #315b44;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.report-form .form-row input,
+.report-form .form-row textarea {
+    border-color: #d6e5dc;
+    border-radius: 11px;
+    background: #fbfdfb;
+    font-size: 0.85rem;
+}
+
+.report-form .form-row input {
+    min-height: 46px;
+}
+
+.report-form .form-row textarea {
+    min-height: 174px;
+    padding: 12px 14px;
+    line-height: 1.55;
+    resize: vertical;
+}
+
+.report-form .form-row input:focus,
+.report-form .form-row textarea:focus {
+    border-color: #58a77a;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(55, 139, 88, 0.13);
+}
+
+.report-form .form-row > small {
+    display: block;
+    margin-top: 7px;
+    color: #74877b;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.report-form .report-message-field {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.report-form .report-message-field textarea {
+    flex: 1 1 auto;
+    min-height: 190px;
+}
+
+.report-form > .report-submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    align-self: flex-end;
+    margin: 4px 0 0 auto;
+    padding: 11px 20px;
+    border: 1px solid var(--green-700);
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--green-700), var(--green-600));
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(36, 95, 68, 0.14);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-form > .report-submit-button:hover {
+    background: linear-gradient(135deg, var(--green-800), var(--green-700));
+    box-shadow: 0 7px 16px rgba(36, 95, 68, 0.22);
+    transform: translateY(-1px);
+}
+
+.report-records-card {
+    margin-top: 0;
+    padding: 26px 30px 20px;
+}
+
+.coordinator-report-filter-tools {
+    flex: 0 0 auto;
+    gap: 12px;
+}
+
+.coordinator-report-count-badge {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #315b44;
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.coordinator-report-filter-empty td {
+    padding: 24px 16px;
+    color: #718378;
+    text-align: center;
+}

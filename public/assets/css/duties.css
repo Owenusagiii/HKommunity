@@ -1,0 +1,1568 @@
+
+
+.duty-records-content {
+    max-width: 1180px;
+}
+
+.admin-registration-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 144px);
+}
+
+.admin-registration-page > .admin-registration-card {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.admin-registration-page .coordinator-scholars-table-scroll {
+    height: auto;
+    min-height: 260px;
+    flex: 1 1 auto;
+}
+
+.duty-weekly-submit-action {
+    display: flex;
+    justify-content: flex-end;
+    margin: -8px 0 22px;
+}
+
+.duty-weekly-submit-button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 17px;
+    border: 1px solid var(--green-700);
+    border-radius: 10px;
+    background: var(--green-700);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.duty-weekly-submit-button:hover,
+.duty-weekly-submit-button:focus-visible {
+    background: var(--green-800);
+    box-shadow: 0 6px 14px rgba(36, 95, 68, 0.2);
+    transform: translateY(-1px);
+}
+
+.duty-back-button {
+    flex: 0 0 auto;
+}
+
+.duty-page-head {
+    align-items: center;
+}
+
+.duty-page-head h1 {
+    margin-bottom: 4px;
+}
+
+.duty-info-banner {
+    display: none;
+}
+
+.coordinator-duty-info-banner {
+    max-width: 420px;
+}
+
+.duty-submission-locked-label {
+    display: block;
+    margin-top: 3px;
+    color: #8b6a25;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.coordinator-dialog-student-id {
+    display: block;
+    margin-top: 4px;
+    color: #718378;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.duty-info-banner i {
+    color: var(--green-700);
+    font-size: 1rem;
+}
+
+.progress-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin-bottom: 30px;
+    padding: 30px 40px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fdf3d8, #faedc0);
+    box-shadow: 0 10px 22px rgba(159, 122, 15, .12);
+}
+
+.duty-progress-banner {
+    flex-wrap: nowrap;
+}
+
+.duty-records-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.duty-record-submit-action {
+    display: flex;
+    justify-content: flex-end;
+    margin: -14px 0 22px;
+}
+
+.duty-progress-banner > .duty-record-submit-action {
+    flex: 0 0 auto;
+    align-self: flex-end;
+    margin: 0 0 0 auto;
+}
+
+.duty-progress-banner .progress-info .duty-record-submit-action {
+    margin: 12px 0 0;
+}
+
+.duty-progress-banner .duty-record-submit-action .duty-weekly-submit-button {
+    width: auto;
+}
+
+.duty-record-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #718378;
+    font-size: 0.74rem;
+    font-weight: 600;
+}
+
+.duty-record-filter select {
+    min-height: 38px;
+    width: auto;
+    padding: 7px 30px 7px 11px;
+    border: 1px solid #d6e5dc;
+    border-radius: 9px;
+    background: #fbfdfb;
+    color: #315b44;
+    font: inherit;
+    cursor: pointer;
+}
+
+.duty-record-filter select:focus-visible {
+    border-color: #58a77a;
+    outline: 3px solid rgba(55, 139, 88, 0.13);
+}
+
+.progress-banner.progress-orange {
+    background: linear-gradient(135deg, #fff0dc, #ffe2bd);
+    box-shadow: 0 10px 22px rgba(198, 115, 28, .14);
+}
+
+.progress-banner.progress-orange .progress-circle {
+    box-shadow: 0 6px 16px rgba(198, 115, 28, .14);
+}
+
+.progress-banner.progress-orange .progress-label,
+.progress-banner.progress-orange .progress-percent,
+.progress-banner.progress-orange .progress-caption {
+    color: #a85b16;
+}
+
+.progress-banner.progress-orange .progress-pending {
+    color: #c26b18;
+}
+
+.progress-banner.progress-orange .progress-bar {
+    background: rgba(215, 126, 31, .2);
+}
+
+.progress-banner.progress-orange .progress-bar span {
+    background: #d77e1f;
+}
+
+.progress-banner.progress-yellow {
+    background: linear-gradient(135deg, #fdf3d8, #faedc0);
+    box-shadow: 0 10px 22px rgba(159, 122, 15, .12);
+}
+
+.progress-banner.progress-green {
+    background: linear-gradient(135deg, #e4f6e9, #d1eedb);
+    box-shadow: 0 10px 22px rgba(47, 138, 92, .14);
+}
+
+.progress-banner.progress-green .progress-circle {
+    box-shadow: 0 6px 16px rgba(47, 138, 92, .14);
+}
+
+.progress-banner.progress-green .progress-label,
+.progress-banner.progress-green .progress-percent,
+.progress-banner.progress-green .progress-caption {
+    color: #2f8056;
+}
+
+.progress-banner.progress-green .progress-pending {
+    color: #2f8a5c;
+}
+
+.progress-banner.progress-green .progress-bar {
+    background: rgba(47, 138, 92, .18);
+}
+
+.progress-banner.progress-green .progress-bar span {
+    background: #2f8a5c;
+}
+
+.progress-circle {
+    display: flex;
+    width: 118px;
+    height: 118px;
+    min-width: 118px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fffdf7;
+    box-shadow: 0 6px 16px rgba(159, 122, 15, .14);
+}
+
+.duty-progress-banner .progress-circle {
+    width: clamp(128px, 18vw, 180px);
+    height: clamp(128px, 18vw, 180px);
+    min-width: clamp(128px, 18vw, 180px);
+}
+
+.duty-progress-banner .progress-num {
+    font-size: clamp(2rem, 3vw, 2.3rem);
+}
+
+.duty-progress-banner .progress-label {
+    font-size: 0.75rem;
+}
+
+.progress-num {
+    color: #123f2c;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.progress-label {
+    margin-top: 2px;
+    color: #8b8264;
+    font-size: 0.65rem;
+}
+
+.progress-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.progress-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.progress-head h2 {
+    margin-bottom: 0;
+    color: #123f2c;
+    font-size: 1.15rem;
+}
+
+.progress-percent {
+    color: #8b7c4d;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(201, 154, 39, .22);
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background: #c99a27;
+}
+
+.progress-footline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.progress-caption,
+.progress-pending {
+    margin-bottom: 0;
+    font-size: 0.72rem;
+}
+
+.progress-caption {
+    color: #8b7c4d;
+}
+
+.progress-pending {
+    color: #c99a27;
+    font-weight: 700;
+}
+
+.duty-records-card {
+    margin-top: 0;
+    padding: 26px 30px 20px;
+}
+
+.records-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.records-head h2 {
+    margin-bottom: 0;
+    color: #123f2c;
+    font-size: 1.15rem;
+}
+
+.coordinator-portal .records-head,
+.scholar-portal .records-head {
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.coordinator-portal .records-head h2,
+.scholar-portal .records-head h2,
+.coordinator-portal .panel-title > span:first-child,
+.scholar-portal .panel-title > span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--green-900);
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+.coordinator-portal .records-head h2::before,
+.scholar-portal .records-head h2::before,
+.coordinator-portal .panel-title > span:first-child::before,
+.scholar-portal .panel-title > span:first-child::before {
+    display: inline-grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid #d7ebde;
+    border-radius: 11px;
+    background: #eaf6ee;
+    color: var(--green-700);
+    content: "\f0ca";
+    font-family: "Font Awesome 6 Free";
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+.coordinator-portal .records-head .sub-small,
+.scholar-portal .records-head .sub-small {
+    margin: 5px 0 0 47px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.coordinator-portal .panel-title,
+.scholar-portal .panel-title {
+    align-items: center;
+}
+
+.coordinator-portal .panel-title > span:first-child,
+.scholar-portal .panel-title > span:first-child {
+    font-size: 1rem;
+}
+
+.record-count {
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.coordinator-toolbar-count {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 5px 10px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #315b44;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.coordinator-duty-submissions-card > .records-head > .record-count {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #315b44;
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.scholar-portal .duty-submission-card #duty-submission-count,
+.scholar-portal .duty-records-card #duty-record-count,
+.scholar-portal .requirement-records-card > .records-head > .record-count,
+.scholar-portal .renewal-records-card > .records-head > .record-count,
+.scholar-portal .report-records-card #scholar-report-count {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #315b44;
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.duty-records-table {
+    margin-top: 0;
+}
+
+.duty-records-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.duty-records-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.coordinator-duty-submissions-scroll .duty-records-table th:nth-child(n+2),
+.coordinator-duty-submissions-scroll .duty-records-table td:nth-child(n+2),
+.coordinator-duty-table-scroll .duty-records-table th:nth-child(n+2),
+.coordinator-duty-table-scroll .duty-records-table td:nth-child(n+2) {
+    text-align: center;
+}
+
+.scholar-duty-table-scroll .duty-records-table th:nth-child(n+2),
+.scholar-duty-table-scroll .duty-records-table td:nth-child(n+2) {
+    text-align: center;
+}
+
+.scholar-duty-table-scroll {
+    height: 250px;
+    overflow: auto;
+}
+
+.scholar-duty-table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-duty-card {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 26px 30px 20px;
+}
+
+.duty-submission-card {
+    margin-bottom: 24px;
+    padding: 26px 30px 20px;
+}
+
+.duty-submission-form {
+    max-width: none;
+    padding-top: 6px;
+}
+
+.duty-submission-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px 28px;
+    max-width: 1100px;
+}
+
+.duty-submission-details {
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+}
+
+.duty-submission-form-grid .form-row {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.duty-submission-files-field {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+}
+
+.duty-submission-form-grid label {
+    margin-bottom: 8px;
+    color: #315b44;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.duty-submission-form-grid input {
+    min-height: 46px;
+    border-color: #d6e5dc;
+    border-radius: 11px;
+    background: #fbfdfb;
+    font-size: 0.85rem;
+}
+
+.duty-submission-form-grid input:focus {
+    border-color: #58a77a;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(55, 139, 88, 0.13);
+}
+
+.duty-proof-dropzone {
+    position: relative;
+    display: flex;
+    min-height: 174px;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+    border: 2px dashed #c9ddd0;
+    border-radius: 13px;
+    background: #f8fbf9;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.duty-proof-dropzone:hover,
+.duty-proof-dropzone.is-dragging {
+    border-color: #4e9a6a;
+    background: #f0f8f3;
+}
+
+.duty-proof-file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.duty-proof-dropzone-label {
+    display: flex;
+    min-height: 174px;
+    flex: 1 0 174px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    padding: 22px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #315b44;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.duty-proof-dropzone-label:hover {
+    background: rgba(230, 242, 234, 0.4);
+}
+
+.duty-proof-dropzone.has-files .duty-proof-dropzone-label {
+    display: flex;
+    min-height: 34px;
+    flex: 0 0 34px;
+    flex-direction: row;
+    gap: 6px;
+    padding: 2px 6px;
+}
+
+.duty-proof-dropzone.has-files .duty-proof-dropzone-icon,
+.duty-proof-dropzone.has-files .duty-proof-dropzone-title,
+.duty-proof-dropzone.has-files .duty-proof-dropzone-limit {
+    display: none;
+}
+
+.duty-proof-dropzone.has-files .duty-proof-dropzone-prompt {
+    font-size: 0.72rem;
+}
+
+.duty-proof-file-input:focus-visible + .duty-proof-dropzone-label {
+    outline: 3px solid rgba(55, 139, 88, 0.2);
+    outline-offset: 2px;
+}
+
+.duty-proof-dropzone-icon {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    margin-bottom: 2px;
+    border-radius: 50%;
+    background: #e6f2ea;
+    color: #348151;
+    font-size: 1.1rem;
+}
+
+.duty-proof-dropzone-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.duty-proof-dropzone-prompt {
+    color: #718378;
+    font-size: 0.77rem;
+    font-weight: 400;
+}
+
+.duty-proof-dropzone-prompt span {
+    color: #267246;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.duty-proof-dropzone-limit {
+    margin-top: 4px;
+    color: #86958b;
+    font-size: 0.68rem;
+}
+
+.duty-proof-file-list {
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    align-self: stretch;
+    flex-direction: column;
+    gap: 7px;
+    margin: 0;
+    padding: 0 6px 6px;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.duty-proof-file-list[hidden],
+.duty-proof-file-error[hidden] {
+    display: none;
+}
+
+.duty-proof-file-list li {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    flex: 0 0 44px;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 0 10px;
+    border: 1px solid #e2ece5;
+    border-radius: 9px;
+    background: #fbfdfb;
+    color: #315b44;
+    font-size: 0.74rem;
+}
+
+.duty-proof-file-icon {
+    flex: 0 0 auto;
+    color: #43875b;
+    font-size: 0.95rem;
+}
+
+.duty-proof-file-name {
+    display: block;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.duty-proof-file-list a.duty-proof-file-name {
+    color: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.duty-proof-file-list a.duty-proof-file-name:hover,
+.duty-proof-file-list a.duty-proof-file-name:focus-visible {
+    color: #267246;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.duty-proof-file-list li small {
+    flex: 0 0 54px;
+    color: #819087;
+    font-size: 0.68rem;
+    text-align: right;
+}
+
+.duty-proof-file-remove {
+    display: grid;
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #fcebea;
+    color: #a5332a;
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.duty-proof-file-remove:hover,
+.duty-proof-file-remove:focus-visible {
+    background: #f5d5d2;
+    color: #82251e;
+}
+
+.duty-proof-file-error {
+    margin: 8px 0 0;
+    color: #b42318;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.duty-submission-form-grid .form-row > small {
+    display: block;
+    margin-top: 7px;
+    color: #74877b;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.duty-submission-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1100px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #e8efea;
+}
+
+.duty-submission-form-actions p {
+    margin: 0;
+    color: #74877b;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.duty-submission-form-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    margin: 0;
+    padding: 11px 20px;
+    border: 1px solid var(--green-700);
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--green-700), var(--green-600));
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(36, 95, 68, 0.14);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.duty-submission-form-actions button:hover {
+    background: linear-gradient(135deg, var(--green-800), var(--green-700));
+    box-shadow: 0 7px 16px rgba(36, 95, 68, 0.22);
+    transform: translateY(-1px);
+}
+
+.duty-submission-files-field small,
+.duty-submission-student-id,
+.duty-review-date,
+.duty-rejection-reason {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    line-height: 1.45;
+    white-space: normal;
+}
+
+.duty-submissions-table-scroll,
+.coordinator-duty-submissions-scroll {
+    max-height: 390px;
+    overflow: auto;
+}
+
+.coordinator-duty-submissions-scroll {
+    height: 350px;
+    max-height: 350px;
+}
+
+.scholar-duty-submissions-scroll {
+    height: 390px;
+}
+
+.duty-submissions-table-scroll thead,
+.coordinator-duty-submissions-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.duty-submissions-table-scroll td,
+.coordinator-duty-submissions-scroll td {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.scholar-duty-submissions-scroll th:nth-child(n+2),
+.scholar-duty-submissions-scroll td:nth-child(n+2) {
+    text-align: center;
+}
+
+.duty-submission-row {
+    cursor: pointer;
+}
+
+.duty-submission-row:hover td,
+.duty-submission-row:focus-visible td {
+    background: #f1f8f3;
+}
+
+.duty-submission-dialog {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(680px, 96vw);
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    border: 0;
+    border-left: 1px solid rgba(99, 128, 112, 0.3);
+    border-radius: 18px 0 0 18px;
+    background: linear-gradient(145deg, #fff, #f8fbf9);
+    color: #294d3d;
+    box-shadow: 0 28px 80px rgba(16, 48, 34, 0.3);
+    transform: translateX(100%);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.duty-submission-dialog.is-open {
+    transform: translateX(0);
+}
+
+.duty-submission-dialog::backdrop {
+    background: rgba(17, 36, 27, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+.duty-submission-dialog-head {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid #e2ece5;
+    background: #fff;
+}
+
+.duty-submission-dialog-eyebrow {
+    color: #718378;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.duty-submission-dialog-head h2 {
+    margin: 5px 0 0;
+    color: #245f44;
+    font-size: 1.15rem;
+}
+
+.duty-submission-dialog-close {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #dce9e2;
+    border-radius: 50%;
+    background: #f8fcfa;
+    color: #456a55;
+    font-size: 1rem;
+}
+
+.duty-submission-dialog-close:hover {
+    background: #eef8f3;
+}
+
+.duty-submission-edit-form,
+.duty-submission-review-card {
+    max-width: none;
+    margin: 20px 24px 24px;
+    padding: 17px;
+    border: 1px solid rgba(47, 107, 77, 0.16);
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f5faf6, #fbfdfb);
+}
+
+.duty-submission-review-card {
+    margin: 0;
+}
+
+.duty-submission-edit-form h3,
+.duty-submission-review-card > h3 {
+    margin: 0 0 14px;
+    color: #244838;
+    font-size: 0.92rem;
+}
+
+.duty-submission-edit-note,
+.duty-submission-review-note {
+    margin: -6px 0 13px;
+    color: #718378;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.duty-submission-edit-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 13px;
+}
+
+.duty-submission-review-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 16px;
+}
+
+.duty-submission-review-summary {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+}
+
+.duty-submission-review-summary > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 11px;
+}
+
+.duty-submission-review-summary > .coordinator-duty-submission-edit-fields {
+    min-width: 0;
+    padding: 10px 11px;
+    border: 1px solid rgba(47, 107, 77, 0.12);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.duty-submission-review-summary .duty-submission-detail-label {
+    flex: 0 0 auto;
+}
+
+.duty-submission-review-summary p {
+    text-align: right;
+}
+
+.duty-submission-edit-summary > div {
+    min-width: 0;
+    padding: 10px 11px;
+    border: 1px solid rgba(47, 107, 77, 0.12);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.duty-submission-edit-summary p,
+.duty-submission-rejection-detail p {
+    margin: 0;
+    color: #315b44;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.duty-submission-review-card .duty-submission-edit-summary p {
+    margin: 0;
+    color: #315b44;
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+.duty-submission-edit-section-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #315b44;
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.duty-submission-edit-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 12px;
+}
+
+.duty-submission-edit-fields {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 12px;
+}
+
+.duty-submission-edit-proof-column {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    flex-direction: column;
+}
+
+.duty-submission-edit-fields .form-row,
+.duty-submission-edit-dropzone {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.duty-submission-edit-fields label {
+    display: block;
+    margin-bottom: 6px;
+    color: #315b44;
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.duty-submission-edit-fields input {
+    min-height: 40px;
+    border-color: #d6e5dc;
+    border-radius: 9px;
+    background: #fff;
+    font-size: 0.78rem;
+}
+
+.duty-submission-edit-dropzone .duty-submission-no-proof {
+    color: #718378;
+    font-size: 0.74rem;
+}
+
+.duty-submission-edit-dropzone {
+    height: auto;
+    min-height: 0;
+    flex: 1 1 0;
+    align-self: stretch;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.duty-submission-proof-list-in-dropzone {
+    width: 100%;
+    max-height: 132px;
+    flex: 0 1 auto;
+    align-self: stretch;
+    padding: 0 6px 6px;
+    overflow-y: auto;
+}
+
+.duty-proof-dropzone-compact {
+    min-height: 94px;
+    flex: 1 1 auto;
+    padding: 5px;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.duty-proof-dropzone-compact.duty-proof-dropzone-locked {
+    cursor: default;
+}
+
+.duty-proof-dropzone-compact .duty-proof-dropzone-label {
+    min-height: 80px;
+    flex: 1 0 80px;
+    gap: 4px;
+    padding: 8px;
+}
+
+.duty-proof-dropzone-compact .duty-proof-dropzone-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+}
+
+.duty-proof-dropzone-compact .duty-proof-dropzone-title {
+    font-size: 0.74rem;
+}
+
+.duty-proof-dropzone-compact .duty-proof-dropzone-prompt {
+    font-size: 0.68rem;
+}
+
+.duty-proof-dropzone-compact .duty-proof-dropzone-limit {
+    margin-top: 1px;
+    font-size: 0.62rem;
+}
+
+.duty-proof-dropzone-unavailable {
+    min-height: 80px;
+    flex: 1 0 80px;
+    color: #718378;
+    font-size: 0.72rem;
+    cursor: default;
+}
+
+.duty-proof-dropzone-compact .duty-proof-file-list {
+    max-height: 132px;
+}
+
+.duty-submission-edit-form.is-locked {
+    border-color: rgba(47, 107, 77, 0.12);
+    background: linear-gradient(145deg, #f3f6f4, #f8faf8);
+}
+
+.duty-submission-edit-form.is-locked .duty-submission-edit-fields input {
+    background: #eef2ef;
+    color: #65746b;
+    cursor: not-allowed;
+}
+
+.duty-submission-save-button {
+    display: inline-flex;
+    min-height: 42px;
+    min-width: 168px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid #2f6b4d;
+    border-radius: 9px;
+    background: #2f6b4d;
+    color: #fff;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.duty-submission-save-button:hover,
+.duty-submission-save-button:focus-visible {
+    background: #24583e;
+}
+
+.scholar-portal .duty-submission-save-button:not(:disabled) {
+    border-color: #1976d2;
+    background: #1976d2;
+}
+
+.scholar-portal .duty-submission-save-button:not(:disabled):hover,
+.scholar-portal .duty-submission-save-button:not(:disabled):focus-visible {
+    border-color: #1565c0;
+    background: #1565c0;
+}
+
+.scholar-portal #duty-edit-confirm-dialog .logout-confirm-submit {
+    border-color: #1976d2;
+    background: #1976d2;
+}
+
+.scholar-portal #duty-edit-confirm-dialog .logout-confirm-submit:hover,
+.scholar-portal #duty-edit-confirm-dialog .logout-confirm-submit:focus-visible {
+    border-color: #1565c0;
+    background: #1565c0;
+}
+
+.duty-submission-save-button:disabled,
+.duty-submission-delete-button:disabled {
+    border-color: #aab8af;
+    background: #dce3de;
+    color: #748178;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.duty-submission-save-button:disabled:hover,
+.duty-submission-delete-button:disabled:hover {
+    border-color: #aab8af;
+    background: #dce3de;
+}
+
+.duty-submission-dialog-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 18px 24px 22px;
+}
+
+.duty-submission-dialog-actions form {
+    max-width: none;
+    margin: 0;
+}
+
+.duty-submission-dialog-actions > form {
+    flex: 0 1 auto;
+}
+
+.duty-submission-delete-button {
+    display: inline-flex;
+    min-height: 42px;
+    min-width: 168px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid #b9433b;
+    border-radius: 9px;
+    background: #b9433b;
+    color: #fff;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.duty-submission-delete-button:hover,
+.duty-submission-delete-button:focus-visible {
+    background: #9f342e;
+}
+
+.duty-submission-detail-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #718378;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.duty-submission-dialog-content p {
+    margin: 0;
+    color: #315b44;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.duty-submission-proof-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.duty-submission-proof-list a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #267246;
+    font-size: 0.76rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.duty-submission-rejection-detail {
+    grid-column: 1 / -1;
+    padding: 11px 13px;
+    border: 1px solid #f1d6d3;
+    border-radius: 9px;
+    background: #fff7f6;
+}
+
+.duty-submission-review-cell {
+    min-width: 190px;
+}
+
+.duty-submission-review-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+}
+
+.duty-submission-dialog-actions.duty-submission-review-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.duty-submission-dialog-actions.duty-submission-review-actions > button,
+.duty-submission-dialog-actions.duty-submission-review-actions > form {
+    width: 100%;
+    min-width: 0;
+}
+
+.duty-submission-dialog-actions.duty-submission-review-actions > form > button {
+    width: 100%;
+    min-width: 0;
+}
+
+.duty-submission-dialog-actions.duty-submission-review-actions {
+    justify-content: flex-end;
+    margin: 16px 0 0;
+}
+
+.duty-submission-dialog-actions .duty-submission-update-button,
+.duty-submission-dialog-actions .duty-submission-update-button:hover,
+.duty-submission-dialog-actions .duty-submission-update-button:focus-visible {
+    border-color: #2873b8;
+    background: #2873b8;
+    color: #fff;
+}
+
+.duty-submission-dialog-actions .duty-submission-update-button:hover,
+.duty-submission-dialog-actions .duty-submission-update-button:focus-visible {
+    background: #1f5f9b;
+}
+
+.duty-submission-review-proof-column {
+    min-height: 100px;
+}
+
+.duty-submission-review-proof-card {
+    gap: 7px;
+    padding: 12px;
+    border: 1px solid rgba(47, 107, 77, 0.14);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.duty-submission-review-proof-column .duty-submission-edit-dropzone {
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+.duty-submission-review-proof-column .duty-submission-proof-list-in-dropzone {
+    max-height: 180px;
+}
+
+.duty-submission-no-proof {
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: #718378;
+    font-size: 0.74rem;
+}
+
+.duty-submission-review-actions .duty-review-approve-form {
+    margin: 0;
+}
+
+.duty-submission-review-actions form {
+    max-width: none;
+}
+
+.duty-submission-review-actions button {
+    padding: 7px 11px;
+    font-size: 0.72rem;
+}
+
+.duty-submission-review-actions .duty-review-reject-button {
+    border-color: #b42318;
+    background: #b42318;
+    color: #fff;
+}
+
+.duty-submission-review-actions .duty-review-reject-button:hover,
+.duty-submission-review-actions .duty-review-reject-button:focus-visible {
+    border-color: #8f1d14;
+    background: #8f1d14;
+}
+
+.duty-rejection-confirm-dialog {
+    text-align: left;
+}
+
+.duty-rejection-confirm-dialog > .logout-confirm-icon,
+.duty-rejection-confirm-dialog > h2,
+.duty-rejection-confirm-dialog > p {
+    text-align: center;
+}
+
+.duty-rejection-confirm-dialog form {
+    max-width: none;
+    margin: 18px 0 0;
+}
+
+.duty-rejection-confirm-dialog label {
+    display: block;
+    margin-bottom: 6px;
+    color: #526a5b;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.duty-rejection-confirm-dialog textarea {
+    width: 100%;
+    min-height: 96px;
+    margin: 0;
+    resize: vertical;
+    font-size: 0.8rem;
+}
+
+.duty-rejection-confirm-dialog .logout-confirm-actions {
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.duty-approval-confirm-dialog .logout-confirm-submit {
+    background: #2f6b4d;
+}
+
+.duty-approval-confirm-dialog .logout-confirm-submit:hover {
+    background: #24583e;
+}
+
+.duty-submission-update-confirm-dialog .logout-confirm-submit {
+    background: #2873b8;
+}
+
+.duty-submission-update-confirm-dialog .logout-confirm-submit:hover {
+    background: #1f5f9b;
+}
+
+.renewal-status-confirm-dialog .logout-confirm-submit {
+    background: #2f6b4d;
+}
+
+.renewal-status-confirm-dialog .logout-confirm-submit:hover {
+    background: #24583e;
+}
+
+.duty-submit-confirm-dialog .logout-confirm-icon {
+    border-color: #d7ebde;
+    background: #eaf6ee;
+    color: #2f8056;
+}
+
+.duty-submit-confirm-dialog .logout-confirm-submit {
+    background: #245f44;
+}
+
+.duty-submit-confirm-dialog .logout-confirm-submit:hover {
+    background: #184a39;
+}
+
+.scholar-report-submit-confirm-dialog .logout-confirm-icon {
+    border-color: #d7ebde;
+    background: #eaf6ee;
+    color: #2f8056;
+}
+
+.scholar-report-submit-confirm-dialog .logout-confirm-submit {
+    background: #245f44;
+}
+
+.scholar-report-submit-confirm-dialog .logout-confirm-submit:hover {
+    background: #184a39;
+}
+
+.scholar-requirement-confirm-dialog .logout-confirm-icon {
+    border-color: #d7ebde;
+    background: #eaf6ee;
+    color: #2f8056;
+}
+
+.scholar-requirement-confirm-dialog .logout-confirm-submit {
+    background: #245f44;
+}
+
+.scholar-requirement-confirm-dialog .logout-confirm-submit:hover {
+    background: #184a39;
+}
+
+.coordinator-record-dialog.scholar-report-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.scholar-report-dialog.coordinator-duty-review-drawer {
+    inset: 0 0 0 auto;
+    width: min(680px, 96vw);
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    border-left: 1px solid rgba(99, 128, 112, 0.3);
+    border-radius: 18px 0 0 18px;
+    transform: translateX(100%);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scholar-report-dialog.coordinator-renewal-drawer {
+    width: min(760px, 96vw);
+}
+
+.scholar-report-dialog.coordinator-duty-review-drawer.is-open {
+    transform: translateX(0);
+}
+
+.coordinator-record-dialog.scholar-report-dialog .scholar-report-dialog-content {
+    min-height: 0;
+    flex: 1 1 auto;
+    max-height: none;
+}
+
+.coordinator-requirements-drawer .scholar-report-dialog-content {
+    display: flex;
+    flex-direction: column;
+}

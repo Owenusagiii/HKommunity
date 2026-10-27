@@ -1,0 +1,15 @@
+textarea[name="description"],
+textarea[name="response"],
+textarea[name="reason"],
+textarea[name="rejection_reason"],
+.admin-record-description,
+.admin-record-drawer-description.is-description strong,
+.quick-link-desc,
+.announce-desc,
+.scholar-requirement-detail-section p,
+.coordinator-report-response p,
+.coordinator-requirement-rejection-reason,
+.duty-rejection-reason,
+.duty-submission-rejection-detail {
+    text-align: justify;
+}

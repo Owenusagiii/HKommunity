@@ -1,0 +1,611 @@
+
+
+body.app-page .table-scroll,
+body.app-page .coordinator-report-table-scroll {
+    border: 1px solid #e3eee7;
+    border-radius: 13px;
+    background: #fff;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+body.app-page .table-scroll > .data-table,
+body.app-page .coordinator-report-table-scroll > .data-table {
+    margin-top: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+body.app-page .table-scroll > .data-table thead,
+body.app-page .coordinator-report-table-scroll > .data-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+body.app-page .data-table th,
+body.admin-portal main > .data-table th {
+    padding: 13px 14px;
+    border-bottom: 1px solid #dce9e0;
+    background: #eff7f1;
+    color: #63806d;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+body.app-page .data-table td,
+body.admin-portal main > .data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #edf2ee;
+    color: #294d3d;
+    font-size: 0.78rem;
+    vertical-align: middle;
+}
+
+body.app-page .data-table tbody tr:last-child td,
+body.admin-portal main > .data-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+body.app-page .data-table tbody tr:hover td,
+body.admin-portal main > .data-table tbody tr:hover td {
+    background: rgba(237, 248, 242, 0.72);
+}
+
+@media (max-width: 600px) {
+    .coordinator-create-dialog .coordinator-create-card-head {
+        padding-right: 58px;
+    }
+
+    .coordinator-create-dialog-close {
+        top: 14px;
+        right: 14px;
+    }
+
+    .coordinator-create-card-head {
+        padding: 18px 16px 15px;
+        flex-wrap: wrap;
+    }
+
+    .coordinator-create-required-note {
+        width: 100%;
+        margin-left: 52px;
+        margin-top: -7px;
+    }
+
+    .coordinator-create-form {
+        padding: 19px 16px 17px;
+    }
+
+    .coordinator-create-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .coordinator-create-year-field {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .coordinator-create-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .coordinator-create-actions .btn,
+    .coordinator-create-cancel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .coordinator-dashboard-shell > .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coordinator-dashboard-lower {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+    .coordinator-dashboard-shell > .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .duty-weekly-submit-action {
+        justify-content: stretch;
+    }
+
+    .duty-weekly-submit-action .duty-weekly-submit-button {
+        width: 100%;
+    }
+
+    .duty-page-head .duty-back-button {
+        width: 100%;
+    }
+
+    .duty-records-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .duty-record-submit-action .duty-weekly-submit-button {
+        width: 100%;
+    }
+
+    .duty-submission-card {
+        padding: 20px 16px 16px;
+    }
+
+    .duty-submission-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .duty-submission-dialog {
+        width: min(560px, 100vw);
+        border-radius: 15px 0 0 15px;
+    }
+
+    .duty-submission-dialog-head {
+        padding: 18px 17px 15px;
+    }
+
+    .duty-submission-edit-form,
+    .duty-submission-review-card {
+        margin: 16px 17px 0;
+        padding: 14px;
+    }
+
+    .duty-submission-review-card {
+        margin: 0;
+    }
+
+    .duty-submission-review-summary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .duty-submission-review-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .duty-submission-edit-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .duty-submission-edit-summary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .duty-submission-dialog-actions {
+        margin: 16px 17px 17px;
+    }
+
+    .duty-submission-dialog-actions > form,
+    .duty-submission-dialog-actions > button {
+        flex: 1 1 0;
+    }
+
+    .duty-submission-save-button,
+    .duty-submission-dialog-actions .duty-submission-delete-button {
+        width: 100%;
+    }
+
+    .duty-submission-dialog-actions > form {
+        min-width: 0;
+    }
+
+    .duty-submission-rejection-detail {
+        grid-column: auto;
+    }
+
+    .duty-submission-form-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .duty-submission-form-actions button {
+        width: 100%;
+    }
+
+    .duty-proof-dropzone-label {
+        min-height: 160px;
+        padding: 18px 12px;
+    }
+
+    .duty-submissions-table-scroll,
+    .coordinator-duty-submissions-scroll {
+        max-height: 340px;
+    }
+
+    .coordinator-duty-submissions-scroll {
+        height: 350px;
+        max-height: 350px;
+    }
+
+    .scholar-duty-submissions-scroll {
+        height: 340px;
+    }
+}
+
+.scholar-portal main,
+.scholar-portal main > section,
+.scholar-portal .content-shell,
+.scholar-portal .duty-records-content {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.scholar-portal .table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scholar-portal .data-table {
+    min-width: 620px;
+}
+
+.scholar-full-height-page main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.scholar-full-height-page .duty-records-content {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.scholar-full-height-page .requirement-records-card,
+.scholar-full-height-page .duty-records-card,
+.scholar-full-height-page .renewal-records-card,
+.scholar-full-height-page .duty-submission-card + .duty-submission-card {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.scholar-full-height-page .scholar-requirements-table-scroll,
+.scholar-full-height-page .scholar-duty-table-scroll,
+.scholar-full-height-page .scholar-renewal-history-scroll,
+.scholar-full-height-page .scholar-duty-submissions-scroll {
+    height: auto;
+    min-height: 220px;
+    flex: 1 1 auto;
+}
+
+@media (max-width: 1100px) {
+    .scholar-portal .scholar-dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .scholar-portal .scholar-dashboard-lower {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .scholar-portal main {
+        padding: 100px 16px 28px;
+    }
+
+    .scholar-portal .table-scroll {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .scholar-portal .data-table {
+        width: max-content;
+        min-width: 720px;
+        table-layout: auto;
+    }
+
+    .scholar-portal .scholar-dashboard-shell {
+        min-height: 0;
+        margin-bottom: 0;
+        padding: 0 0 24px;
+    }
+
+    .scholar-portal .overview-card {
+        padding: 26px 24px;
+    }
+
+    .scholar-portal .overview-greet {
+        max-width: 100%;
+        font-size: clamp(1.5rem, 5vw, 1.9rem);
+        overflow-wrap: anywhere;
+    }
+
+    .scholar-portal .scholar-dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .stat {
+        min-width: 0;
+        min-height: 140px;
+        padding: 18px 16px;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .number {
+        font-size: clamp(1.1rem, 3vw, 1.55rem);
+        overflow-wrap: anywhere;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .number.renewal-text {
+        font-size: 0.95rem;
+        line-height: 1.35;
+    }
+
+    .scholar-portal .scholar-dashboard-lower {
+        gap: 16px;
+    }
+
+    .scholar-portal .duty-page-head {
+        align-items: stretch;
+    }
+
+    .scholar-portal .duty-info-banner {
+        width: 100%;
+        max-width: none;
+    }
+
+    .scholar-portal .records-card,
+    .scholar-portal .renewal-summary-card,
+    .scholar-portal .report-submit-card,
+    .scholar-portal .report-records-card {
+        padding: 20px 16px 16px;
+    }
+
+    .scholar-portal .records-head {
+        align-items: flex-start;
+    }
+
+    .scholar-portal .records-head > div,
+    .scholar-portal .duty-records-actions {
+        min-width: 0;
+    }
+
+    .scholar-portal .duty-records-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .scholar-portal .duty-record-filter {
+        max-width: 100%;
+    }
+
+    .scholar-portal .duty-record-filter select {
+        max-width: 100%;
+    }
+
+    .scholar-portal .duty-record-submit-action {
+        margin-top: 12px;
+    }
+
+    .scholar-portal .scholar-duty-table-scroll,
+    .scholar-portal .scholar-requirements-table-scroll,
+    .scholar-portal .scholar-reports-table-scroll,
+    .scholar-portal .scholar-duty-submissions-scroll {
+        height: 360px;
+        max-height: min(360px, calc(100dvh - 180px));
+    }
+
+    .scholar-portal .scholar-renewal-history-scroll {
+        height: 155px;
+        max-height: min(155px, calc(100dvh - 180px));
+    }
+
+    .scholar-portal .scholar-requirements-table-scroll {
+        height: 390px;
+        max-height: min(390px, calc(100dvh - 180px));
+    }
+
+    .scholar-full-height-page .scholar-requirements-table-scroll,
+    .scholar-full-height-page .scholar-duty-table-scroll,
+    .scholar-full-height-page .scholar-renewal-history-scroll,
+    .scholar-full-height-page .scholar-duty-submissions-scroll {
+        height: auto;
+        max-height: none;
+    }
+
+    .scholar-portal .updates-filter-actions {
+        width: 100%;
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .scholar-portal .updates-columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .scholar-portal .updates-columns::before {
+        display: none;
+    }
+
+    .scholar-portal .updates-column + .updates-column {
+        padding: 20px 0 0;
+        border-top: 1px solid rgba(99, 128, 112, 0.24);
+    }
+
+    .scholar-portal .updates-panel,
+    .scholar-portal .updates-panel .announce-list,
+    .scholar-portal .scholar-announcements-scroll {
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .scholar-portal .renewal-summary-status {
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .scholar-portal .renewal-summary-copy {
+        min-width: 0;
+    }
+
+    .scholar-portal .renewal-summary-copy h2,
+    .scholar-portal .renewal-summary-copy p {
+        overflow-wrap: anywhere;
+    }
+
+    .scholar-portal .renewal-summary-metrics {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .scholar-portal main {
+        padding: 92px 12px 22px;
+    }
+
+    .scholar-portal .page-head {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .scholar-portal .page-head h1,
+    .scholar-portal .scholar-dashboard-shell > h1 {
+        font-size: clamp(1.65rem, 8vw, 2rem);
+    }
+
+    .scholar-portal .sub-small {
+        line-height: 1.5;
+    }
+
+    .scholar-portal .scholar-dashboard-stats {
+        gap: 10px;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .stat {
+        min-height: 132px;
+        padding: 15px 12px;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .stat-head {
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.75rem;
+        line-height: 1.35;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .stat-icon {
+        width: 17px;
+        flex-basis: 17px;
+        font-size: 1rem;
+    }
+
+    .scholar-portal .scholar-dashboard-stats .number {
+        font-size: clamp(0.95rem, 4.5vw, 1.25rem);
+    }
+
+    .scholar-portal .scholar-dashboard-stats .stat-note {
+        font-size: 0.62rem;
+        line-height: 1.4;
+    }
+
+    .scholar-portal .overview-card {
+        padding: 22px 18px;
+    }
+
+    .scholar-portal .overview-watermark {
+        right: 14px;
+        font-size: 95px;
+    }
+
+    .scholar-portal .records-card,
+    .scholar-portal .renewal-summary-card,
+    .scholar-portal .report-submit-card,
+    .scholar-portal .report-records-card {
+        padding: 17px 12px 13px;
+        border-radius: 14px;
+    }
+
+    .scholar-portal .records-head h2,
+    .scholar-portal .panel-title > span:first-child {
+        font-size: 0.94rem;
+    }
+
+    .scholar-portal .records-head h2::before {
+        width: 31px;
+        height: 31px;
+        flex-basis: 31px;
+    }
+
+    .scholar-portal .duty-records-actions {
+        gap: 8px;
+    }
+
+    .scholar-portal .duty-record-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .scholar-portal .duty-record-filter select {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .scholar-portal .record-count {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .scholar-portal .scholar-dashboard-lower .panel {
+        padding: 15px 13px;
+    }
+
+    .scholar-portal .renewal-summary-status {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .scholar-portal .renewal-summary-copy h2 {
+        font-size: 1.2rem;
+    }
+
+    .scholar-portal .renewal-progress-steps,
+    .scholar-portal .renewal-summary-metrics {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scholar-portal .report-form > .report-submit-button {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .scholar-portal .updates-mark-all-read {
+        flex: 1 1 100%;
+    }
+
+    .scholar-portal .header-menu-options {
+        max-width: calc(100vw - 24px);
+    }
+}

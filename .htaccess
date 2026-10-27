@@ -1,0 +1,22 @@
+Options -Indexes -MultiViews
+
+RewriteEngine On
+RewriteBase /HKommunity/
+ErrorDocument 404 /HKommunity/public/404.php
+
+# Keep application internals and database files out of direct web access.
+RewriteRule ^(?:app|config|database|vendor)(?:/|$) - [F,L,NC]
+RewriteRule \.(?:sql|md|json|lock)$ - [F,L,NC]
+
+# Canonicalize legacy PHP page URLs to clean extensionless URLs.
+RewriteRule ^public/index\.php$ /HKommunity/ [R=301,L]
+RewriteRule ^public/404\.php$ - [L]
+RewriteRule ^public/(.+)\.php$ $1 [R=301,L,NE]
+
+# Serve the landing page at the project root.
+RewriteRule ^$ public/index.php [END]
+
+# Internally route clean page URLs to their PHP files.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+?)/?$ public/$1.php [END]

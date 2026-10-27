@@ -1,0 +1,918 @@
+
+
+.coordinator-requirements-drawer .coordinator-assigned-requirements-section {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.coordinator-requirements-drawer .coordinator-assigned-requirements-panel {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.coordinator-requirements-drawer .coordinator-assigned-requirements-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.duty-submission-proof-file {
+    margin: 0 0 9px !important;
+}
+
+.duty-submission-proof-link {
+    display: inline-flex;
+    max-width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+    overflow-wrap: anywhere;
+    text-align: left;
+}
+
+.duty-submission-proof-link i:last-child {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.duty-review-reject-form textarea {
+    min-height: 66px;
+    resize: vertical;
+    font-size: 0.75rem;
+}
+
+.duty-review-approve-form button,
+.duty-review-reject-form button {
+    padding: 7px 11px;
+    font-size: 0.72rem;
+}
+
+.coordinator-duty-form {
+    max-width: none;
+}
+
+.coordinator-duty-scholar-field {
+    max-width: 540px;
+    margin-bottom: 20px;
+}
+
+.coordinator-duty-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 22px;
+    max-width: 900px;
+}
+
+.coordinator-duty-form-grid .form-row {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.coordinator-scholar-picker {
+    position: relative;
+}
+
+.coordinator-scholar-search {
+    position: relative;
+}
+
+.coordinator-scholar-search > i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.8rem;
+    pointer-events: none;
+}
+
+.coordinator-scholar-search input {
+    padding-left: 38px;
+}
+
+.coordinator-scholar-picker > .requirement-form-note {
+    display: block;
+    margin-top: 7px;
+}
+
+.coordinator-scholar-results {
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 0;
+    left: 0;
+    z-index: 5;
+    max-height: 240px;
+    overflow-y: auto;
+    padding: 6px;
+    border: 1px solid #dce8e2;
+    border-radius: 0 0 12px 12px;
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(25, 66, 51, 0.14);
+}
+
+.coordinator-scholar-result {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--green-900);
+    text-align: left;
+    font-size: 0.78rem;
+}
+
+.coordinator-scholar-result[hidden] {
+    display: none;
+}
+
+.coordinator-scholar-result:hover,
+.coordinator-scholar-result:focus-visible {
+    background: var(--green-100);
+    box-shadow: none;
+}
+
+.coordinator-scholar-result small {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.coordinator-scholar-no-results {
+    margin: 8px 10px;
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+.coordinator-duty-form-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.coordinator-duty-form-actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+    box-shadow: none;
+}
+
+.coordinator-duty-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    gap: 16px;
+}
+
+.coordinator-duty-tools .requirement-search {
+    width: min(100%, 223px);
+}
+
+.coordinator-duty-tools .requirement-search input {
+    min-height: 41px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 0.82rem;
+}
+
+.coordinator-duty-table-scroll {
+    height: 350px;
+    overflow: auto;
+}
+
+.coordinator-duty-table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-duty-table-scroll th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.coordinator-duty-table-scroll td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.coordinator-duty-scholar-cell strong,
+.coordinator-duty-scholar-cell small {
+    display: block;
+}
+
+.coordinator-duty-scholar-cell small {
+    margin-top: 3px;
+    color: #819287;
+    font-size: 0.7rem;
+}
+
+.coordinator-scholar-duty-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.coordinator-fill-table-drawer .coordinator-scholar-duty-content {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.coordinator-fill-table-drawer .coordinator-scholar-duty-card {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.coordinator-scholar-duty-card {
+    width: 100%;
+}
+
+.coordinator-scholar-progress-card .records-head {
+    margin-bottom: 14px;
+}
+
+.coordinator-scholar-progress-card {
+    margin-bottom: 18px;
+}
+
+.coordinator-scholar-progress-card .admin-year-progress-metrics {
+    margin-top: 0;
+}
+
+.coordinator-scholar-progress-empty {
+    margin: 0;
+    color: #718378;
+    font-size: 0.78rem;
+}
+
+.coordinator-scholar-duty-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.coordinator-scholar-duty-card-head h3 {
+    margin: 0 0 6px;
+}
+
+.coordinator-scholar-duty-card-head .duty-submission-review-note {
+    margin: 0;
+}
+
+.coordinator-scholar-duty-filters {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 12px;
+}
+
+.coordinator-scholar-duty-filters .duty-record-filter {
+    justify-content: space-between;
+}
+
+.coordinator-scholar-duty-table-scroll {
+    height: 440px;
+    max-height: 440px;
+    overflow: auto;
+}
+
+.coordinator-fill-table-drawer .coordinator-scholar-duty-table-scroll {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    flex: 1 1 auto;
+}
+
+.coordinator-scholars-records-card .coordinator-scholar-duty-table-scroll {
+    height: 300px;
+    max-height: 300px;
+}
+
+.coordinator-scholar-duty-table {
+    min-width: 580px;
+    margin-top: 0;
+}
+
+.coordinator-scholar-duty-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-scholar-duty-table td {
+    vertical-align: top;
+}
+
+.coordinator-scholar-duty-table .coordinator-assigned-requirement-row,
+.coordinator-scholar-duty-table .coordinator-duty-file-row {
+    cursor: pointer;
+}
+
+.coordinator-scholar-duty-table .admin-management-duty-details > td {
+    padding: 0 !important;
+    background: #f7faf8;
+    text-align: left !important;
+    white-space: normal;
+}
+
+.coordinator-scholar-duty-table .admin-management-duty-details .coordinator-requirement-expanded-content {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.coordinator-scholar-duty-table .admin-management-duty-file-list {
+    max-height: 150px;
+    margin: 0;
+    padding: 0 0 0 18px;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+}
+
+.coordinator-scholar-duty-table .admin-management-duty-file-list li {
+    height: auto;
+    min-height: 36px;
+    flex: 0 0 auto;
+    padding: 7px 9px;
+    border: 1px solid #e4ede7;
+    border-radius: 9px;
+    background: #fbfdfb;
+}
+
+.coordinator-scholar-duty-table .admin-management-duty-no-files {
+    display: block;
+    margin-top: 7px;
+    color: #819087;
+    font-size: 0.68rem;
+}
+
+.coordinator-scholars-records-card .coordinator-scholar-duty-table th:not(:first-child),
+.coordinator-scholars-records-card .coordinator-scholar-duty-table td:not(:first-child) {
+    text-align: center;
+}
+
+.coordinator-renewals-detail-table {
+    min-width: 620px;
+    margin-top: 0;
+}
+
+.coordinator-renewals-detail-table td {
+    vertical-align: top;
+}
+
+.coordinator-renewals-table th:last-child,
+.coordinator-renewals-table td:last-child {
+    text-align: center;
+}
+
+.coordinator-renewals-detail-table th:not(:first-child),
+.coordinator-renewals-detail-table td:not(:first-child) {
+    text-align: center;
+}
+
+.coordinator-renewals-detail-table td:nth-child(3) form {
+    display: flex;
+    justify-content: center;
+}
+
+.coordinator-renewals-detail-table select {
+    min-width: 145px;
+    padding: 8px 28px 8px 10px;
+}
+
+.coordinator-renewals-detail-table td:last-child button {
+    background: linear-gradient(135deg, var(--green-700), var(--green-600));
+    color: #fff;
+}
+
+.coordinator-renewals-detail-table td:last-child button:hover,
+.coordinator-renewals-detail-table td:last-child button:focus-visible {
+    background: #24583e;
+}
+
+.coordinator-scholar-duty-no-matches[hidden] {
+    display: none;
+}
+
+.coordinator-scholar-duty-record-meta {
+    display: block;
+    margin-top: 5px;
+    color: #718378;
+    font-size: 0.68rem;
+    line-height: 1.45;
+}
+
+.duty-record-action {
+    color: var(--green-700);
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.coordinator-duty-update-form {
+    max-width: none;
+    margin-top: 18px;
+}
+
+.coordinator-duty-update-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.coordinator-duty-update-grid .form-row {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.coordinator-duty-update-grid input {
+    font-size: 0.78rem;
+}
+
+.coordinator-duty-update-form button {
+    padding: 8px 12px;
+    font-size: 0.74rem;
+}
+
+.coordinator-scholars-card {
+    margin-top: 0;
+    padding: 26px 30px 20px;
+}
+
+.coordinator-scholars-main {
+    padding-right: 20px;
+    padding-bottom: 26px;
+    padding-left: 20px;
+}
+
+.coordinator-scholars-page {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 134px);
+    flex-direction: column;
+}
+
+.coordinator-scholars-records-card {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.coordinator-scholars-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    gap: 16px;
+}
+
+.coordinator-scholars-search {
+    display: flex;
+    align-items: center;
+    max-width: none;
+    gap: 8px;
+    margin: 0;
+}
+
+.coordinator-scholars-search .requirement-search {
+    width: min(100%, 360px);
+}
+
+.coordinator-scholars-search .requirement-search input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 0.82rem;
+}
+
+.coordinator-scholars-search button {
+    flex: 0 0 auto;
+}
+
+.coordinator-scholars-table {
+    margin-top: 0;
+}
+
+.coordinator-scholars-table-scroll {
+    height: 390px;
+    overflow: auto;
+}
+
+.coordinator-scholars-records-card .coordinator-scholars-table-scroll {
+    height: auto;
+    min-height: 240px;
+    flex: 1 1 auto;
+}
+
+.coordinator-scholars-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-scholars-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.coordinator-scholars-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.coordinator-scholars-table .coordinator-scholar-identity strong,
+.coordinator-scholars-table .coordinator-scholar-identity small {
+    display: block;
+}
+
+.coordinator-scholars-table .coordinator-scholar-identity strong {
+    font-weight: 700;
+}
+
+.coordinator-scholars-table .coordinator-scholar-identity small {
+    margin-top: 4px;
+    color: #819187;
+    font-size: 0.68rem;
+}
+
+.coordinator-scholars-table th:nth-child(2),
+.coordinator-scholars-table td:nth-child(2),
+.coordinator-scholars-table th:nth-child(3),
+.coordinator-scholars-table td:nth-child(3),
+.coordinator-scholars-table th:nth-child(4),
+.coordinator-scholars-table td:nth-child(4) {
+    text-align: center;
+}
+
+.coordinator-renewals-card {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 26px 30px 20px;
+}
+
+.coordinator-renewals-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    gap: 16px;
+}
+
+.coordinator-renewals-search {
+    max-width: none;
+    margin: 0;
+}
+
+.coordinator-renewals-search .requirement-search {
+    width: min(100%, 360px);
+}
+
+.coordinator-renewals-search .requirement-search input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 0.82rem;
+}
+
+.coordinator-renewals-status-filter {
+    width: 190px;
+    min-width: 170px;
+    min-height: 41px;
+    padding: 8px 30px 8px 11px;
+    font-size: 0.82rem;
+}
+
+.coordinator-renewals-year-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 175px;
+    gap: 4px;
+}
+
+.coordinator-renewals-year-filter select {
+    width: 100%;
+    min-height: 41px;
+    padding: 8px 30px 8px 11px;
+    font-size: 0.82rem;
+}
+
+.coordinator-renewals-table {
+    margin-top: 0;
+}
+
+.coordinator-renewals-table-scroll {
+    height: 365px;
+    overflow: auto;
+}
+
+.coordinator-promotion-table-scroll {
+    height: 365px;
+    overflow: auto;
+}
+
+.coordinator-promotion-table th:not(.coordinator-promotion-actions-heading):not(.coordinator-promotion-scholar-heading),
+.coordinator-promotion-table td:not(.coordinator-promotion-actions):not(.coordinator-promotion-scholar-cell) {
+    text-align: center;
+}
+
+.coordinator-promotion-table th.coordinator-promotion-actions-heading,
+.coordinator-promotion-table td.coordinator-promotion-actions {
+    width: 48px;
+    text-align: center;
+}
+
+#promotion-table:not(.has-promotion-selection) th.coordinator-promotion-actions-heading,
+#promotion-table:not(.has-promotion-selection) td.coordinator-promotion-actions {
+    display: none;
+}
+
+#promotion-table:not(.has-promotion-selection) .coordinator-promotion-scholar-heading input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.coordinator-promotion-table .coordinator-promotion-scholar-heading,
+.coordinator-promotion-table .coordinator-promotion-scholar-cell {
+    text-align: left;
+}
+
+.coordinator-promotion-scholar-name,
+.coordinator-promotion-scholar-id {
+    display: block;
+}
+
+.coordinator-promotion-scholar-name {
+    font-weight: 700;
+}
+
+.coordinator-promotion-scholar-id {
+    margin-top: 3px;
+    color: #819287;
+    font-size: 0.7rem;
+}
+
+.coordinator-promotion-filter {
+    width: auto;
+    min-width: 190px;
+    min-height: 41px;
+    padding: 8px 30px 8px 11px;
+    font-size: 0.82rem;
+}
+
+.coordinator-promotion-table input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--green-700);
+}
+
+.coordinator-promotion-actions-heading,
+.coordinator-promotion-actions {
+    text-align: right;
+}
+
+.coordinator-promotion-actions-heading input[type="checkbox"] {
+    margin: 0;
+    accent-color: var(--green-700);
+    vertical-align: middle;
+}
+
+.coordinator-promotion-actions {
+    white-space: nowrap;
+}
+
+.coordinator-promotion-actions > form {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.coordinator-promotion-bulk-form {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    justify-content: flex-end;
+    margin-top: 14px;
+}
+
+.coordinator-promotion-bulk-form [data-promotion-submit] {
+    min-height: 42px;
+    min-width: 168px;
+    padding: 9px 14px;
+    border: 1px solid #2f6b4d;
+    border-radius: 9px;
+    background: #2f6b4d;
+    color: #fff;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.coordinator-promotion-bulk-form [data-promotion-submit]:hover:not(:disabled) {
+    background: #24583e;
+}
+
+.coordinator-promotion-bulk-form [data-promotion-submit]:hover:not(:disabled) {
+    background: #24583e;
+}
+
+.coordinator-promotion-bulk-form [data-promotion-submit]:focus-visible {
+    outline: 3px solid rgba(47, 128, 86, 0.28);
+    outline-offset: 3px;
+}
+
+.coordinator-promotion-bulk-form [data-promotion-submit]:disabled {
+    border-color: #cbd8cf;
+    background: #e8eee9;
+    color: #86968b;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+.coordinator-promotion-confirm-dialog .logout-confirm-icon {
+    border-color: #d7eadc;
+    background: #eef8f1;
+    color: #2f8056;
+}
+
+.coordinator-promotion-confirm-dialog .logout-confirm-submit {
+    background: #2f8056;
+}
+
+.coordinator-promotion-confirm-dialog .logout-confirm-submit:hover {
+    background: #276b48;
+}
+
+.coordinator-promotion-table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-renewals-table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.coordinator-renewals-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.coordinator-renewals-table th:nth-child(2) {
+    text-align: center;
+}
+
+.coordinator-renewals-table td:nth-child(2) {
+    text-align: center;
+}
+
+.coordinator-renewals-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.coordinator-renewals-table th:last-child,
+.coordinator-renewals-table td:last-child {
+    text-align: center;
+}
+
+.coordinator-renewals-scholar-cell strong,
+.coordinator-renewals-scholar-id {
+    display: block;
+}
+
+.coordinator-renewals-scholar-name {
+    font-weight: 700;
+}
+
+.coordinator-renewals-scholar-id {
+    margin-top: 3px;
+    color: #819287;
+    font-size: 0.7rem;
+}
+
+.renewals-search-empty[hidden] {
+    display: none !important;
+}
+
+.admin-periods-card {
+    margin-top: 0;
+    padding: 26px 30px 20px;
+}
+
+.period-create-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.period-create-form {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin: 0;
+    padding: 24px 26px 20px;
+}
+
+.period-create-form .records-head {
+    margin-bottom: 16px;
+}
+
+.period-create-form h2 {
+    font-size: 1rem;
+}
+
+.admin-periods-head {
+    margin-top: 26px;
+}
+
+.admin-periods-table {
+    margin-top: 0;
+}
+
+.admin-periods-table th {
+    color: #93a39a;
+    font-size: 0.65rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.admin-periods-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.admin-periods-table th:not(:first-child),
+.admin-periods-table td:not(:first-child) {
+    text-align: center;
+}
+
+.users-page-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: -4px 0 18px;
+}
+
+.admin-users-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 22px;
+    padding: 24px 26px 20px;
+    border: 1px solid rgba(79, 147, 113, 0.2);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(247, 252, 248, 0.97));
+    box-shadow: 0 12px 26px rgba(32, 79, 55, 0.09);
+}
+
+.admin-users-card:last-child {
+    margin-bottom: 0;
+}
+
+.admin-users-page .duty-page-head,
+.admin-registration-page .duty-page-head {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-users-page .duty-page-head h1,
+.admin-registration-page .duty-page-head h1 {
+    margin-bottom: 5px;
+    color: var(--green-900);
+    font-size: clamp(1.65rem, 2.5vw, 2.1rem);
+}
+
+.admin-users-page .duty-page-head .sub-small,
+.admin-registration-page .duty-page-head .sub-small {
+    margin: 0;
+    color: #657b6e;
+    font-size: 0.88rem;
+}

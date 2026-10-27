@@ -1,0 +1,553 @@
+
+
+@media (max-width: 900px) {
+    .scholar-announcements-page .updates-columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .scholar-announcements-page .updates-panel {
+        height: min(430px, calc(100dvh - 180px));
+        max-height: none;
+    }
+
+    .scholar-portal.scholar-announcements-page .scholar-announcements-scroll,
+    .scholar-portal.scholar-announcements-page .scholar-notifications-scroll {
+        min-height: 0;
+        flex: 1 1 auto;
+        height: auto;
+        max-height: none;
+        align-content: start;
+        grid-auto-rows: max-content;
+        overflow-y: auto;
+    }
+
+    .scholar-announcements-page .scholar-announcements-scroll .announce-list {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .scholar-announcements-page .scholar-notifications-scroll > .announce-list {
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 800px) {
+    .scholar-quick-links-page .duty-records-content {
+        height: calc(100dvh - 128px);
+    }
+
+    .scholar-quick-links-page .scholar-links-head,
+    .scholar-announcements-page .announcements-head {
+        align-items: stretch;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar {
+        width: 100%;
+    }
+
+    .scholar-announcements-page .updates-column + .updates-column {
+        padding-top: 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .scholar-quick-links-page .duty-records-content {
+        height: calc(100dvh - 114px);
+    }
+
+    .scholar-quick-links-page .scholar-links-head {
+        gap: 12px;
+    }
+
+    .scholar-quick-links-page .scholar-links-tools {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .scholar-quick-links-page .scholar-page-count {
+        min-height: 34px;
+        padding: 6px 10px;
+        font-size: 0.68rem;
+    }
+
+    .scholar-quick-links-page .quick-links-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .scholar-quick-links-page .duty-records-content {
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .scholar-quick-links-page .quick-link-card {
+        min-height: 0;
+        padding: 17px 15px;
+    }
+
+    .scholar-quick-links-page .quick-link-btn {
+        width: 100%;
+    }
+
+    .scholar-announcements-page .announcements-head {
+        gap: 14px;
+        margin-bottom: 17px;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar .duty-record-filter {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar .updates-mark-all-read {
+        grid-column: 2;
+        align-self: center;
+        white-space: nowrap;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar .record-count {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .scholar-announcements-page .updates-panel {
+        padding: 9px;
+        border-radius: 14px;
+    }
+
+    .scholar-announcements-page .announce-card,
+    .scholar-announcements-page .notification-item {
+        padding: 14px 13px 14px 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .scholar-announcements-page .scholar-updates-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar .duty-record-filter,
+    .scholar-announcements-page .scholar-updates-toolbar .record-count,
+    .scholar-announcements-page .scholar-updates-toolbar .updates-mark-all-read {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar .record-count {
+        grid-row: 2;
+        justify-self: start;
+    }
+
+    .scholar-announcements-page .scholar-updates-toolbar .updates-mark-all-read {
+        grid-row: 3;
+        justify-self: stretch;
+    }
+}
+
+    .admin-scholar-progress-page .page-head > div:first-child > .sub-small {
+        margin: 7px 0 0;
+    }
+
+    .admin-scholar-export-card .records-head {
+        margin-bottom: 16px;
+    }
+
+    .admin-users-page .admin-scholar-export-card .records-head .sub-small {
+        margin-left: 47px;
+    }
+
+    .admin-scholar-export-form {
+        display: grid;
+        width: 100%;
+        max-width: none;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: end;
+        gap: 12px;
+    }
+
+    .admin-scholar-export-form .form-row {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .admin-scholar-export-form .form-row label {
+        display: block;
+        margin-bottom: 7px;
+        color: #486c57;
+        font-size: 0.74rem;
+        font-weight: 700;
+    }
+
+    .admin-scholar-export-form select {
+        width: 100%;
+        min-height: 40px;
+        padding: 8px 11px;
+        border: 1px solid #d7e9de;
+        border-radius: 10px;
+        background: #fff;
+        color: #244838;
+        font-size: 0.76rem;
+    }
+
+    .admin-portal .admin-scholar-export-form > button.btn.btn-green {
+        width: 100%;
+        height: 40px;
+        min-height: 40px;
+        padding: 8px 11px;
+        white-space: nowrap;
+    }
+
+    .admin-scholar-progress-period-filter {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: end;
+        width: 100%;
+        max-width: none;
+        gap: 12px;
+        margin: 0 0 18px;
+        padding: 0;
+    }
+
+    .admin-scholar-progress-period-filter .form-row {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .admin-scholar-progress-period-filter .form-row label {
+        display: block;
+        margin-bottom: 7px;
+        color: #486c57;
+        font-size: 0.74rem;
+        font-weight: 700;
+    }
+
+    .admin-scholar-progress-period-filter select {
+        width: 100%;
+        min-height: 40px;
+        padding: 8px 11px;
+        border: 1px solid #d7e9de;
+        border-radius: 10px;
+        background: #fff;
+        color: #244838;
+        font-size: 0.76rem;
+    }
+
+    .admin-scholar-progress-records .records-head {
+        margin-bottom: 16px;
+    }
+
+    .admin-scholar-progress-tools {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 14px;
+        min-width: 0;
+    }
+
+    .admin-scholar-progress-search {
+        width: min(100%, 280px);
+    }
+
+    .admin-scholar-progress-search input {
+        min-height: 42px;
+    }
+
+    .admin-scholar-progress-tools .record-count {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .admin-scholar-progress-period-filter .admin-scholar-progress-search {
+        width: 100%;
+        max-width: none;
+    }
+
+    .admin-users-page .admin-scholar-progress-table-scroll {
+        height: 460px;
+        min-height: 0;
+    }
+
+    .admin-scholar-progress-table {
+        min-width: 850px;
+    }
+
+    .admin-scholar-progress-table th:not(:first-child),
+    .admin-scholar-progress-table td:not(:first-child) {
+        text-align: center;
+    }
+
+    .admin-scholar-progress-table th:first-child,
+    .admin-scholar-progress-table td:first-child {
+        text-align: left;
+    }
+
+    .admin-scholar-progress-clickable-cell {
+        cursor: pointer;
+        transition: background-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .admin-scholar-progress-clickable-cell:hover,
+    .admin-scholar-progress-clickable-cell:focus-visible {
+        background: #f0f8f3;
+        box-shadow: inset 0 0 0 2px rgba(47, 107, 77, 0.32);
+        outline: 0;
+    }
+
+    .admin-scholar-progress-clickable-cell:focus-visible {
+        position: relative;
+        z-index: 1;
+    }
+
+    .admin-management-detail-dialog .admin-management-dialog-table-scroll {
+        max-height: min(560px, calc(100dvh - 260px));
+        overflow: auto;
+        border: 1px solid #e3eee7;
+        border-radius: 12px;
+    }
+
+    .admin-management-dialog-table {
+        min-width: 420px;
+        margin: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .admin-management-dialog-table thead {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .admin-management-dialog-table th,
+    .admin-management-dialog-table td {
+        white-space: normal;
+    }
+
+    .admin-management-dialog-table th:not(:first-child),
+    .admin-management-dialog-table td:not(:first-child) {
+        text-align: center;
+    }
+
+    .admin-management-dialog-table .coordinator-assigned-requirement-row {
+        cursor: pointer;
+    }
+
+    .admin-management-dialog-table .coordinator-assigned-requirement-row:hover td {
+        background: #f4faf6;
+    }
+
+    [data-management-duty-row] {
+        cursor: pointer;
+    }
+
+    [data-management-duty-row]:focus-visible {
+        outline: 2px solid rgba(47, 107, 77, 0.55);
+        outline-offset: -2px;
+    }
+
+    [data-management-duty-row]:hover td {
+        background: #f4faf6;
+    }
+
+    .admin-management-duty-details[hidden] {
+        display: none;
+    }
+
+    .admin-management-duty-details > td {
+        padding: 0 !important;
+        background: #f7faf8;
+        white-space: normal;
+    }
+
+    .admin-management-duty-details .coordinator-requirement-expanded-content {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-management-duty-details .coordinator-requirement-expanded-content > section:last-child {
+        grid-column: auto;
+    }
+
+    .admin-management-duty-file-list {
+        display: flex;
+        max-width: none;
+        max-height: 150px;
+        margin: 0;
+        padding: 0 0 0 18px;
+        overflow-y: auto;
+        flex-direction: column;
+        gap: 5px;
+        list-style: none;
+    }
+
+    .admin-management-duty-file-list li {
+        min-height: 36px;
+        height: auto;
+        flex: 0 0 auto;
+        padding: 7px 9px;
+        border: 1px solid #e4ede7;
+        border-radius: 9px;
+        background: #fbfdfb;
+    }
+
+    .admin-management-duty-file-list li small {
+        flex-basis: 54px;
+    }
+
+    .admin-management-duty-no-files {
+        display: block;
+        margin-top: 7px;
+        color: #819087;
+        font-size: 0.68rem;
+    }
+
+    .admin-scholar-progress-name,
+    .admin-scholar-progress-table td > small {
+        display: block;
+    }
+
+    .admin-scholar-progress-name {
+        color: #244838;
+        font-size: 0.78rem;
+    }
+
+    .admin-scholar-progress-table td > small {
+        margin-top: 4px;
+        color: #819187;
+        font-size: 0.68rem;
+    }
+
+    .admin-scholar-progress-value {
+        margin-bottom: 7px;
+        color: #456353;
+        font-size: 0.72rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .admin-scholar-progress-bar {
+        width: 100%;
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e9f0eb;
+    }
+
+    .admin-scholar-progress-bar > span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #65a77b, #2f8056);
+        transition: width 0.25s ease;
+    }
+
+    .admin-scholar-progress-bar > span.is-complete {
+        background: #2f8056;
+    }
+
+    .admin-scholar-progress-muted {
+        color: #839287;
+        font-size: 0.72rem;
+        font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+        .admin-scholar-export-form {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .admin-scholar-export-form > button {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .admin-scholar-export-form {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .admin-scholar-progress-period-filter {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .admin-scholar-progress-period-filter .form-row {
+            width: 100%;
+        }
+
+        .admin-scholar-progress-tools {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .admin-users-page .admin-scholar-progress-table-scroll {
+            height: 460px;
+        }
+    }
+
+body.app-page .table-scroll,
+body.app-page [class*="-table-scroll"],
+body.app-page .scholar-renewal-history-scroll,
+body.app-page .coordinator-assigned-requirements-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+body.app-page .table-scroll::-webkit-scrollbar,
+body.app-page [class*="-table-scroll"]::-webkit-scrollbar,
+body.app-page .scholar-renewal-history-scroll::-webkit-scrollbar,
+body.app-page .coordinator-assigned-requirements-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+body.app-page .table-scroll::-webkit-scrollbar-track,
+body.app-page [class*="-table-scroll"]::-webkit-scrollbar-track,
+body.app-page .scholar-renewal-history-scroll::-webkit-scrollbar-track,
+body.app-page .coordinator-assigned-requirements-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body.app-page .table-scroll::-webkit-scrollbar-thumb,
+body.app-page [class*="-table-scroll"]::-webkit-scrollbar-thumb,
+body.app-page .scholar-renewal-history-scroll::-webkit-scrollbar-thumb,
+body.app-page .coordinator-assigned-requirements-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(54, 109, 81, 0.4);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(54, 109, 81, 0.4);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(54, 109, 81, 0.55);
+}

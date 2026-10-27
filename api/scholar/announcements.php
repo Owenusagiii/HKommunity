@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/../_bootstrap.php'; require_once __DIR__.'/../../middleware/scholar.php'; require_once __DIR__.'/../../app/controllers/AnnouncementController.php';$c=new AnnouncementController($pdo);jsonResponse(['success'=>true,'items'=>$c->allForRole('scholar')]);

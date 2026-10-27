@@ -1,0 +1,851 @@
+
+
+.scholar-page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+    color: #4e8965;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.scholar-page-eyebrow i {
+    font-size: 0.72rem;
+}
+
+.scholar-page-count {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border: 1px solid #d5e8dc;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.76);
+    color: #416c51;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.scholar-page-count i {
+    color: #4f9569;
+}
+
+.scholar-quick-links-page .scholar-links-head {
+    align-items: center;
+    margin-bottom: 34px;
+}
+
+.scholar-quick-links-page .scholar-links-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.scholar-quick-links-page .scholar-links-tools .duty-record-filter {
+    margin: 0;
+}
+
+.scholar-quick-links-page .duty-records-content {
+    display: flex;
+    height: calc(100dvh - 144px);
+    min-height: 0;
+    flex-direction: column;
+    padding: 22px;
+    border: 1px solid rgba(211, 229, 218, 0.9);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(223, 244, 230, 0.55), transparent 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 251, 247, 0.94));
+    box-shadow: 0 10px 28px rgba(43, 83, 62, 0.07);
+}
+
+.scholar-quick-links-page .scholar-links-head h2 {
+    margin-bottom: 5px;
+    color: #174b35;
+}
+
+.scholar-quick-links-page .scholar-quick-links-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 8px 8px 12px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+.scholar-quick-links-page .quick-links-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+    align-content: start;
+    gap: 17px;
+}
+
+.scholar-quick-links-page .quick-link-card {
+    position: relative;
+    min-height: 150px;
+    padding: 17px 18px 16px;
+    overflow: hidden;
+    border: 1px solid #dfebe3;
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(223, 243, 230, 0.4), transparent 42%),
+        rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 14px rgba(43, 83, 62, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.scholar-quick-links-page .quick-link-card[hidden] {
+    display: none;
+}
+
+.scholar-quick-links-page .quick-link-card:focus-within {
+    border-color: #8fc5a1;
+    box-shadow: 0 0 0 3px rgba(72, 143, 95, 0.14), 0 10px 22px rgba(43, 83, 62, 0.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .scholar-quick-links-page .quick-link-card:hover {
+        transform: translateY(-3px);
+        border-color: #8fc5a1;
+        background:
+            radial-gradient(circle at 100% 0, rgba(205, 238, 216, 0.58), transparent 46%),
+            rgba(255, 255, 255, 0.98);
+        box-shadow: 0 10px 22px rgba(43, 83, 62, 0.12);
+    }
+
+    .scholar-quick-links-page .quick-link-card:hover .quick-link-icon {
+        border-color: #c2e2cd;
+        background: linear-gradient(145deg, #e1f4e7, #d1ecd9);
+        color: #24643f;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scholar-quick-links-page .quick-link-card {
+        transition: none;
+    }
+}
+
+.scholar-quick-links-page .quick-link-head {
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 8px;
+}
+
+.scholar-quick-links-page .quick-link-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border: 1px solid #d8eadf;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #eff9f2, #e2f2e7);
+    color: #34754d;
+    font-size: 0.9rem;
+}
+
+.scholar-quick-links-page .quick-link-kicker {
+    display: block;
+    margin: 2px 0 5px;
+    color: #819287;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.scholar-quick-links-page .quick-link-head h2 {
+    color: #214c38;
+    font-size: 1rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.scholar-quick-links-page .quick-link-created {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: auto;
+    color: #819287;
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+.scholar-quick-links-page .quick-link-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.scholar-quick-links-page .quick-link-created i {
+    color: #5d9270;
+}
+
+.scholar-quick-links-page .quick-link-desc {
+    margin: 0 0 10px;
+    color: #60766a;
+    font-size: 0.79rem;
+    line-height: 1.65;
+}
+
+.scholar-quick-links-page .quick-link-btn {
+    min-height: 36px;
+    padding: 7px 12px;
+    border: 1px solid #2f6b4d;
+    border-radius: 10px;
+    background: #fff;
+    color: #2f6b4d;
+}
+
+.scholar-quick-links-page .quick-link-btn:hover,
+.scholar-quick-links-page .quick-link-btn:focus-visible {
+    background: #2f6b4d;
+    color: #fff;
+}
+
+.scholar-quick-links-page .empty-state-card {
+    display: grid;
+    min-height: 0;
+    flex: 1 1 auto;
+    place-items: center;
+    border: 1px dashed #bfd8c6;
+    background: rgba(255, 255, 255, 0.72);
+    text-align: center;
+}
+
+.scholar-announcements-page .announcements-head {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.scholar-announcements-page .scholar-updates-toolbar {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border: 1px solid #dfebe3;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(43, 83, 62, 0.04);
+}
+
+.scholar-announcements-page .scholar-updates-toolbar .duty-record-filter {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.scholar-announcements-page .scholar-updates-toolbar .record-count {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #315b44;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.scholar-announcements-page .scholar-updates-toolbar .updates-mark-all-read {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.scholar-announcements-page .updates-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.scholar-announcements-page .updates-columns::before {
+    display: none;
+}
+
+.scholar-announcements-page .updates-column + .updates-column {
+    padding-left: 0;
+}
+
+.scholar-announcements-page .updates-column-title {
+    min-height: 46px;
+    margin: 0 0 10px;
+    padding: 0 2px;
+    color: #244838;
+    font-size: 0.96rem;
+}
+
+.scholar-announcements-page .updates-column-title i {
+    display: inline-grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid #d8eadf;
+    border-radius: 11px;
+    background: #f1f8f3;
+    color: #377650;
+}
+
+.scholar-announcements-page .updates-column:nth-child(2) .updates-column-title i {
+    border-color: #dce8f1;
+    background: #f1f6fa;
+    color: #4e7796;
+}
+
+.scholar-announcements-page .updates-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid #e0ebe4;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 8px 22px rgba(43, 83, 62, 0.07);
+}
+
+.scholar-announcements-page .scholar-announcements-scroll,
+.scholar-announcements-page .updates-panel .announce-list {
+    padding: 2px 6px 5px 2px;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+.scholar-announcements-page .scholar-announcements-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+.scholar-announcements-page .scholar-notifications-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+.scholar-announcements-page .scholar-announcements-scroll .announce-list {
+    max-height: none;
+    overflow: visible;
+}
+
+.scholar-announcements-page .scholar-notifications-scroll > .announce-list {
+    min-height: 0;
+    max-height: none;
+}
+
+.scholar-announcements-page .announce-list {
+    gap: 11px;
+    align-content: start;
+    grid-auto-rows: max-content;
+}
+
+.scholar-announcements-page .announce-card,
+.scholar-announcements-page .notification-item {
+    padding: 16px 16px 16px 19px;
+    border: 1px solid rgba(76, 127, 94, 0.12);
+    border-radius: 13px;
+    box-shadow: 0 4px 12px rgba(37, 74, 59, 0.05);
+}
+
+.scholar-announcements-page .announce-card:hover,
+.scholar-announcements-page .notification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 18px rgba(37, 74, 59, 0.1);
+}
+
+.scholar-announcements-page .announce-card::before,
+.scholar-announcements-page .notification-item::before {
+    width: 4px;
+}
+
+.scholar-announcements-page .announce-tag {
+    margin-bottom: 7px;
+    color: #668172;
+    font-size: 0.61rem;
+    letter-spacing: 0.08em;
+}
+
+.scholar-announcements-page .announce-title {
+    margin-bottom: 0;
+    font-size: 0.91rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.scholar-announcements-page .announcement-details,
+.scholar-announcements-page .notification-details {
+    margin-top: 12px;
+    padding-top: 12px;
+}
+
+.scholar-announcements-page .announcement-details p,
+.scholar-announcements-page .notification-details p {
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+
+.scholar-announcements-page .notification-summary {
+    gap: 10px;
+}
+
+.scholar-announcements-page .notification-status {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(47, 107, 77, 0.09);
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+}
+
+.scholar-announcements-page .notification-item.unread {
+    border-color: #c9dfd0;
+    box-shadow: inset 0 0 0 1px rgba(47, 107, 77, 0.06), 0 5px 14px rgba(37, 74, 59, 0.08);
+}
+
+.scholar-announcements-page .empty-announcements {
+    padding: 34px 18px;
+    border: 1px dashed #cbded1;
+    border-radius: 13px;
+    background: #fbfdfb;
+}
+
+.scholar-announcement-trigger {
+    cursor: pointer;
+}
+
+.scholar-announcement-trigger:focus-visible {
+    outline: 3px solid rgba(55, 139, 88, 0.32);
+    outline-offset: 2px;
+}
+
+.scholar-announcement-dialog {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    width: min(680px, calc(100vw - 32px));
+    max-width: none;
+    max-height: min(780px, calc(100dvh - 32px));
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    border: 1px solid #d7e5da;
+    border-radius: 17px;
+    background: #fff;
+    color: #294d3d;
+    box-shadow: 0 24px 70px rgba(16, 48, 34, 0.3);
+}
+
+.scholar-announcement-dialog::backdrop {
+    background: rgba(17, 36, 27, 0.58);
+    backdrop-filter: blur(3px);
+}
+
+html.scholar-announcement-dialog-open,
+body.scholar-announcement-dialog-open,
+html:has(.scholar-announcement-dialog[open]),
+body:has(.scholar-announcement-dialog[open]) {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+.scholar-announcement-letter {
+    max-height: inherit;
+    overflow-y: auto;
+    background:
+        radial-gradient(circle at 100% 0, rgba(227, 242, 231, 0.6), transparent 38%),
+        linear-gradient(145deg, #fff 0%, #fcfdfb 100%);
+}
+
+.scholar-announcement-letter-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    min-height: 58px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 20px;
+    border-bottom: 1px solid #e2ebe4;
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.scholar-announcement-letter-head > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #477357;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.scholar-announcement-letter-head > span i {
+    color: #548a65;
+}
+
+.scholar-announcement-dialog-close {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid #dce9e2;
+    border-radius: 50%;
+    background: #f8fcfa;
+    color: #456a55;
+    cursor: pointer;
+}
+
+.scholar-announcement-dialog-close:hover {
+    background: #eef8f3;
+}
+
+.scholar-announcement-letter-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 34px 40px 40px;
+}
+
+.scholar-announcement-letter-date {
+    margin-bottom: 12px;
+    color: #728578;
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+.scholar-announcement-letter-content h2 {
+    margin-bottom: 0;
+    color: #214c38;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.scholar-announcement-letter-rule {
+    width: 64px;
+    height: 3px;
+    margin: 17px 0 23px;
+    border-radius: 3px;
+    background: #8fc4a0;
+}
+
+.scholar-announcement-letter-body {
+    color: #445b4e;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.scholar-announcement-letter-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    margin-top: 20px;
+    padding: 9px 13px;
+    border: 1px solid #c9dfd0;
+    border-radius: 9px;
+    background: #f1f8f3;
+    color: #315f43;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.scholar-announcement-letter-link:hover {
+    background: #e5f2e9;
+}
+
+.scholar-announcement-sender {
+    margin: 26px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #e2ebe4;
+    color: #718378;
+    font-size: 0.72rem;
+}
+
+.scholar-announcement-sender strong {
+    color: #416c51;
+}
+
+.scholar-report-row {
+    cursor: pointer;
+}
+
+.scholar-reports-table-scroll .report-records-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+}
+
+.scholar-reports-table-scroll .report-records-table th,
+.scholar-reports-table-scroll .report-records-table td {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.scholar-reports-table-scroll .report-records-table th:first-child,
+.scholar-reports-table-scroll .report-records-table td:first-child {
+    width: 30%;
+}
+
+.scholar-reports-table-scroll .report-records-table th:nth-child(2),
+.scholar-reports-table-scroll .report-records-table td:nth-child(2) {
+    width: 45%;
+}
+
+.scholar-reports-table-scroll .report-records-table th:nth-child(3),
+.scholar-reports-table-scroll .report-records-table td:nth-child(3) {
+    width: 25%;
+}
+
+.scholar-report-row:focus-visible {
+    outline: 3px solid rgba(55, 139, 88, 0.2);
+    outline-offset: -3px;
+}
+
+.scholar-report-dialog {
+    position: fixed;
+    inset: 0 0 0 auto;
+    display: block;
+    width: min(600px, 96vw);
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-left: 1px solid rgba(99, 128, 112, 0.3);
+    border-radius: 18px 0 0 18px;
+    background: linear-gradient(145deg, #fff, #f8fbf9);
+    color: #294d3d;
+    box-shadow: 0 24px 70px rgba(16, 48, 34, 0.28);
+    animation: coordinator-report-drawer-in 0.24s ease-out;
+}
+
+.scholar-report-dialog:not([open]) {
+    display: none;
+}
+
+.scholar-report-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.scholar-report-dialog::backdrop {
+    background: rgba(17, 36, 27, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+html.scholar-report-dialog-open,
+body.scholar-report-dialog-open,
+html:has(.scholar-report-dialog[open]),
+body:has(.scholar-report-dialog[open]) {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+html:has(.coordinator-report-dialog[open]),
+body:has(.coordinator-report-dialog[open]) {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+.scholar-report-dialog-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 23px 17px;
+    border-bottom: 1px solid #e2ece5;
+    background: #fff;
+}
+
+.scholar-report-dialog-eyebrow {
+    color: #718378;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.scholar-report-dialog-head h2 {
+    margin: 5px 0 0;
+    color: #245f44;
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.scholar-report-dialog-close {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid #dce9e2;
+    border-radius: 50%;
+    background: #f8fcfa;
+    color: #456a55;
+    cursor: pointer;
+}
+
+.scholar-report-dialog-close:hover {
+    background: #eef8f3;
+}
+
+.scholar-report-dialog-content {
+    min-height: 0;
+    flex: 1 1 auto;
+    max-height: none;
+    padding: 20px 23px 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.scholar-report-dialog-content > form[data-confirm-scholar-report-delete] {
+    display: flex;
+    justify-content: flex-end;
+    max-width: none;
+    margin-top: 16px;
+}
+
+.scholar-report-dialog-content > .duty-submission-delete-button.is-locked {
+    display: flex;
+    min-width: 0;
+    margin: 16px 0 0 auto;
+}
+
+.scholar-report-dialog-content > .duty-submission-delete-button.is-locked:disabled {
+    border-color: #c7d0ca;
+    background: #e8ede9;
+    color: #718078;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+@media (max-width: 520px) {
+    .coordinator-assigned-requirements-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+    }
+
+    .coordinator-assigned-requirements-table td,
+    .coordinator-assigned-requirements-table th {
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .coordinator-requirement-expanded-content {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 10px;
+    }
+
+    .coordinator-requirement-expanded-actions {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .coordinator-requirement-actions.has-review-actions {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .coordinator-requirement-actions.has-review-actions .requirement-submission-button,
+    .coordinator-requirement-actions.has-review-actions .coordinator-requirement-no-submission,
+    .coordinator-requirement-actions.has-review-actions .coordinator-requirement-review-form {
+        grid-column: 1;
+    }
+
+    .coordinator-requirement-actions.has-review-actions .coordinator-requirement-review-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .coordinator-requirement-actions:not(.has-review-actions) .requirement-submission-button {
+        width: 100%;
+    }
+
+    .scholar-announcement-dialog {
+        width: calc(100vw - 20px);
+        max-height: calc(100dvh - 20px);
+        border-radius: 14px;
+    }
+
+    .scholar-announcement-letter-content {
+        padding: 25px 20px 28px;
+    }
+
+    .scholar-announcement-letter-body {
+        font-size: 0.84rem;
+    }
+
+    .scholar-report-dialog {
+        inset: 0 0 0 auto;
+        width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 18px 0 0 18px;
+    }
+
+    .scholar-report-dialog-head {
+        padding: 19px 18px 16px;
+    }
+
+    .scholar-report-dialog-content {
+        max-height: none;
+        padding: 18px;
+    }
+
+    .scholar-report-detail-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scholar-report-dialog.coordinator-duty-review-drawer {
+        width: min(560px, 100vw);
+        border-radius: 15px 0 0 15px;
+    }
+
+    .scholar-report-dialog.coordinator-renewal-drawer {
+        width: min(640px, 100vw);
+    }
+
+    .duty-submission-review-actions {
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 901px) {
+    .scholar-announcements-page .updates-panel {
+        height: calc(100vh - 230px);
+        box-sizing: border-box;
+    }
+
+    .scholar-announcements-page .scholar-announcements-scroll {
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .scholar-announcements-page .scholar-notifications-scroll {
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .scholar-announcements-page .scholar-notifications-scroll > .announce-list {
+        height: auto;
+        overflow: visible;
+    }
+}

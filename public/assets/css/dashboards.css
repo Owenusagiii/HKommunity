@@ -1,0 +1,391 @@
+
+
+.stat-icon {
+    width: 21px;
+    font-size: 21px;
+    flex: 0 0 21px;
+}
+
+.number {
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 12px;
+    color: #214c38;
+}
+
+.renewal-text {
+    font-size: 21px;
+}
+
+.bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    background: #e5e8e4;
+    margin-top: 9px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.year-card .bar { background: #d6e6f9; }
+.year-card .bar span { background: #3d76b3; }
+.duty-card .bar { background: #eee5ce; }
+.duty-card .bar span { background: #c99a27; }
+.requirements-card .bar { background: #dce9f6; }
+.requirements-card .bar span { background: #508abd; }
+.renewal-card .bar { background: #eadcf2; }
+.renewal-card .bar span { background: #8b5cad; }
+
+.stat-note {
+    font-size: 9px;
+    color: #819189;
+    margin-top: 8px;
+}
+
+.lower {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 45px;
+}
+
+.coordinator-dashboard-lower {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.coordinator-dashboard-shell > .stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.coordinator-dashboard-shell > .stat-grid .stat {
+    min-height: 157px;
+    padding: 23px 20px 17px;
+}
+
+.coordinator-dashboard-progress-card {
+    margin-bottom: 20px;
+}
+
+.coordinator-dashboard-progress-card .records-head {
+    margin-bottom: 12px;
+}
+
+.coordinator-dashboard-progress-card .admin-year-progress-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 0;
+    padding: 14px;
+}
+
+.coordinator-dashboard-progress-card .admin-year-progress-metric {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #e4ede7;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.coordinator-dashboard-progress-card .admin-year-progress-metric-head {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.coordinator-dashboard-progress-card .admin-year-progress-metric-head > div {
+    min-width: 0;
+}
+
+.coordinator-dashboard-progress-card .admin-year-progress-metric-head p {
+    line-height: 1.45;
+}
+
+.coordinator-dashboard-lower .panel-title {
+    font-size: 0.9rem;
+}
+
+.coordinator-dashboard-lower .view-all {
+    font-size: 0.7rem;
+}
+
+.coordinator-dashboard-lower .announcement-info b {
+    font-size: 0.82rem;
+}
+
+.coordinator-dashboard-lower .announcement-info small,
+.coordinator-dashboard-lower .date {
+    font-size: 0.68rem;
+}
+
+.coordinator-dashboard-lower .dashboard-scroll-list {
+    height: auto;
+    overflow: visible;
+    scrollbar-gutter: auto;
+}
+
+.coordinator-dashboard-notifications .announcement-info small {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dashboard-scroll-list {
+    height: 108px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(54, 109, 81, 0.4) transparent;
+}
+
+.dashboard-scroll-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard-scroll-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dashboard-scroll-list::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(54, 109, 81, 0.4);
+}
+
+.dashboard-scroll-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(54, 109, 81, 0.55);
+}
+
+.coordinator-dashboard-notifications .dashboard-notification-row {
+    min-height: 46px;
+    margin-bottom: 8px;
+    padding: 7px 10px;
+    border: 1px solid #dceae3;
+    border-radius: 9px;
+    background: #f7fbf9;
+    gap: 9px;
+}
+
+.dashboard-announcement-row {
+    min-height: 46px;
+    margin-bottom: 8px;
+    padding: 7px 10px;
+    border: 1px solid #dceae3;
+    border-radius: 9px;
+    background: #f7fbf9;
+    gap: 9px;
+}
+
+.dashboard-announcement-row:last-child {
+    margin-bottom: 0;
+}
+
+.dashboard-announcement-row .bullet {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    font-size: 0.8rem;
+}
+
+.dashboard-announcement-row .announcement-info b {
+    font-size: 0.82rem;
+}
+
+.dashboard-announcement-row .date {
+    font-size: 0.68rem;
+}
+
+.coordinator-dashboard-notifications .dashboard-notification-row:last-child {
+    margin-bottom: 0;
+}
+
+.coordinator-dashboard-notifications .dashboard-notification-row .bullet {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    font-size: 0.8rem;
+}
+
+.coordinator-dashboard-notifications .dashboard-notification-row .announcement-info b {
+    font-size: 0.82rem;
+}
+
+.coordinator-dashboard-notifications .dashboard-notification-row .announcement-info small,
+.coordinator-dashboard-notifications .dashboard-notification-row .date {
+    font-size: 0.68rem;
+}
+
+.coordinator-dashboard-notifications .dashboard-notification-row.is-unread .bullet {
+    background: #dcefe3;
+    color: #1f7049;
+}
+
+.coordinator-dashboard-lower .dashboard-announcement-row,
+.coordinator-dashboard-lower .dashboard-notification-row {
+    min-height: 59px;
+}
+
+.scholar-dashboard-lower .panel-title {
+    font-size: 1rem;
+}
+
+.scholar-dashboard-lower .dashboard-scroll-list {
+    height: auto;
+    overflow: visible;
+    scrollbar-gutter: auto;
+}
+
+.scholar-dashboard-lower .view-all {
+    font-size: 0.78rem;
+}
+
+.scholar-dashboard-lower .announcement-info b {
+    font-size: 0.92rem;
+}
+
+.scholar-dashboard-lower .announcement-info small,
+.scholar-dashboard-lower .date {
+    font-size: 0.75rem;
+}
+
+.scholar-dashboard-lower .quick {
+    min-height: 59px;
+    height: auto;
+    margin-bottom: 8px;
+    padding: 7px 10px;
+    justify-content: flex-start;
+    gap: 9px;
+    border-color: #dceae3;
+    border-radius: 9px;
+    background: #f7fbf9;
+    color: #294d3d;
+    font-size: 0.82rem;
+}
+
+.scholar-dashboard-lower .quick:last-child {
+    margin-bottom: 0;
+}
+
+.scholar-dashboard-lower .quick i {
+    display: inline-grid;
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e5f4ec;
+    color: #238056;
+    font-size: 0.8rem;
+}
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #e0eae5;
+    border-radius: 15px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(37, 74, 59, 0.08);
+}
+
+.panel-link {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel-link:hover,
+.panel-link:focus-visible {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(37, 74, 59, 0.14);
+}
+
+.panel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #294d3d;
+    margin-bottom: 12px;
+}
+
+.view-all {
+    font-size: 9px;
+    font-weight: 600;
+    color: #536b60;
+}
+
+.announcement {
+    min-height: 59px;
+    border-top: 1px solid #edf1ef;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bullet {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e5f4ec;
+    color: #238056;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.announcement-info {
+    flex: 1;
+}
+
+.announcement-info b {
+    display: block;
+    font-size: 11px;
+    color: #294d3d;
+}
+
+.announcement-info small {
+    display: block;
+    font-size: 8px;
+    color: #8b9992;
+    margin-top: 3px;
+}
+
+.date {
+    font-size: 8px;
+    color: #8b9992;
+}
+
+.quick {
+    width: 100%;
+    height: 37px;
+    border: 1px solid #dceae3;
+    background: #f7fbf9;
+    border-radius: 9px;
+    margin-bottom: 9px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 9px;
+    color: #426151;
+    transition: 0.2s ease;
+}
+
+.quick:hover {
+    background: #eaf7f0;
+    transform: translateX(2px);
+}
+
+.quick i {
+    width: 17px;
+    font-size: 17px;
+    flex: 0 0 17px;
+}

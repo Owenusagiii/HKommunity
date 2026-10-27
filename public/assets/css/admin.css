@@ -1,0 +1,1731 @@
+
+
+.admin-users-page .duty-info-banner,
+.admin-registration-page .duty-info-banner {
+    border-color: #d2e8d9;
+    background: rgba(239, 249, 242, 0.92);
+    box-shadow: 0 6px 18px rgba(32, 79, 55, 0.05);
+}
+
+.admin-users-page .duty-info-banner {
+    max-width: 360px;
+}
+
+.admin-registration-page .duty-info-banner {
+    max-width: 380px;
+}
+
+.admin-users-page .records-head,
+.admin-registration-page .records-head {
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.admin-users-page .records-head h2,
+.admin-registration-page .records-head h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0;
+    font-size: 1.08rem;
+}
+
+.admin-users-page .records-head .sub-small,
+.admin-registration-page .records-head .sub-small {
+    margin: 5px 0 0 47px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.admin-users-page .record-count,
+.admin-registration-page .record-count {
+    padding: 7px 11px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #3d6b50;
+    font-size: 0.72rem;
+}
+
+.admin-users-page .table-scroll,
+.admin-registration-page .table-scroll {
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #e3eee7;
+    border-radius: 13px;
+    background: #fff;
+}
+
+.admin-users-page .data-table tbody tr:last-child td,
+.admin-registration-page .data-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.admin-users-page .admin-role-tools {
+    min-width: 0;
+}
+
+.admin-users-page .admin-role-search {
+    flex: 0 1 auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-users-page .admin-role-search .requirement-search {
+    width: 220px;
+}
+
+.admin-users-page .admin-role-search .requirement-search input {
+    min-height: 42px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+}
+
+.admin-users-page .admin-role-search .admin-users-year-filter {
+    width: 145px;
+    min-height: 42px;
+    padding: 8px 28px 8px 10px;
+    border-color: #dce8e2;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--green-800);
+    font-size: 0.76rem;
+}
+
+.admin-role-table {
+    margin-top: 0;
+}
+
+.admin-requirements-page #admin-requirements-table th:not(:first-child),
+.admin-requirements-page #admin-requirements-table td:not(:first-child),
+.admin-announcements-page [aria-labelledby="announcement-records-title"] .admin-role-table th:not(:first-child),
+.admin-announcements-page [aria-labelledby="announcement-records-title"] .admin-role-table td:not(:first-child),
+.admin-reports-table th:not(:first-child),
+.admin-reports-table td:not(:first-child),
+.admin-quick-links-page .admin-quick-links-table th:not(:first-child),
+.admin-quick-links-page .admin-quick-links-table td:not(:first-child) {
+    text-align: center;
+}
+
+.renewal-period-table th:not(:first-child),
+.renewal-period-table td:not(:first-child) {
+    text-align: center;
+}
+
+#admin-scholars-table th:not(:first-child),
+#admin-scholars-table td:not(:first-child) {
+    text-align: center;
+}
+
+#admin-scholars-table th:first-child,
+#admin-scholars-table td:first-child {
+    text-align: left;
+}
+
+#admin-coordinators-table th:not(:first-child),
+#admin-coordinators-table td:not(:first-child) {
+    text-align: center;
+}
+
+#admin-coordinators-table th:first-child,
+#admin-coordinators-table td:first-child {
+    text-align: left;
+}
+
+.admin-role-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    color: #63806d;
+    background: #eff7f1;
+    font-size: 0.68rem;
+    letter-spacing: .05em;
+    white-space: nowrap;
+}
+
+.admin-role-table td {
+    color: #294d3d;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.admin-users-page .inline-form button {
+    padding: 7px 11px;
+    border: 1px solid #dce9e0;
+    border-radius: 9px;
+    background: #f2f8f4;
+    color: #3a664c;
+    font-size: 0.72rem;
+}
+
+.admin-users-page .inline-form button:hover {
+    background: #e5f3e9;
+}
+
+.admin-users-page .users-page-actions .btn {
+    min-height: 42px;
+    border-radius: 12px;
+    box-shadow: 0 7px 16px rgba(36, 95, 68, 0.16);
+}
+
+.admin-users-page .coordinator-create-account-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.coordinator-create-card {
+    overflow: hidden;
+    border: 1px solid rgba(79, 147, 113, 0.2);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.99), rgba(248, 252, 249, 0.98));
+    box-shadow: 0 12px 28px rgba(32, 79, 55, 0.09);
+}
+
+.coordinator-create-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 22px 26px 18px;
+    border-bottom: 1px solid #e8f0ea;
+}
+
+.coordinator-create-section-icon {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #438a62, #286643);
+    font-size: 0.95rem;
+}
+
+.coordinator-create-card-head h2 {
+    margin: 0 0 4px;
+    color: var(--green-900);
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.coordinator-create-card-head p {
+    margin: 0;
+    color: #7a8d81;
+    font-size: 0.75rem;
+}
+
+.coordinator-create-required-note {
+    margin-left: auto;
+    color: #829388;
+    font-size: 0.7rem;
+}
+
+.coordinator-create-required-note span,
+.coordinator-create-field label span {
+    color: #c1574b;
+}
+
+.coordinator-create-form {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 24px 26px 22px;
+}
+
+.coordinator-create-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px 22px;
+}
+
+.coordinator-create-field {
+    min-width: 0;
+}
+
+.coordinator-create-field label {
+    margin-bottom: 7px;
+    color: #3b624d;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.coordinator-create-field input,
+.coordinator-create-field select {
+    min-height: 45px;
+    border-color: #dce8e0;
+    border-radius: 11px;
+    background-color: #fff;
+    font-size: 0.82rem;
+}
+
+.coordinator-create-field input::placeholder {
+    color: #a0afa6;
+}
+
+.coordinator-create-field input:focus,
+.coordinator-create-field select:focus {
+    border-color: #6eaa81;
+    box-shadow: 0 0 0 3px rgba(94, 157, 112, 0.13);
+    outline: 0;
+}
+
+.coordinator-create-field .password-toggle:hover,
+.coordinator-create-field .password-toggle:focus-visible {
+    background: rgba(20, 85, 62, 0.08);
+    box-shadow: 0 0 0 2px rgba(20, 85, 62, 0.08);
+    transform: translateY(-50%);
+}
+
+.coordinator-create-field .password-field input {
+    min-height: 45px;
+}
+
+.coordinator-create-year-field {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 11px);
+}
+
+.coordinator-create-hint {
+    display: block;
+    margin-top: 7px;
+    color: #819186;
+    font-size: 0.69rem;
+    line-height: 1.5;
+}
+
+.coordinator-create-form .field-error {
+    margin-top: 6px;
+}
+
+.coordinator-create-form-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 0 18px;
+    padding: 11px 13px;
+    border: 1px solid #f0d0cc;
+    border-radius: 10px;
+    background: #fff6f4;
+    color: #a83f35;
+    font-size: 0.8rem;
+}
+
+.coordinator-create-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 19px;
+    border-top: 1px solid #e8f0ea;
+}
+
+.coordinator-create-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 11px;
+    box-shadow: 0 7px 16px rgba(36, 95, 68, 0.16);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.coordinator-create-cancel {
+    display: inline-grid;
+    min-height: 44px;
+    place-items: center;
+    padding: 0 15px;
+    border: 1px solid #dce8e0;
+    border-radius: 11px;
+    background: #fff;
+    color: #5c7365;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.coordinator-create-cancel:hover {
+    border-color: #c7dccd;
+    background: #f4f9f5;
+}
+
+.admin-requirements-page .admin-requirements-create-form {
+    max-width: none;
+    margin: 0;
+}
+
+.admin-requirements-page .admin-requirement-create-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+}
+
+.admin-requirements-page .admin-requirement-create-form .form-row label {
+    margin: 0;
+    color: #486c57;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.admin-requirements-page .admin-requirement-create-form .form-row input,
+.admin-requirements-page .admin-requirement-create-form .form-row textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--green-900);
+    font-size: 0.82rem;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.admin-requirements-page .admin-requirement-create-form .form-row textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.admin-requirements-page .admin-requirement-create-form .form-row input:focus,
+.admin-requirements-page .admin-requirement-create-form .form-row textarea:focus {
+    border-color: var(--green-600);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.12);
+}
+
+.admin-requirements-page .admin-requirement-create-form .form-row input::placeholder,
+.admin-requirements-page .admin-requirement-create-form .form-row textarea::placeholder {
+    color: #9aa99f;
+}
+
+main.admin-requirements-main {
+    padding-bottom: 26px;
+}
+
+.admin-requirements-page .admin-requirements-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.5fr);
+    align-items: stretch;
+    gap: 20px;
+}
+
+.admin-requirements-page .admin-requirements-layout > .admin-users-card {
+    min-width: 0;
+    margin: 0;
+}
+
+.admin-requirements-page .admin-requirement-status-form {
+    display: none;
+}
+
+.admin-quick-links-page .admin-quick-link-create-form {
+    max-width: none;
+    margin: 0;
+}
+
+.admin-create-fields-card {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid #e2eee6;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f6faf7, #fff);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.admin-create-fields-card:focus-within {
+    border-color: rgba(47, 107, 77, 0.4);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.08);
+}
+
+.admin-quick-links-page .admin-quick-link-create-form .form-row,
+.admin-announcements-page .admin-announcement-create-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+main.admin-quick-links-main {
+    padding-bottom: 26px;
+}
+
+.admin-quick-links-page .admin-quick-links-table {
+    table-layout: fixed;
+}
+
+.admin-quick-links-page .admin-quick-links-table th:nth-child(1) {
+    width: 40%;
+}
+
+.admin-quick-links-page .admin-quick-links-table th:nth-child(2) {
+    width: 25%;
+}
+
+.admin-quick-links-page .admin-quick-links-table th:nth-child(3) {
+    width: 35%;
+}
+
+.admin-quick-links-page .admin-quick-links-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.5fr);
+    align-items: stretch;
+    gap: 20px;
+}
+
+.admin-quick-links-page .admin-quick-links-layout > .admin-users-card {
+    min-width: 0;
+    margin: 0;
+}
+
+.admin-quick-links-page .admin-quick-links-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    gap: 16px;
+}
+
+.admin-quick-links-page .admin-quick-link-status-form {
+    display: none;
+}
+
+.admin-quick-link-status-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+    padding: 9px 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    gap: 6px;
+    line-height: 1.2;
+    text-align: center;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .admin-record-save-button {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: #fff !important;
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .admin-record-save-button:hover:not(:disabled),
+.admin-record-drawer-content .admin-quick-link-status-actions > .admin-record-save-button:focus-visible {
+    border-color: #1d4ed8;
+    background: #1d4ed8;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.22);
+    transform: translateY(-1px);
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .btn-danger {
+    border-color: #b84942;
+    background: #b84942;
+    color: #fff !important;
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .btn-danger:hover:not(:disabled),
+.admin-record-drawer-content .admin-quick-link-status-actions > .btn-danger:focus-visible {
+    border-color: #a53e38;
+    background: #a53e38;
+    box-shadow: 0 6px 14px rgba(165, 62, 56, 0.2);
+    transform: translateY(-1px);
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .admin-record-deactivate-button {
+    border-color: #b84942;
+    background: #fff;
+    color: #a53e38 !important;
+}
+
+.admin-record-drawer-content .admin-quick-link-status-actions > .admin-record-deactivate-button:hover:not(:disabled),
+.admin-record-drawer-content .admin-quick-link-status-actions > .admin-record-deactivate-button:focus-visible {
+    border-color: #a53e38;
+    background: #fff5f4;
+    box-shadow: 0 6px 14px rgba(165, 62, 56, 0.14);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .admin-quick-link-status-actions {
+        flex-wrap: wrap;
+    }
+
+    .admin-record-drawer-content .admin-quick-link-status-actions > .btn {
+        flex: 1 1 150px;
+    }
+}
+
+.admin-announcements-page .admin-announcement-create-form {
+    max-width: none;
+    margin: 0;
+}
+
+.admin-announcements-page .admin-announcement-create-form .form-row {
+    margin: 0;
+}
+
+main.admin-announcements-main {
+    padding-bottom: 26px;
+}
+
+.admin-announcements-page .admin-announcements-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.5fr);
+    align-items: stretch;
+    gap: 20px;
+}
+
+.admin-announcements-page .admin-announcements-layout > .admin-users-card {
+    min-width: 0;
+    margin: 0;
+}
+
+.admin-announcements-page .admin-announcement-form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.75fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.admin-announcements-page .admin-announcement-form-grid .form-row {
+    min-width: 0;
+    margin: 0;
+}
+
+.admin-quick-links-page .admin-quick-link-create-form .form-row label,
+.admin-announcements-page .admin-announcement-create-form .form-row label {
+    margin: 0;
+    color: #486c57;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.admin-quick-links-page .admin-quick-link-create-form .form-row input,
+.admin-quick-links-page .admin-quick-link-create-form .form-row textarea,
+.admin-announcements-page .admin-announcement-create-form .form-row input,
+.admin-announcements-page .admin-announcement-create-form .form-row textarea,
+.admin-announcements-page .admin-announcement-create-form .form-row select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--green-900);
+    font-size: 0.82rem;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.admin-quick-links-page .admin-quick-link-create-form .form-row textarea,
+.admin-announcements-page .admin-announcement-create-form .form-row textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.admin-quick-links-page .admin-quick-link-create-form .form-row input:focus,
+.admin-quick-links-page .admin-quick-link-create-form .form-row textarea:focus,
+.admin-announcements-page .admin-announcement-create-form .form-row input:focus,
+.admin-announcements-page .admin-announcement-create-form .form-row textarea:focus,
+.admin-announcements-page .admin-announcement-create-form .form-row select:focus {
+    border-color: var(--green-600);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.12);
+}
+
+.admin-quick-links-page .admin-quick-link-create-form .form-row input::placeholder,
+.admin-quick-links-page .admin-quick-link-create-form .form-row textarea::placeholder,
+.admin-announcements-page .admin-announcement-create-form .form-row input::placeholder,
+.admin-announcements-page .admin-announcement-create-form .form-row textarea::placeholder {
+    color: #9aa99f;
+}
+
+.admin-announcements-page .admin-announcement-status-form {
+    display: none;
+}
+
+main.admin-reports-main {
+    padding-bottom: 26px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.admin-reports-page {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 134px);
+    flex-direction: column;
+}
+
+.admin-reports-page > .admin-reports-records-card {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.admin-reports-page .admin-reports-table-scroll {
+    height: auto;
+    min-height: 240px;
+    flex: 1 1 auto;
+}
+
+.admin-users-section-icon {
+    display: inline-grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 1px solid #d7ebde;
+    border-radius: 11px;
+    background: #eaf6ee;
+    color: var(--green-700);
+    font-size: 0.9rem;
+}
+
+.admin-registration-card {
+    margin-bottom: 0;
+}
+
+.admin-registration-tools {
+    min-width: 0;
+}
+
+.admin-registration-selection-count {
+    color: #657b6e;
+    font-size: 0.72rem;
+    white-space: nowrap;
+}
+
+.admin-registration-selection-count[hidden],
+.admin-registration-bulk-approve[hidden] {
+    display: none !important;
+}
+
+.admin-portal .btn.btn-green.admin-registration-bulk-approve {
+    min-height: 42px;
+    padding: 8px 13px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+}
+
+.admin-registration-bulk-approve:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.admin-registration-search {
+    flex: 0 1 auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-registration-search .requirement-search {
+    width: 220px;
+}
+
+.admin-registration-search .requirement-search input,
+.admin-registration-search select {
+    min-height: 42px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: #dce8e2;
+    background: #fff;
+    font-size: 0.78rem;
+}
+
+.admin-registration-search select {
+    width: 145px;
+    padding: 8px 28px 8px 10px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    color: var(--green-800);
+}
+
+.admin-registration-table {
+    margin-top: 0;
+}
+
+#admin-registrations-table th:not(.admin-registration-select-column):not(.admin-registration-scholar-heading),
+#admin-registrations-table td:not(.admin-registration-select-column):not(.admin-registration-scholar-cell) {
+    text-align: center;
+}
+
+#admin-registrations-table th.admin-registration-select-column,
+#admin-registrations-table td.admin-registration-select-column {
+    width: 48px;
+    text-align: center;
+}
+
+#admin-registrations-table:not(.has-registration-selection) .admin-registration-select-column {
+    display: none;
+}
+
+#admin-registrations-table #registration-select-all,
+#admin-registrations-table .admin-registration-select-column input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--green-700);
+    vertical-align: middle;
+}
+
+#admin-registrations-table .admin-registration-scholar-heading.has-select-all-control #registration-select-all {
+    margin-right: 10px;
+}
+
+#admin-registrations-table .admin-registration-scholar-heading,
+#admin-registrations-table .admin-registration-scholar-cell {
+    text-align: left;
+}
+
+#admin-registrations-table .admin-registration-scholar-cell > small {
+    display: block;
+    margin-top: 4px;
+    color: #819187;
+    font-size: 0.68rem;
+}
+
+.admin-registration-search-empty[hidden] {
+    display: none !important;
+}
+
+.admin-registration-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.admin-registration-table th,
+.admin-registration-table td {
+    white-space: nowrap;
+}
+
+.admin-import-page .duty-page-head {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-import-page .duty-page-head h1 {
+    margin-bottom: 5px;
+    color: var(--green-900);
+    font-size: clamp(1.65rem, 2.5vw, 2.1rem);
+}
+
+.admin-import-page .duty-page-head .sub-small {
+    margin: 0;
+    color: #657b6e;
+    font-size: 0.88rem;
+}
+
+.admin-import-page .duty-info-banner {
+    max-width: 380px;
+    border-color: #d2e8d9;
+    background: rgba(239, 249, 242, 0.92);
+    box-shadow: 0 6px 18px rgba(32, 79, 55, 0.05);
+}
+
+.admin-import-upload-card {
+    margin-bottom: 22px;
+    padding: 24px 26px;
+    border: 1px solid rgba(79, 147, 113, 0.2);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(247, 252, 248, 0.97));
+    box-shadow: 0 12px 26px rgba(32, 79, 55, 0.09);
+}
+
+.admin-import-card-heading {
+    margin-bottom: 18px;
+}
+
+.admin-import-card-heading h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0;
+    color: var(--green-900);
+    font-size: 1.08rem;
+}
+
+.admin-import-card-heading p {
+    margin: 5px 0 0 47px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.admin-import-columns {
+    display: grid;
+    gap: 7px;
+    margin-bottom: 18px;
+    padding: 20px 22px;
+    border: 1px solid #e2eee6;
+    border-radius: 13px;
+    background: rgba(244, 250, 246, 0.8);
+    color: #486c57;
+    font-size: 0.75rem;
+}
+
+.admin-import-columns code {
+    color: #356149;
+    font-size: 0.74rem;
+    overflow-wrap: anywhere;
+}
+
+.admin-import-upload-form {
+    display: flex;
+    align-items: end;
+    gap: 14px;
+    max-width: none;
+    margin: 0;
+}
+
+.admin-import-upload-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 340px;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #e2eee6;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f6faf7, #fff);
+    margin: 0;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.admin-import-upload-form .form-row:focus-within {
+    border-color: rgba(47, 107, 77, 0.48);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.09);
+}
+
+.admin-import-upload-form .form-row label {
+    margin: 0;
+    color: #486c57;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.admin-import-upload-form input[type="file"] {
+    width: 100%;
+    min-height: 46px;
+    padding: 6px;
+    border: 1px dashed #b9d2c2;
+    border-radius: 10px;
+    background: #f9fcfa;
+    color: #657b6e;
+    font-size: 0.78rem;
+}
+
+.admin-import-upload-form input[type="file"]::file-selector-button {
+    min-height: 32px;
+    margin-right: 10px;
+    padding: 6px 12px;
+    border: 1px solid #cfe2d5;
+    border-radius: 8px;
+    background: #eaf6ee;
+    color: #245f44;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.admin-import-upload-form input[type="file"]::file-selector-button:hover {
+    border-color: #a9cbb5;
+    background: #dff0e5;
+}
+
+.admin-import-file-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-import-upload-form .admin-import-file-controls input[type="file"] {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.admin-import-upload-form button {
+    min-height: 44px;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 560px) {
+    .admin-import-file-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-import-upload-form .admin-import-file-controls button {
+        align-self: flex-end;
+    }
+}
+
+.admin-import-history-card {
+    margin-bottom: 0;
+}
+
+.admin-import-history-card .records-head {
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.admin-import-history-card .records-head .sub-small {
+    margin: 5px 0 0 47px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.admin-import-history-tools {
+    min-width: 0;
+}
+
+.admin-import-history-search {
+    flex: 0 1 auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-import-history-search .requirement-search {
+    width: 220px;
+}
+
+.admin-import-history-search .requirement-search input,
+.admin-import-history-search select {
+    min-height: 42px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: #dce8e2;
+    background: #fff;
+    font-size: 0.78rem;
+}
+
+.admin-import-history-search select {
+    width: 145px;
+    padding: 8px 28px 8px 10px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    color: var(--green-800);
+}
+
+.admin-import-table-scroll {
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #e3eee7;
+    border-radius: 13px;
+    background: #fff;
+}
+
+.admin-import-table {
+    margin-top: 0;
+}
+
+.admin-import-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.admin-import-table th,
+.admin-import-table td {
+    white-space: nowrap;
+}
+
+.admin-import-table th:not(:first-child),
+.admin-import-table td:not(:first-child) {
+    text-align: center;
+}
+
+.admin-import-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.admin-import-table .inline-form {
+    display: inline-flex;
+}
+
+.admin-import-table .inline-form button {
+    padding: 7px 11px;
+    font-size: 0.72rem;
+}
+
+.admin-import-dialog-actions {
+    max-width: none;
+}
+
+.admin-import-dialog-actions > p {
+    margin: 0 0 12px;
+    color: #657b6e;
+    font-size: 0.82rem;
+}
+
+.admin-import-dialog-actions h3 {
+    margin: 0 0 12px;
+    color: #244838;
+    font-size: 0.92rem;
+}
+
+.admin-import-dialog-actions .form-row {
+    margin-bottom: 14px;
+}
+
+.admin-import-dialog-actions .admin-import-actions {
+    flex-wrap: nowrap;
+}
+
+.admin-import-dialog-actions .inline-form {
+    max-width: none;
+    margin: 0;
+}
+
+.admin-import-dialog-actions .inline-form button {
+    min-height: 40px;
+    padding: 8px 13px;
+}
+
+.admin-import-dialog-actions .admin-import-reject-button {
+    border: 1px solid #edcfcc;
+    background: #fff3f1;
+    color: #a9433c;
+}
+
+.admin-import-dialog-actions .admin-import-reject-button:hover {
+    background: #fce5e2;
+}
+
+.admin-import-dialog-actions .admin-import-reject-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+.admin-import-detail-content > .admin-user-detail-card {
+    margin: 18px 0 0;
+    padding: 17px;
+    border: 1px solid rgba(47, 107, 77, 0.16);
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f5faf6, #fbfdfb);
+}
+
+.admin-import-detail-content > .admin-import-summary-card {
+    margin-top: 0;
+}
+
+.admin-import-detail-content .admin-import-review-card {
+    display: flex;
+    justify-content: flex-end;
+    margin: 18px 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+.admin-import-detail-content .admin-import-actions {
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.admin-import-detail-content .admin-import-actions .inline-form .admin-import-reject-button {
+    border: 1px solid #b84942;
+    background: #fff;
+    color: #b84942;
+}
+
+.admin-import-delete-form {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.admin-import-detail-content .admin-import-actions .inline-form button,
+.admin-import-delete-button {
+    min-height: 44px;
+    padding: 11px 17px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.admin-import-delete-button {
+    border: 1px solid #b84942;
+    background: #b84942;
+    color: #fff;
+}
+
+.admin-import-detail-content .admin-import-actions .inline-form .admin-import-reject-button:hover:not(:disabled) {
+    border-color: #a53e38;
+    background: #fff3f1;
+    color: #a53e38;
+}
+
+.admin-import-delete-button:hover:not(:disabled) {
+    border-color: #a53e38;
+    background: #a53e38;
+    color: #fff;
+}
+
+.admin-import-delete-button:disabled {
+    border-color: #aab8af;
+    background: #dce3de;
+    color: #748178;
+    cursor: not-allowed;
+    opacity: 0.75;
+    transform: none;
+}
+
+.admin-import-search-empty[hidden] {
+    display: none !important;
+}
+
+.admin-academic-page .duty-page-head {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-academic-page .duty-page-head h1 {
+    margin-bottom: 5px;
+    color: var(--green-900);
+    font-size: clamp(1.65rem, 2.5vw, 2.1rem);
+}
+
+.admin-academic-page .duty-page-head .sub-small {
+    margin: 0;
+    color: #657b6e;
+    font-size: 0.88rem;
+}
+
+.admin-academic-page .duty-info-banner {
+    max-width: 480px;
+    padding: 9px 12px;
+    border-color: #d2e8d9;
+    background: rgba(239, 249, 242, 0.92);
+    box-shadow: 0 6px 18px rgba(32, 79, 55, 0.05);
+    font-size: 0.72rem;
+    line-height: 1.35;
+}
+
+.admin-academic-page .admin-periods-card {
+    padding: 24px 26px 22px;
+}
+
+.admin-academic-page .period-create-grid {
+    gap: 24px;
+    padding: 24px 26px 22px;
+}
+
+.admin-academic-page .period-create-form {
+    min-width: 0;
+    height: auto;
+    padding: 0;
+}
+
+.admin-academic-page .period-create-form .records-head {
+    margin-bottom: 16px;
+}
+
+.admin-academic-page .period-create-form h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--green-900);
+    font-size: 0.98rem;
+}
+
+.admin-academic-page .period-create-form .sub-small {
+    margin: 5px 0 0 46px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.admin-academic-page .period-create-form input,
+.admin-academic-page .period-create-form select {
+    min-height: 42px;
+    border-color: #d9e7de;
+    background: #fff;
+}
+
+.admin-academic-page .period-create-form > .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #e2eee6;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f6faf7, #fff);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.admin-academic-page .period-create-form > .form-row:focus-within {
+    border-color: rgba(47, 107, 77, 0.48);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.09);
+}
+
+.admin-academic-page .period-create-form > .form-row label,
+.admin-academic-page .semester-create-fields > .form-row label {
+    margin: 0;
+    color: #486c57;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.admin-academic-page .period-create-form > .form-row input,
+.admin-academic-page .semester-create-fields > .form-row select {
+    width: 100%;
+    height: 46px;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--green-900);
+    font-size: 0.82rem;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.admin-academic-page .period-create-form > .form-row input:focus,
+.admin-academic-page .semester-create-fields > .form-row select:focus {
+    border-color: var(--green-600);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.12);
+}
+
+.admin-academic-page .period-create-form > .form-row input::placeholder {
+    color: #9aa99f;
+}
+
+.admin-academic-page .semester-create-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid #e2eee6;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f6faf7, #fff);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.admin-academic-page .semester-create-fields:focus-within {
+    border-color: rgba(47, 107, 77, 0.48);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.09);
+}
+
+.admin-academic-page .semester-create-fields .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.admin-academic-page .period-create-form button {
+    margin-top: 16px;
+}
+
+.admin-academic-page .admin-periods-head {
+    align-items: center;
+    margin: 23px 0 14px;
+}
+
+.admin-academic-page .admin-periods-head h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0;
+    color: var(--green-900);
+    font-size: 1.08rem;
+}
+
+.admin-academic-page .admin-periods-head .sub-small {
+    margin: 5px 0 0 47px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.admin-academic-page .record-count {
+    padding: 7px 11px;
+    border: 1px solid #dcebe1;
+    border-radius: 999px;
+    background: #f1f8f3;
+    color: #3d6b50;
+    font-size: 0.72rem;
+}
+
+.admin-academic-table-scroll {
+    height: 220px;
+    overflow: auto;
+    border: 1px solid #e3eee7;
+    border-radius: 13px;
+    background: #fff;
+}
+
+.admin-academic-table-scroll .data-table {
+    margin-top: 0;
+}
+
+.admin-academic-table-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.admin-academic-table-scroll th,
+.admin-academic-table-scroll td {
+    white-space: nowrap;
+}
+
+.admin-academic-table-scroll .inline-form button {
+    padding: 7px 11px;
+    border: 1px solid #dce9e0;
+    border-radius: 9px;
+    background: #f2f8f4;
+    color: #3a664c;
+    font-size: 0.72rem;
+}
+
+.admin-academic-table-scroll .admin-academic-status-form,
+.admin-academic-table-scroll .admin-academic-delete-form {
+    display: inline-flex;
+    margin: 0 3px;
+}
+
+.admin-academic-table-scroll .inline-form .admin-academic-deactivate-button {
+    border-color: #b84942;
+    background: #fff;
+    color: #a53e38 !important;
+}
+
+.admin-academic-table-scroll .inline-form .admin-academic-deactivate-button:hover:not(:disabled),
+.admin-academic-table-scroll .inline-form .admin-academic-deactivate-button:focus-visible {
+    border-color: #a53e38;
+    background: #fff5f4;
+    box-shadow: 0 4px 10px rgba(165, 62, 56, 0.12);
+}
+
+.admin-academic-table-scroll .admin-academic-delete-button {
+    border-color: #b84942;
+    background: #b84942;
+    color: #fff;
+}
+
+.admin-academic-table-scroll .admin-academic-delete-button:hover:not(:disabled),
+.admin-academic-table-scroll .admin-academic-delete-button:focus-visible {
+    border-color: #a53e38;
+    background: #a53e38;
+}
+
+.admin-academic-table-scroll .admin-academic-delete-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.renewal-period-records-card form[data-confirm-renewal-period-deactivation] button {
+    border-color: #b84942;
+    background: #b84942;
+    color: #fff;
+}
+
+.renewal-period-records-card form[data-confirm-renewal-period-deactivation] button:hover {
+    border-color: #a53e38;
+    background: #a53e38;
+}
+
+.renewal-period-create-form {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: 14px;
+}
+
+.renewal-period-create-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #e2eee6;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #f6faf7, #fff);
+    margin: 0;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.renewal-period-create-form .form-row:focus-within {
+    border-color: rgba(47, 107, 77, 0.48);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.09);
+}
+
+.renewal-period-create-form .form-row label {
+    margin: 0;
+    color: #486c57;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.renewal-period-create-form select,
+.renewal-period-create-form input {
+    display: block;
+    width: 100%;
+    height: 46px;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #dce8e2;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--green-900);
+    font-size: 0.82rem;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.renewal-period-create-form select:focus,
+.renewal-period-create-form input:focus {
+    border-color: var(--green-600);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(47, 107, 77, 0.12);
+}
+
+.renewal-period-create-form input::placeholder {
+    color: #9aa99f;
+}
+
+.renewal-period-create-form button {
+    display: inline-flex;
+    min-height: 44px;
+    grid-column: 1 / -1;
+    justify-self: end;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.renewal-period-create-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+    box-shadow: none;
+}
+
+.renewal-period-form-note {
+    margin: 12px 0 0;
+}
+
+.admin-renewal-period-page .renewal-period-delete-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    border: 1px solid #f0d1ce;
+    border-radius: 10px;
+    background: #fff3f1;
+    color: #a53e38;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.admin-renewal-period-page .renewal-period-delete-note i {
+    flex: 0 0 auto;
+    margin-top: 2px;
+}
+
+.renewal-period-records-card .admin-record-delete-button:disabled {
+    border-color: #d7c6c4;
+    background: #eee8e7;
+    color: #8c7371;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: none;
+}
+
+@media (max-width: 800px) {
+    main.admin-quick-links-main {
+        padding-bottom: 14px;
+    }
+
+    main.admin-reports-main {
+        padding-bottom: 14px;
+    }
+
+    .admin-reports-page {
+        min-height: calc(100dvh - 114px);
+    }
+
+    .admin-quick-links-page .admin-quick-links-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    main.admin-requirements-main {
+        padding-bottom: 14px;
+    }
+
+    main.admin-announcements-main {
+        padding-bottom: 14px;
+    }
+
+    .admin-announcements-page .admin-announcements-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-announcements-page .admin-announcement-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .admin-requirements-page .admin-requirements-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-users-page .duty-info-banner,
+    .admin-registration-page .duty-info-banner {
+        max-width: none;
+    }
+
+    .admin-users-page .admin-users-card {
+        padding: 18px 16px;
+    }
+
+    .admin-users-page .admin-role-search {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .admin-users-page .admin-role-search .requirement-search {
+        flex: 1 1 170px;
+        width: auto;
+    }
+
+    .admin-users-page .admin-role-search .admin-users-year-filter {
+        flex: 1 1 130px;
+        width: auto;
+    }
+
+
+
+    .users-page-actions {
+        justify-content: flex-start;
+    }
+
+    .admin-registration-search {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .admin-registration-search .requirement-search {
+        flex: 1 1 170px;
+        width: auto;
+    }
+
+    .admin-registration-search select {
+        flex: 1 1 130px;
+        width: auto;
+    }
+
+    .admin-import-page .duty-info-banner {
+        max-width: none;
+    }
+
+    .admin-import-upload-card {
+        padding: 20px 16px;
+    }
+
+    .admin-import-upload-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-import-upload-form .form-row {
+        width: 100%;
+    }
+
+    .admin-import-history-search {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .admin-import-history-search .requirement-search {
+        flex: 1 1 170px;
+        width: auto;
+    }
+
+    .admin-import-history-search select {
+        flex: 1 1 130px;
+        width: auto;
+    }
+
+    .admin-academic-page .duty-info-banner {
+        max-width: none;
+    }
+
+    .admin-academic-page .admin-periods-card {
+        padding: 18px 16px;
+    }
+
+    .admin-academic-page .period-create-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-academic-page .semester-create-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .renewal-period-create-form {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .renewal-period-create-form button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,2 @@
+<?php require_once __DIR__.'/components/header.php'; require_once __DIR__.'/../models/User.php'; $u=(new User($pdo))->findByEmail($_SESSION['phinmaed_email']??''); ?>
+<main><h1>Profile</h1><p>Email: <?=htmlspecialchars($u['phinmaed_email']??'')?></p><p>Role: <?=htmlspecialchars($u['role']??'')?></p><p>Account status: <?=htmlspecialchars($u['status']??'')?></p><p>Account information can only be edited by the owner through the profile workflow.</p></main></body></html>

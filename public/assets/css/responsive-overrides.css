@@ -1,0 +1,356 @@
+
+
+@media (max-width: 1100px) {
+    .admin-quick-links-page .admin-quick-links-layout,
+    .admin-announcements-page .admin-announcements-layout,
+    .admin-requirements-page .admin-requirements-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-scholar-progress-period-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-portal .admin-dashboard-content {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .admin-portal .admin-dashboard-content > .admin-dashboard-stats,
+    .admin-portal .admin-dashboard-content > .admin-year-progress-card,
+    .admin-portal .admin-dashboard-content > .admin-activity-card {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .admin-portal,
+    .scholar-portal {
+        overflow-x: hidden;
+    }
+
+    .admin-portal main,
+    .scholar-portal main {
+        width: 100%;
+        min-width: 0;
+        margin-left: 0;
+    }
+
+    .admin-portal main > *,
+    .scholar-portal main > *,
+    .admin-portal .duty-records-content,
+    .scholar-portal .duty-records-content,
+    .admin-portal .content-shell,
+    .scholar-portal .content-shell {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .admin-registration-page {
+        min-height: calc(100dvh - 124px);
+    }
+
+    .coordinator-scholars-page {
+        min-height: calc(100dvh - 124px);
+    }
+
+    .admin-portal .records-head,
+    .scholar-portal .records-head,
+    .admin-portal .page-head,
+    .scholar-portal .page-head {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .admin-portal .records-head > div,
+    .scholar-portal .records-head > div {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .admin-portal .table-scroll,
+    .scholar-portal .table-scroll,
+    .admin-portal [class*="-table-scroll"],
+    .scholar-portal [class*="-table-scroll"] {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .admin-portal .admin-scholar-progress-period-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-portal .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer {
+        width: min(560px, 100vw);
+    }
+
+    .scholar-portal .scholar-dashboard-shell,
+    .scholar-portal .scholar-dashboard-lower,
+    .scholar-portal .quick-links-grid,
+    .scholar-portal .renewal-summary-card,
+    .scholar-portal .report-records-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-portal main,
+    .scholar-portal main {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .admin-portal .records-card,
+    .admin-portal .admin-users-card,
+    .admin-portal .admin-periods-card,
+    .scholar-portal .records-card {
+        min-width: 0;
+        padding-right: 13px;
+        padding-left: 13px;
+    }
+
+    .admin-portal .records-head,
+    .scholar-portal .records-head {
+        align-items: flex-start;
+    }
+
+    .admin-portal .records-head .record-count,
+    .scholar-portal .records-head .record-count {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .admin-portal .admin-scholar-export-form,
+    .admin-portal .admin-scholar-progress-period-filter,
+    .scholar-portal .renewal-summary-metrics {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-portal .admin-scholar-export-form > button,
+    .scholar-portal .report-form > .report-submit-button {
+        width: 100%;
+        grid-column: 1;
+    }
+
+    .admin-portal .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer {
+        width: 100vw;
+        border-radius: 15px 0 0 15px;
+    }
+
+    .admin-portal .admin-record-dialog.scholar-requirement-dialog.admin-record-drawer > .admin-record-drawer-content {
+        padding: 16px;
+    }
+
+    .admin-portal .admin-quick-link-status-actions {
+        flex-wrap: wrap;
+    }
+
+    .admin-portal .admin-record-drawer-content .admin-quick-link-status-actions > .btn {
+        flex: 1 1 140px;
+    }
+
+    .scholar-portal .scholar-dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .scholar-portal .quick-link-card,
+    .scholar-portal .announce-card,
+    .scholar-portal .notification-item,
+    .scholar-portal .renewal-summary-status {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .scholar-portal .duty-records-actions,
+    .scholar-portal .updates-filter-actions {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .scholar-portal .duty-records-actions > *,
+    .scholar-portal .updates-filter-actions > * {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .scholar-portal .scholar-dashboard-stats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-portal .admin-record-drawer-content .admin-quick-link-status-actions > .btn {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+    .coordinator-portal .coordinator-dashboard-shell > .stat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 175px), 1fr));
+        gap: clamp(12px, 2vw, 20px);
+    }
+
+    .coordinator-portal .coordinator-dashboard-shell > .stat-grid .stat {
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+        min-height: 157px;
+        padding: clamp(12px, 2vw, 18px);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+    .coordinator-dashboard-progress-card .admin-year-progress-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .coordinator-dashboard-progress-card .admin-year-progress-metric:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 800px) {
+    .coordinator-portal main {
+        width: 100%;
+        min-width: 0;
+        margin-left: 0;
+    }
+
+    .coordinator-portal main > *,
+    .coordinator-portal .content-shell,
+    .coordinator-portal .duty-records-content,
+    .coordinator-portal .announcement-content,
+    .coordinator-portal .records-card,
+    .coordinator-portal .panel {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .coordinator-portal .records-head > div,
+    .coordinator-portal .page-head > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .coordinator-portal .table-scroll,
+    .coordinator-portal [class*="-table-scroll"] {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .coordinator-portal .coordinator-dashboard-shell {
+        min-height: 0;
+        margin-bottom: 0;
+        padding: 0 0 24px;
+    }
+
+    .coordinator-portal .overview-card {
+        padding: 26px 24px;
+    }
+
+    .coordinator-portal .overview-greet {
+        max-width: 100%;
+        font-size: clamp(1.5rem, 5vw, 1.9rem);
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 600px) {
+    .coordinator-portal main {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .coordinator-portal .records-card {
+        padding: 20px 13px 16px;
+    }
+
+    .coordinator-portal .records-head {
+        align-items: flex-start;
+    }
+
+    .coordinator-portal .coordinator-dashboard-shell > .stat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+        gap: 12px;
+    }
+
+    .coordinator-portal .coordinator-dashboard-shell > .stat-grid .stat {
+        aspect-ratio: 1;
+        width: 100%;
+        max-width: 210px;
+        justify-self: center;
+        min-height: 0;
+        padding: clamp(10px, 3vw, 14px);
+    }
+
+    .coordinator-dashboard-progress-card .admin-year-progress-metrics {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .coordinator-dashboard-progress-card .admin-year-progress-metric {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .coordinator-report-action-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .coordinator-report-update-form .form-row:nth-of-type(2) {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .coordinator-report-update-form .form-row:first-of-type {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .coordinator-report-update-form > button {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .coordinator-report-escalate-form button {
+        width: 100%;
+        min-width: 0;
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .coordinator-portal .coordinator-dashboard-shell > .stat-grid .stat {
+        padding: 11px;
+    }
+}
+
+@media (max-width: 800px) {
+    body.app-page .table-scroll,
+    body.app-page [class*="-table-scroll"] {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.app-page .table-scroll > .data-table,
+    body.app-page [class*="-table-scroll"] > .data-table {
+        width: max-content;
+        min-width: max(100%, 560px);
+        max-width: none;
+        table-layout: auto;
+    }
+}
