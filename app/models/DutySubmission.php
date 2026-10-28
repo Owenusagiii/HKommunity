@@ -27,9 +27,11 @@ class DutySubmission
             throw new RuntimeException('Duty submissions are locked because no duty hours are required for this period.');
         }
 
-        $this->pdo->beginTransaction();
-
         try {
+            $this->pdo->beginTransaction();
+            $this->lockScholarForWeeklyLimit($scholarId);
+            $this->assertWeeklyHoursWithinLimit($scholarId, $date, $hours);
+
             $stmt = $this->pdo->prepare(
                 "INSERT INTO duty_submissions
                     (scholar_id, renewal_period_id, duty_date, duty_type, claimed_hours)
@@ -62,7 +64,7 @@ class DutySubmission
 
             $this->pdo->commit();
             return $submissionId;
-        } catch (PDOException $exception) {
+        } catch (Throwable $exception) {
             if ($this->pdo->inTransaction()) {
                 $this->pdo->rollBack();
             }
@@ -93,9 +95,10 @@ class DutySubmission
 
     public function deleteForScholar(int $submissionId, int $scholarId): ?array
     {
-        $this->pdo->beginTransaction();
-
         try {
+            $this->pdo->beginTransaction();
+            $this->lockScholarForWeeklyLimit($scholarId);
+
             $submissionStmt = $this->pdo->prepare(
                 "SELECT ds.id, ds.status, ds.renewal_period_id, rp.required_duty_hours
                  FROM duty_submissions ds
@@ -165,9 +168,10 @@ class DutySubmission
         array $files,
         array $removeFileIds = []
     ): ?array {
-        $this->pdo->beginTransaction();
-
         try {
+            $this->pdo->beginTransaction();
+            $this->lockScholarForWeeklyLimit($scholarId);
+
             $submissionStmt = $this->pdo->prepare(
                 "SELECT ds.id, ds.status, ds.renewal_period_id, ds.duty_date, ds.duty_type,
                         ds.claimed_hours, rp.required_duty_hours
@@ -198,6 +202,7 @@ class DutySubmission
             $date ??= $submission['duty_date'];
             $type ??= $submission['duty_type'];
             $hours ??= (float) $submission['claimed_hours'];
+            $this->assertWeeklyHoursWithinLimit($scholarId, $date, $hours, $submissionId);
 
             $existingFilesStmt = $this->pdo->prepare(
                 'SELECT id, stored_filename
@@ -280,7 +285,7 @@ class DutySubmission
 
             $this->pdo->commit();
             return $deletedStoredFilenames;
-        } catch (PDOException $exception) {
+        } catch (Throwable $exception) {
             if ($this->pdo->inTransaction()) {
                 $this->pdo->rollBack();
             }
@@ -333,11 +338,11 @@ class DutySubmission
         string $type,
         float $hours
     ): bool {
-        $this->pdo->beginTransaction();
-
         try {
+            $this->pdo->beginTransaction();
+
             $submissionStmt = $this->pdo->prepare(
-                "SELECT ds.id
+                "SELECT ds.id, ds.scholar_id
                  FROM duty_submissions ds
                  JOIN scholars sc ON sc.id = ds.scholar_id
                  JOIN renewal_periods rp ON rp.id = ds.renewal_period_id
@@ -354,10 +359,19 @@ class DutySubmission
                 'year_level' => $coordinatorYearLevel,
             ]);
 
-            if (!$submissionStmt->fetch()) {
+            $submission = $submissionStmt->fetch();
+            if (!$submission) {
                 $this->pdo->rollBack();
                 return false;
             }
+
+            $this->lockScholarForWeeklyLimit((int) $submission['scholar_id']);
+            $this->assertWeeklyHoursWithinLimit(
+                (int) $submission['scholar_id'],
+                $date,
+                $hours,
+                $submissionId
+            );
 
             $updateStmt = $this->pdo->prepare(
                 "UPDATE duty_submissions
@@ -376,7 +390,7 @@ class DutySubmission
 
             $this->pdo->commit();
             return true;
-        } catch (PDOException $exception) {
+        } catch (Throwable $exception) {
             if ($this->pdo->inTransaction()) {
                 $this->pdo->rollBack();
             }
@@ -514,5 +528,58 @@ class DutySubmission
         unset($item);
 
         return $items;
+    }
+
+    private function lockScholarForWeeklyLimit(int $scholarId): void
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT id FROM scholars WHERE id = :scholar_id FOR UPDATE'
+        );
+        $stmt->execute(['scholar_id' => $scholarId]);
+        if (!$stmt->fetchColumn()) {
+            throw new RuntimeException('The Scholar account could not be found.');
+        }
+    }
+
+    private function assertWeeklyHoursWithinLimit(
+        int $scholarId,
+        string $date,
+        float $hours,
+        ?int $excludeSubmissionId = null
+    ): void {
+        $dutyDate = new DateTimeImmutable($date);
+        $weekStart = $dutyDate
+            ->modify('-' . ((int) $dutyDate->format('N') - 1) . ' days')
+            ->format('Y-m-d');
+        $weekEnd = (new DateTimeImmutable($weekStart))
+            ->modify('+6 days')
+            ->format('Y-m-d');
+
+        $sql = "SELECT COALESCE(SUM(claimed_hours), 0)
+                FROM duty_submissions
+                WHERE scholar_id = :scholar_id
+                  AND duty_date BETWEEN :week_start AND :week_end
+                  AND status IN ('pending', 'approved')";
+        $params = [
+            'scholar_id' => $scholarId,
+            'week_start' => $weekStart,
+            'week_end' => $weekEnd,
+        ];
+        if ($excludeSubmissionId !== null) {
+            $sql .= ' AND id <> :submission_id';
+            $params['submission_id'] = $excludeSubmissionId;
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        $weeklyHours = (float) $stmt->fetchColumn();
+        if (round($weeklyHours + $hours, 2) > 8.0) {
+            $remainingHours = max(0, 8.0 - $weeklyHours);
+            throw new RuntimeException(sprintf(
+                'This duty week already has %s hours submitted. The weekly maximum is 8 hours, so you can add up to %s more.',
+                number_format($weeklyHours, 2),
+                number_format($remainingHours, 2)
+            ));
+        }
     }
 }

@@ -1,78 +1,133 @@
-# Project Structure
+# HKommunity Project Structure
 
-HKommunity is a PHP application. A browser request enters through `public/`, uses shared configuration and role checks, reads or changes data through models and controllers, and returns a rendered page. Browser JavaScript and API endpoints support interactive features.
+HKommunity is a PHP web application. Browser requests are handled by pages in `public/`; shared configuration, middleware, controllers, and models support those pages. Views render reusable interface templates, while the browser loads static assets from `public/assets/`. API endpoints provide JSON interactions.
+
+The folder map below covers the application folders currently in the repository. `.git/` is Git's internal metadata, and the subfolders inside `vendor/` are installed and managed by Composer rather than maintained as application code.
 
 ## Folder map
 
 ```text
 HKommunity/
-├── api/                 JSON endpoints for admin, coordinator, and scholar features
-├── app/
-│   ├── bootstrap/       Shared startup and error handling
-│   ├── controllers/     Feature workflows and request-level operations
-│   ├── models/          Database queries and domain rules
-│   └── views/           Shared templates and role-specific page fragments
-├── config/              App settings and database connection
-├── database/            SQL schema and database backups
-├── MD/                  Project and feature documentation
-├── middleware/          Login and role access checks
-├── public/
-│   ├── admin/            Admin page handlers
-│   ├── assets/           CSS, JavaScript, images, and local fonts
-│   ├── coordinator/      Coordinator page handlers
-│   └── scholar/          Scholar page handlers
-├── uploads/              Runtime files uploaded or used by the app
-│   ├── duty-submissions/ Duty proof files retained for authorized review
-│   └── registrations/    Temporary registration-import files
-├── vendor/              Composer-installed PHP dependencies
-├── .htaccess             Apache rewrite and access rules
-├── composer.json         PHP dependency declarations
-├── composer.lock         Resolved dependency versions
-├── hk.vued.erd           Database relationship diagram
-├── index.php             Redirects to the public landing page
-└── ScholarsList_2025-2027.xlsx  Workbook used by registration workflows
+├── api/                              JSON endpoints
+│   ├── admin/                        Admin-specific endpoints
+│   ├── coordinator/                  Coordinator-specific endpoints
+│   └── scholar/                      Scholar-specific endpoints
+├── app/                              Shared application code
+│   ├── bootstrap/                    Request startup and error handling
+│   ├── controllers/                  Feature workflows
+│   ├── models/                       Data access and business rules
+│   └── views/                        Reusable page templates
+│       ├── admin/                    Admin page templates
+│       ├── auth/                     Landing and login templates
+│       ├── components/               Shared interface components
+│       ├── coordinator/              Coordinator page templates
+│       ├── errors/                   Error page templates
+│       └── scholar/                  Scholar page templates
+├── config/                           Application and database configuration
+├── database/                         SQL schema and database backups
+├── MD/                               Project documentation and reference files
+├── middleware/                       Authentication and role-access checks
+├── public/                           Web-facing pages and public files
+│   ├── admin/                        Admin page handlers
+│   ├── assets/                       Browser assets
+│   │   ├── css/                      Stylesheets
+│   │   ├── fontawesome/              Locally hosted Font Awesome files
+│   │   │   ├── css/                  Font Awesome stylesheets
+│   │   │   └── webfonts/             Font Awesome font files
+│   │   ├── images/                   Interface images and logos
+│   │   └── js/                       Browser-side scripts
+│   ├── coordinator/                  Coordinator page handlers
+│   └── scholar/                      Scholar page handlers
+├── uploads/                          Runtime-uploaded or staged files
+│   ├── duty-submissions/             Duty proof files
+│   └── registrations/                Temporary registration-import files
+└── vendor/                           Composer-installed PHP dependencies
 ```
 
-## What each folder does
+## What the folders do
 
-- **`api/`** — PHP endpoints that return or accept JSON. Endpoints are grouped by role; shared endpoints handle cross-role features such as notifications. Page scripts in `public/assets/js/` call these when an interaction needs data without a full page response.
-- **`app/bootstrap/`** — Code shared early in the request lifecycle, such as error handling.
-- **`app/controllers/`** — Coordinates multi-step feature operations, such as authentication, imports, renewals, reports, and requirement submissions. Controllers commonly use models to access or change data.
-- **`app/models/`** — Encapsulates database queries and business rules for users, scholars, academic periods, registrations, duty records, requirements, reports, and notifications.
-- **`app/views/`** — Reusable HTML templates. `components/` holds shared interface pieces such as the header, navigation, and flash messages; other subfolders group fragments by role or purpose.
-- **`config/`** — `app.php` defines application settings such as the base URL and timezone. `database.php` creates the shared PDO database connection.
-- **`database/`** — Contains SQL schema and backup files. The current folder has SQL dumps; it does not contain a `migrations/` subfolder.
-- **`MD/`** — Guides and notes about project structure, portals, testing, exports, and implemented features.
-- **`middleware/`** — Checks authentication and role permissions before protected pages run. Role-specific files protect admin, coordinator, and scholar routes.
-- **`public/`** — Web-facing PHP pages and static assets. Subfolders separate admin, coordinator, and scholar pages; shared pages such as login and registration are at the `public/` root.
-- **`public/assets/css/`** — Shared and feature-specific styling, loaded by page templates.
-- **`public/assets/js/`** — Browser-side interactions such as search, dialogs, confirmation flows, and table behavior.
-- **`public/assets/images/` and `public/assets/fontawesome/`** — Images and locally hosted icon styles/fonts used by the interface.
-- **`uploads/`** — Runtime files, not application source. Duty proof files are retained for authorized review. Registration import files are staged here while they are processed, then deleted; their parsed records and import history remain in the database.
-- **`vendor/`** — Third-party libraries installed by Composer. Do not edit package contents directly; manage dependencies using Composer and the project manifests.
+### Application and server-side code
+
+| Folder | Purpose |
+|---|---|
+| `api/` | Shared and role-specific PHP endpoints that accept or return JSON for interactive features. |
+| `api/admin/` | Admin endpoints for features such as users, scholars, registrations, academic periods, requirements, reports, and announcements. |
+| `api/coordinator/` | Coordinator endpoints for scholar records, duty records, renewals, requirements, reports, and announcements. |
+| `api/scholar/` | Scholar endpoints for duty records, renewals, requirements, reports, quick links, and announcements. |
+| `app/bootstrap/` | Code needed early in a request, including application-wide error handling. |
+| `app/controllers/` | Coordinates multi-step feature workflows and connects request handling to models. |
+| `app/models/` | Encapsulates database operations and domain rules for users, scholars, academic periods, duty records, requirements, reports, notifications, and related features. |
+| `app/views/` | PHP/HTML templates used to render pages and shared interface content. |
+| `app/views/admin/` | Templates for admin dashboards and management pages. |
+| `app/views/auth/` | Landing-page and login templates. |
+| `app/views/components/` | Shared pieces such as the header, sidebar, footer, helper functions, and flash messages. |
+| `app/views/coordinator/` | Templates for coordinator dashboards and workflows. |
+| `app/views/errors/` | Templates for styled error pages. |
+| `app/views/scholar/` | Templates for scholar dashboards and workflows. |
+| `config/` | Application settings and the shared database connection. |
+| `middleware/` | Authentication and authorization checks used to protect pages by role. |
+
+### Public pages and browser assets
+
+| Folder | Purpose |
+|---|---|
+| `public/` | Web-accessible PHP pages shared across roles, including login, registration, profile, notifications, and error handling. |
+| `public/admin/` | Admin-facing page handlers, including management, imports, exports, and reports. |
+| `public/coordinator/` | Coordinator-facing page handlers for scholar management and coordinator workflows. |
+| `public/scholar/` | Scholar-facing page handlers for records, submissions, requirements, renewals, and reports. |
+| `public/assets/` | Static files loaded by the browser. |
+| `public/assets/css/` | Shared and feature-specific stylesheets. |
+| `public/assets/fontawesome/` | Locally hosted Font Awesome resources used for interface icons. |
+| `public/assets/fontawesome/css/` | Font Awesome CSS files. |
+| `public/assets/fontawesome/webfonts/` | Font Awesome font files used by its stylesheets. |
+| `public/assets/images/` | Logos and other interface images. |
+| `public/assets/js/` | JavaScript for menus, search, filters, confirmations, dialogs, tables, and other browser interactions. |
+
+### Data, documentation, and runtime files
+
+| Folder | Purpose |
+|---|---|
+| `database/` | SQL schema and backup files. |
+| `MD/` | Project documentation, portal and feature references, testing notes, and related project materials. |
+| `uploads/` | Runtime file storage; not application source code. |
+| `uploads/duty-submissions/` | Duty proof files associated with duty submissions and available to authorized workflows. |
+| `uploads/registrations/` | Temporary staging area for registration-import files; import records are stored in the database, and source files are removed after processing. |
+| `vendor/` | Third-party PHP packages installed from `composer.json` and `composer.lock`. Manage these with Composer; do not edit their files directly. |
+
+## Important files at the project root
+
+| File | Purpose |
+|---|---|
+| `.htaccess` | Apache rewrite and access rules. |
+| `composer.json` | Declares PHP dependencies and Composer configuration. |
+| `composer.lock` | Records the resolved dependency versions. |
+| `hk.vued.erd` | Database entity-relationship diagram. |
+| `hkommunity.sql` | SQL database file. |
+| `hkommunity_backup.sql` | Database backup SQL file. |
+| `index.php` | Root entry point that forwards visitors into the public application. |
 
 ## How a request moves through the project
 
-1. Apache routes the URL to a PHP page in `public/`. The root `index.php` redirects to `public/index.php`.
-2. The page loads the relevant `config/` files and role middleware. Requests from an unauthorized role are denied or redirected.
-3. The page validates the request and coordinates the feature. Complex workflows may be delegated to a controller in `app/controllers/`.
-4. Controllers and page handlers use models in `app/models/` to read or update MySQL through the shared PDO connection.
-5. The PHP page renders HTML using shared or role-specific templates from `app/views/`.
-6. The browser loads CSS, images, and JavaScript from `public/assets/`. JavaScript may call `api/` endpoints for interactive data.
-7. Uploaded files are stored under `uploads/` when the workflow requires them; database rows store related metadata and application state.
+1. Apache receives a request and serves or routes it to a PHP entry point in `public/`.
+2. The page loads configuration and the appropriate middleware to establish the database connection and check access.
+3. The page validates the request and handles the page-level work. Multi-step workflows may be delegated to a controller in `app/controllers/`.
+4. Controllers and page handlers use models in `app/models/` to read or update application data.
+5. PHP renders the response using templates in `app/views/`.
+6. The browser loads styles, images, fonts, and scripts from `public/assets/`. Scripts may call endpoints in `api/` for interactive data.
+7. Workflows that accept files may use `uploads/` for runtime storage or temporary staging.
 
 ## Example: importing registrations
 
 1. [`public/admin/registration-import.php`](../public/admin/registration-import.php) checks admin access and accepts a CSV or XLSX upload.
-2. It temporarily stores the file in `uploads/registrations/` and passes its path to [`app/controllers/RegistrationImportController.php`](../app/controllers/RegistrationImportController.php) for parsing and validation.
+2. The source file is temporarily staged in `uploads/registrations/` and passed to [`app/controllers/RegistrationImportController.php`](../app/controllers/RegistrationImportController.php) for parsing and validation.
 3. The controller and [`app/models/RegistrationImport.php`](../app/models/RegistrationImport.php) save the import and parsed registration rows to the database.
-4. The temporary source file is removed after processing. Import history and parsed rows remain available through the database and admin page.
+4. The temporary source file is removed after processing; import history and parsed rows remain available through the database and admin page.
 
 ## Where to make changes
 
 | Change needed | Start here |
 |---|---|
-| Page markup or form handling | Matching page in `public/admin/`, `public/coordinator/`, or `public/scholar/` |
+| Page markup or form handling | Matching page in `public/admin/`, `public/coordinator/`, `public/scholar/`, or `public/` |
 | Shared header, sidebar, or message | `app/views/components/` |
 | Database query or domain rule | Matching class in `app/models/` |
 | Multi-step feature workflow | Matching class in `app/controllers/` |

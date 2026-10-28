@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             || strlen($type) > 100
             || !is_numeric($rawHours)
             || $hours <= 0
-            || $hours > 24
+            || $hours > 8
         ) {
-            flash('error', 'Enter a valid duty date, duty type, and claimed hours (up to 24).');
+            flash('error', 'Enter a valid duty date, duty type, and claimed hours (up to 8 per week).');
             $redirectUrl = BASE_URL . 'public/coordinator/duty-records.php';
             if ($action === 'update-duty-submission' && $reopenSubmissionId !== null) {
                 $redirectUrl .= '?open-submission=' . $reopenSubmissionId;
@@ -74,6 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $type,
                 $hours
             );
+        } catch (RuntimeException $exception) {
+            flash('error', $exception->getMessage());
+            redirectTo(BASE_URL . 'public/coordinator/duty-records.php');
         } catch (PDOException $exception) {
             error_log('Duty submission update database error: ' . $exception->getMessage());
             flash('error', 'Unable to update this duty submission right now. Please try again.');
@@ -312,7 +315,8 @@ require __DIR__ . '/../../app/views/components/header.php';
                                             </div>
                                             <div class="form-row">
                                                 <label for="coordinator-duty-hours-<?= e($submission['id']) ?>">Claimed hours</label>
-                                                <input id="coordinator-duty-hours-<?= e($submission['id']) ?>" type="number" name="claimed_hours" min="0.01" max="24" step="0.01" value="<?= e(number_format((float) $submission['claimed_hours'], 2, '.', '')) ?>" required>
+                                                <input id="coordinator-duty-hours-<?= e($submission['id']) ?>" type="number" name="claimed_hours" min="0.01" max="8" step="0.01" value="<?= e(number_format((float) $submission['claimed_hours'], 2, '.', '')) ?>" required>
+                                                <small>Weekly total cannot exceed 8 hours, Monday through Sunday.</small>
                                             </div>
                                         </form>
                                     <?php else: ?>

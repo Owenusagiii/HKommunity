@@ -1,0 +1,35 @@
+
+# =====================================
+# HKommunity - Git Ignore
+# =====================================
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Private configuration files
+# Add specific filenames here if they contain credentials
+# Example: config/database.local.php
+
+# Dependencies installed by Composer
+/vendor/
+
+# Private scholar uploads and documents
+/uploads/*
+!/uploads/.gitkeep
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+ehthumbs.db

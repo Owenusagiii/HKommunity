@@ -182,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             || $submissionId < 1
             || ($date !== null && (!$dateValue || $dateValue->format('Y-m-d') !== $date))
             || ($type !== null && ($type === '' || strlen($type) > 100))
-            || ($rawHours !== null && (!is_numeric($rawHours) || $hours === null || $hours <= 0 || $hours > 24))
+            || ($rawHours !== null && (!is_numeric($rawHours) || $hours === null || $hours <= 0 || $hours > 8))
             || $invalidRemoveFileIds
         ) {
             flash('error', 'Enter valid values for any duty fields you changed.');
@@ -309,10 +309,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             || $type === ''
             || strlen($type) > 100
             || $hours <= 0
-            || $hours > 24
+            || $hours > 8
             || !is_numeric($rawHours)
         ) {
-            throw new RuntimeException('Enter a valid duty date, duty type, and claimed hours (up to 24).');
+            throw new RuntimeException('Enter a valid duty date, duty type, and claimed hours (up to 8 per week).');
         }
         $files = $storeProofFiles($_FILES['proof_files'] ?? null, true);
 
@@ -396,8 +396,8 @@ require __DIR__ . '/../../app/views/components/header.php';
                             </div>
                             <div class="form-row">
                                 <label for="submission-claimed-hours">Claimed Hours</label>
-                                <input id="submission-claimed-hours" type="number" name="claimed_hours" min="0.01" max="24" step="0.01" placeholder="e.g. 3.00" aria-describedby="submission-claimed-hours-hint" required>
-                                <small id="submission-claimed-hours-hint">Enter the number of hours completed (up to 24).</small>
+                                <input id="submission-claimed-hours" type="number" name="claimed_hours" min="0.01" max="8" step="0.01" placeholder="e.g. 3.00" aria-describedby="submission-claimed-hours-hint" required>
+                                <small id="submission-claimed-hours-hint">Maximum 8 claimed hours per Monday–Sunday week, across all submissions.</small>
                             </div>
                         </div>
                         <div class="form-row duty-submission-files-field">
@@ -550,7 +550,8 @@ require __DIR__ . '/../../app/views/components/header.php';
                                     </div>
                                     <div class="form-row">
                                         <label for="edit-submission-claimed-hours-<?= e($submission['id']) ?>">Claimed Hours</label>
-                                        <input id="edit-submission-claimed-hours-<?= e($submission['id']) ?>" type="number" name="claimed_hours" min="0.01" max="24" step="0.01" value="<?= e(number_format((float) $submission['claimed_hours'], 2, '.', '')) ?>" required <?= $isLocked ? 'disabled' : '' ?>>
+                                        <input id="edit-submission-claimed-hours-<?= e($submission['id']) ?>" type="number" name="claimed_hours" min="0.01" max="8" step="0.01" value="<?= e(number_format((float) $submission['claimed_hours'], 2, '.', '')) ?>" required <?= $isLocked ? 'disabled' : '' ?>>
+                                        <small>Weekly total cannot exceed 8 hours, Monday through Sunday.</small>
                                     </div>
                                 </div>
                                 <div class="duty-submission-edit-proof-column">
