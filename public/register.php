@@ -143,8 +143,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h2>REGISTER</h2>
 
                 <?php if ($successMessage): ?>
-                    <div class="flash-message success" role="status" data-auto-dismiss>
-                        <?= htmlspecialchars($successMessage) ?>
+                    <div class="auth-flash-container" aria-live="polite">
+                        <div class="flash-message success" role="status" data-auto-dismiss>
+                            <span class="auth-flash-icon" aria-hidden="true">&#10003;</span>
+                            <span><?= htmlspecialchars($successMessage, ENT_QUOTES, 'UTF-8') ?></span>
+                            <button class="flash-message-close" type="button" aria-label="Dismiss notification">&times;</button>
+                        </div>
                     </div>
                 <?php endif; ?>
 

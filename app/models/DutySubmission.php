@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/RenewalPeriod.php';
+require_once __DIR__ . '/DutyRecord.php';
 
 class DutySubmission
 {
@@ -30,6 +31,11 @@ class DutySubmission
         try {
             $this->pdo->beginTransaction();
             $this->lockScholarForWeeklyLimit($scholarId);
+            $this->assertDutyHoursIncomplete(
+                $scholarId,
+                $periodId,
+                (float) $activePeriod['required_duty_hours']
+            );
             $this->assertWeeklyHoursWithinLimit($scholarId, $date, $hours);
 
             $stmt = $this->pdo->prepare(
@@ -125,6 +131,12 @@ class DutySubmission
                 return null;
             }
 
+            $this->assertDutyHoursIncomplete(
+                $scholarId,
+                (int) $submission['renewal_period_id'],
+                (float) $submission['required_duty_hours']
+            );
+
             $filesStmt = $this->pdo->prepare(
                 'SELECT stored_filename
                  FROM duty_submission_files
@@ -151,7 +163,7 @@ class DutySubmission
 
             $this->pdo->commit();
             return $storedFiles;
-        } catch (PDOException $exception) {
+        } catch (Throwable $exception) {
             if ($this->pdo->inTransaction()) {
                 $this->pdo->rollBack();
             }
@@ -198,6 +210,12 @@ class DutySubmission
                 $this->pdo->rollBack();
                 return null;
             }
+
+            $this->assertDutyHoursIncomplete(
+                $scholarId,
+                (int) $submission['renewal_period_id'],
+                (float) $submission['required_duty_hours']
+            );
 
             $date ??= $submission['duty_date'];
             $type ??= $submission['duty_type'];
@@ -538,6 +556,15 @@ class DutySubmission
         $stmt->execute(['scholar_id' => $scholarId]);
         if (!$stmt->fetchColumn()) {
             throw new RuntimeException('The Scholar account could not be found.');
+        }
+    }
+
+    private function assertDutyHoursIncomplete(int $scholarId, int $periodId, float $requiredHours): void
+    {
+        if ((new DutyRecord($this->pdo))->totalHours($scholarId, $periodId) >= $requiredHours) {
+            throw new RuntimeException(
+                'Duty submissions are locked because you have completed the required duty hours for this period.'
+            );
         }
     }
 

@@ -413,6 +413,12 @@ require __DIR__ . '/../../app/views/components/header.php';
                 </div>
                 <div class="coordinator-duty-tools">
                     <span class="coordinator-toolbar-count"><?= e(count($scholarDutyRecords)) ?> scholars</span>
+                    <label class="visually-hidden" for="duty-record-hours-sort">Sort by rendered hours</label>
+                    <select id="duty-record-hours-sort" class="coordinator-promotion-filter" aria-label="Sort by rendered hours" <?= !$scholarDutyRecords ? 'disabled' : '' ?>>
+                        <option value="default">Default</option>
+                        <option value="highest">Highest</option>
+                        <option value="lowest">Lowest</option>
+                    </select>
                     <label class="requirement-search">
                         <span class="visually-hidden">Search duty records by student ID number</span>
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
@@ -440,6 +446,8 @@ require __DIR__ . '/../../app/views/components/header.php';
                                 data-popout-dialog="scholar-duty-dialog-<?= e($scholarId) ?>"
                                 aria-haspopup="dialog"
                                 aria-controls="scholar-duty-dialog-<?= e($scholarId) ?>"
+                                data-rendered-hours="<?= e($scholarRecordGroup['total_hours']) ?>"
+                                data-last-name="<?= e($scholar['last_name']) ?>"
                             >
                                 <td class="coordinator-duty-scholar-cell">
                                     <strong><?= e(nameCaps($scholar)) ?></strong>

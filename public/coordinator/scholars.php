@@ -47,6 +47,10 @@ if (is_int($requestedPeriodId)) {
 $selectedPeriod ??= $activePeriod;
 $selectedPeriod ??= $periods[0] ?? null;
 $studentId = trim((string) ($_GET['student_id'] ?? ''));
+$complianceFilter = (string) ($_GET['compliance_filter'] ?? 'default');
+if (!in_array($complianceFilter, ['default', 'incomplete', 'complete'], true)) {
+    $complianceFilter = 'default';
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && post('action') === 'review') {
     $requirementId = (int) post('id');
@@ -302,6 +306,9 @@ require __DIR__ . '/../../app/views/components/header.php';
                     <?php if ($studentId !== ''): ?>
                         <input type="hidden" name="student_id" value="<?= e($studentId) ?>">
                     <?php endif; ?>
+                    <?php if ($complianceFilter !== 'default'): ?>
+                        <input type="hidden" name="compliance_filter" value="<?= e($complianceFilter) ?>">
+                    <?php endif; ?>
                 </form>
             </div>
             <?php if ($selectedPeriod): ?>
@@ -349,6 +356,12 @@ require __DIR__ . '/../../app/views/components/header.php';
                         <?php if ($selectedPeriod): ?>
                             <input type="hidden" name="period_id" value="<?= e($selectedPeriod['id']) ?>">
                         <?php endif; ?>
+                        <label class="visually-hidden" for="scholar-compliance-filter">Filter scholars by compliance</label>
+                        <select id="scholar-compliance-filter" name="compliance_filter" class="coordinator-promotion-filter" aria-label="Filter scholars by compliance" <?= !$selectedPeriod ? 'disabled' : '' ?>>
+                            <option value="default" <?= $complianceFilter === 'default' ? 'selected' : '' ?>>Default</option>
+                            <option value="incomplete" <?= $complianceFilter === 'incomplete' ? 'selected' : '' ?>>Not Complete</option>
+                            <option value="complete" <?= $complianceFilter === 'complete' ? 'selected' : '' ?>>Complete</option>
+                        </select>
                         <label class="requirement-search">
                             <span class="visually-hidden">Search scholars by student ID number</span>
                             <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
@@ -370,6 +383,14 @@ require __DIR__ . '/../../app/views/components/header.php';
                     </thead>
                     <tbody>
                         <?php foreach ($rows as $row): ?>
+                            <?php
+                            $scholarProgress = $scholarProgressById[(int) $row['id']] ?? null;
+                            $dutyComplete = $scholarProgress
+                                && (float) $scholarProgress['rendered_hours'] >= (float) $scholarProgress['required_duty_hours'];
+                            $requirementsComplete = $scholarProgress
+                                && (int) $scholarProgress['assigned_count'] > 0
+                                && (int) $scholarProgress['approved_count'] >= (int) $scholarProgress['assigned_count'];
+                            ?>
                             <tr
                                 class="coordinator-popout-row"
                                 tabindex="0"
@@ -377,12 +398,13 @@ require __DIR__ . '/../../app/views/components/header.php';
                                 data-popout-dialog="scholar-dialog-<?= e($row['id']) ?>"
                                 aria-haspopup="dialog"
                                 aria-controls="scholar-dialog-<?= e($row['id']) ?>"
+                                data-duty-complete="<?= $dutyComplete ? 'true' : 'false' ?>"
+                                data-requirements-complete="<?= $requirementsComplete ? 'true' : 'false' ?>"
                             >
                                 <td class="coordinator-scholar-identity">
                                     <strong><?= e(nameCaps($row)) ?></strong>
                                     <small><?= e($row['student_id_number']) ?></small>
                                 </td>
-                                <?php $scholarProgress = $scholarProgressById[(int) $row['id']] ?? null; ?>
                                 <td>
                                     <?php if ($scholarProgress): ?>
                                         <?= e(number_format((float) $scholarProgress['rendered_hours'], 2)) ?>
@@ -411,7 +433,7 @@ require __DIR__ . '/../../app/views/components/header.php';
                             <tr><td colspan="4">No scholars found.</td></tr>
                         <?php else: ?>
                             <tr class="scholars-search-empty" hidden>
-                                <td colspan="4">No scholars match that student ID.</td>
+                                <td colspan="4">No scholars match the selected filters.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>

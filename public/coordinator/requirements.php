@@ -203,6 +203,14 @@ foreach ($scholars as $scholar) {
     }
 }
 
+uasort(
+    $scholarRequirementGroups,
+    static fn (array $first, array $second): int => strcasecmp(
+        $first['scholar']['last_name'] ?? '',
+        $second['scholar']['last_name'] ?? ''
+    )
+);
+
 $pageTitle = 'Requirements';
 require __DIR__ . '/../../app/views/components/header.php';
 ?>

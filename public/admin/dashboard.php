@@ -16,7 +16,7 @@ $stats['reports'] = (int) $pdo->query('SELECT COUNT(*) FROM reports')->fetchColu
 $recentLoginActivities = (new LoginActivity($pdo))->recent();
 
 $activeDashboardSemesterStmt = $pdo->query(
-    "SELECT sm.id AS semester_id
+    "SELECT sm.id AS semester_id, sm.semester, ay.academic_year
      FROM semesters sm
      JOIN academic_years ay ON ay.id = sm.academic_year_id
      WHERE sm.status = 'active' AND ay.status = 'active'
@@ -106,6 +106,54 @@ $yearLevelColors = [
     '4th Year' => '#FFC107',
     '5th Year' => '#9C27B0',
 ];
+$dashboardYearLevelProgress = array_fill_keys(
+    array_keys($yearLevelColors),
+    ['scholars' => 0, 'complete' => 0]
+);
+$dashboardYearLevelProgressStmt = $pdo->prepare(
+    "SELECT sc.year_level,
+            COUNT(*) AS scholar_count,
+            SUM(
+                CASE
+                    WHEN rp.id IS NOT NULL
+                     AND COALESCE(req.assigned_count, 0) > 0
+                     AND req.approved_count >= req.assigned_count
+                     AND COALESCE(hours.rendered_hours, 0) >= rp.required_duty_hours
+                    THEN 1
+                    ELSE 0
+                END
+            ) AS completed_count
+     FROM scholars sc
+     JOIN users u ON u.id = sc.user_id
+     LEFT JOIN renewal_periods rp
+        ON rp.year_level = sc.year_level
+       AND rp.semester_id = :semester_id
+     LEFT JOIN (
+        SELECT scholar_id, renewal_period_id, COUNT(*) AS assigned_count,
+               SUM(CASE WHEN status = 'approved' THEN 1 ELSE 0 END) AS approved_count
+        FROM scholar_requirements
+        GROUP BY scholar_id, renewal_period_id
+     ) req ON req.scholar_id = sc.id AND req.renewal_period_id = rp.id
+     LEFT JOIN (
+        SELECT scholar_id, renewal_period_id, SUM(hours) AS rendered_hours
+        FROM duty_records
+        GROUP BY scholar_id, renewal_period_id
+     ) hours ON hours.scholar_id = sc.id AND hours.renewal_period_id = rp.id
+     WHERE u.role = 'scholar' AND u.status = 'active'
+     GROUP BY sc.year_level"
+);
+$dashboardYearLevelProgressStmt->execute([
+    'semester_id' => (int) ($activeDashboardSemester['semester_id'] ?? 0),
+]);
+foreach ($dashboardYearLevelProgressStmt->fetchAll(PDO::FETCH_ASSOC) as $yearLevelProgress) {
+    $yearLevel = (string) $yearLevelProgress['year_level'];
+    if (isset($dashboardYearLevelProgress[$yearLevel])) {
+        $dashboardYearLevelProgress[$yearLevel] = [
+            'scholars' => (int) $yearLevelProgress['scholar_count'],
+            'complete' => (int) $yearLevelProgress['completed_count'],
+        ];
+    }
+}
 $activeScholarsByYearLevel = array_fill_keys(array_keys($yearLevelColors), 0);
 $activeScholarsByYearLevelStmt = $pdo->query(
     "SELECT sc.year_level, COUNT(*) AS scholar_count
@@ -261,6 +309,7 @@ $largestYearLevelShare = $activeScholarTotal > 0
                 </div>
             </section>
 
+            <div class="admin-dashboard-bottom">
             <section class="records-card admin-activity-card" aria-labelledby="admin-activity-title">
             <div class="records-head">
                 <div>
@@ -314,6 +363,48 @@ $largestYearLevelShare = $activeScholarTotal > 0
                 </table>
             </div>
             </section>
+            <section class="records-card admin-year-completion-card" aria-labelledby="admin-year-completion-title">
+                <div class="records-head">
+                    <div>
+                        <h2 class="admin-users-section-title" id="admin-year-completion-title">
+                            <span class="admin-users-section-icon"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></span>
+                            Year-Level Completion
+                        </h2>
+                        <p class="sub-small"><?= e($activeDashboardSemester
+                            ? $activeDashboardSemester['academic_year'] . ' · ' . $activeDashboardSemester['semester']
+                            : 'No active semester') ?></p>
+                    </div>
+                </div>
+                <div class="admin-year-completion-list" aria-label="Fully complete scholars by year level">
+                    <?php foreach ($yearLevelColors as $yearLevel => $yearColor): ?>
+                        <?php
+                        $scholarCount = $dashboardYearLevelProgress[$yearLevel]['scholars'];
+                        $completedCount = $dashboardYearLevelProgress[$yearLevel]['complete'];
+                        $completionPercentage = $scholarCount > 0
+                            ? (int) round(($completedCount / $scholarCount) * 100)
+                            : 0;
+                        ?>
+                        <div class="admin-year-completion-item">
+                            <div class="admin-year-completion-label">
+                                <h3><?= e($yearLevel) ?></h3>
+                                <p><?= e($completedCount) ?> / <?= e($scholarCount) ?> complete</p>
+                            </div>
+                            <div
+                                class="admin-year-completion-bar"
+                                role="progressbar"
+                                aria-label="<?= e($yearLevel . ' completion') ?>"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="<?= e($completionPercentage) ?>"
+                            >
+                                <span style="width: <?= e($completionPercentage) ?>%; --year-level-color: <?= e($yearColor) ?>;"></span>
+                            </div>
+                            <strong><?= e($completionPercentage) ?>%</strong>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+            </div>
 
         </div>
 

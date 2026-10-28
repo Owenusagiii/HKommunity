@@ -54,7 +54,7 @@
 }
 
 .coordinator-dashboard-lower {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 24px;
     margin-top: 20px;
 }
@@ -229,6 +229,10 @@
 .coordinator-dashboard-lower .dashboard-announcement-row,
 .coordinator-dashboard-lower .dashboard-notification-row {
     min-height: 59px;
+}
+
+.scholar-dashboard-lower {
+    gap: 24px;
 }
 
 .scholar-dashboard-lower .panel-title {

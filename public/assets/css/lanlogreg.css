@@ -461,9 +461,20 @@ select {
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
+.auth-flash-container .flash-message.success {
+    border-color: rgba(54, 109, 81, 0.28);
+    background: #eef8f2;
+    color: #245f44;
+}
+
 .auth-flash-container .flash-message > span:nth-child(2) {
     overflow-wrap: anywhere;
     line-height: 1.45;
+}
+
+.auth-flash-container .flash-message.success .auth-flash-icon {
+    background: #d7eddf;
+    color: #245f44;
 }
 
 .auth-flash-icon {

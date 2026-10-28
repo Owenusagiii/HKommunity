@@ -26,11 +26,6 @@ $items = $selectedPeriod
     ? $model->all((int) $scholar['id'], null, null, (int) $selectedPeriod['id'])
     : [];
 $progressPeriod = $selectedPeriod;
-$canSubmitDuty = $scholarPeriodContext['can_transact']
-    && $workPeriod
-    && $selectedPeriod
-    && (int) $workPeriod['id'] === (int) $selectedPeriod['id']
-    && (float) ($selectedPeriod['required_duty_hours'] ?? 0) > 0;
 $totalHours = $progressPeriod
     ? $model->totalHours((int) $scholar['id'], (int) $progressPeriod['id'])
     : 0.0;
@@ -40,6 +35,12 @@ $progress = $requiredHours > 0
     ? min(100, (int) round(($totalHours / $requiredHours) * 100))
     : ($dutyHoursNotRequired ? 100 : 0);
 $remainingHours = max(0, $requiredHours - $totalHours);
+$dutyHoursComplete = $requiredHours > 0 && $totalHours >= $requiredHours;
+$canSubmitDuty = $scholarPeriodContext['can_transact']
+    && $workPeriod
+    && $selectedPeriod
+    && (int) $workPeriod['id'] === (int) $selectedPeriod['id']
+    && !$dutyHoursComplete;
 $progressTone = $progress >= 100 ? 'progress-green' : ($progress >= 50 ? 'progress-yellow' : 'progress-orange');
 
 $pageTitle = 'My Duty Records';
@@ -93,6 +94,11 @@ require __DIR__ . '/../../app/views/components/header.php';
                 <i class="fa-solid fa-lock" aria-hidden="true"></i>
                 No duty hours are required for this period. Duty transactions are locked.
             </div>
+        <?php elseif ($dutyHoursComplete): ?>
+            <div class="scholar-period-read-only" role="status">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                You have completed the required duty hours for this period. Duty submissions are locked.
+            </div>
         <?php endif; ?>
         <div class="records-card duty-records-card">
             <div class="records-head">
@@ -101,6 +107,7 @@ require __DIR__ . '/../../app/views/components/header.php';
                     <p class="sub-small"><?= $selectedPeriod ? e($selectedPeriod['academic_year'] . ' · ' . $selectedPeriod['semester']) : 'No period selected' ?></p>
                 </div>
                 <div class="duty-records-actions">
+                    <span class="record-count" id="duty-record-count" aria-live="polite"><?= e(count($items)) ?> records</span>
                     <label class="duty-record-filter">
                         <span>Show</span>
                         <select id="duty-record-date-filter" aria-label="Filter duty records by date">
@@ -110,7 +117,6 @@ require __DIR__ . '/../../app/views/components/header.php';
                             <option value="last-month">Last month</option>
                         </select>
                     </label>
-                    <span class="record-count" id="duty-record-count" aria-live="polite"><?= e(count($items)) ?> records</span>
                 </div>
             </div>
 

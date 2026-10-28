@@ -519,8 +519,23 @@
 
 .coordinator-scholars-records-card .coordinator-scholars-table-scroll {
     height: auto;
-    min-height: 240px;
-    flex: 1 1 auto;
+    max-height: 602px;
+    min-height: 0;
+    flex: 0 1 auto;
+}
+
+.coordinator-scholars-records-card .coordinator-scholars-table th {
+    box-sizing: border-box;
+    height: 42px;
+}
+
+.coordinator-scholars-records-card .coordinator-scholars-table tbody tr:not(.scholars-search-empty) {
+    height: 56px;
+}
+
+.coordinator-scholars-records-card .coordinator-scholars-table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .coordinator-scholars-table thead {

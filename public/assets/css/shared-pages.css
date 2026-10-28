@@ -1173,6 +1173,99 @@ h2 {
     padding: 26px 30px 20px;
 }
 
+.admin-dashboard-bottom {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+    align-items: stretch;
+    gap: 24px;
+    min-width: 0;
+}
+
+.admin-dashboard-bottom .admin-activity-card {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+.admin-year-completion-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    margin: 0;
+    padding: 26px 24px 20px;
+}
+
+.admin-year-completion-card .records-head {
+    margin-bottom: 14px;
+}
+
+.admin-year-completion-card .records-head h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0;
+    font-size: 1.08rem;
+}
+
+.admin-year-completion-card .records-head .sub-small {
+    margin: 5px 0 0 47px;
+    color: #7a8d81;
+    font-size: 0.76rem;
+}
+
+.admin-year-completion-list {
+    display: grid;
+    flex: 1;
+    gap: 10px;
+    align-content: stretch;
+}
+
+.admin-year-completion-item {
+    display: grid;
+    grid-template-columns: minmax(78px, 0.8fr) minmax(0, 1fr) 38px;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #e2eee6;
+    border-radius: 11px;
+    background: rgba(244, 250, 246, 0.78);
+}
+
+.admin-year-completion-label h3 {
+    margin: 0;
+    color: #244838;
+    font-size: 0.76rem;
+}
+
+.admin-year-completion-label p {
+    margin: 3px 0 0;
+    color: #7a8d81;
+    font-size: 0.64rem;
+    white-space: nowrap;
+}
+
+.admin-year-completion-bar {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e5e7eb;
+}
+
+.admin-year-completion-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--year-level-color);
+}
+
+.admin-year-completion-item > strong {
+    color: #315b44;
+    font-size: 0.74rem;
+    text-align: right;
+}
+
 .admin-activity-card .records-head {
     align-items: center;
     margin-bottom: 14px;

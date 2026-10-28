@@ -22,6 +22,12 @@
         grid-column: 1;
         grid-row: auto;
     }
+
+    .admin-portal .admin-dashboard-content > .admin-dashboard-bottom {
+        grid-column: 1;
+        grid-row: auto;
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 @media (max-width: 800px) {

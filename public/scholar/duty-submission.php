@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../middleware/scholar.php';
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../config/app.php';
 require_once __DIR__ . '/../../app/models/Scholar.php';
+require_once __DIR__ . '/../../app/models/DutyRecord.php';
 require_once __DIR__ . '/../../app/models/DutySubmission.php';
 require_once __DIR__ . '/../../app/models/RenewalPeriod.php';
 require_once __DIR__ . '/../../app/models/ScholarPeriodContext.php';
@@ -29,6 +30,11 @@ $workPeriod = $scholarPeriodContext['can_transact']
     && (float) ($availableWorkPeriod['required_duty_hours'] ?? 0) > 0
         ? $availableWorkPeriod
         : null;
+$approvedDutyHours = $workPeriod
+    ? (new DutyRecord($pdo))->totalHours((int) $scholar['id'], (int) $workPeriod['id'])
+    : 0.0;
+$dutyHoursComplete = $workPeriod !== null
+    && $approvedDutyHours >= (float) $workPeriod['required_duty_hours'];
 $uploadDirectory = __DIR__ . '/../../uploads/duty-submissions';
 $storedPaths = [];
 $storeProofFiles = static function (mixed $fileInput, bool $required) use ($uploadDirectory, &$storedPaths): array {
@@ -145,6 +151,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         && $dutyTransactionsLocked
     ) {
         flash('error', 'Duty transactions are locked because no duty hours are required for this period.');
+        redirectTo(BASE_URL . 'public/scholar/duty-submission.php');
+    }
+    if (
+        in_array($action, ['update-duty-submission', 'delete-duty-submission', 'submit-duty'], true)
+        && $dutyHoursComplete
+    ) {
+        flash('error', 'Duty submissions are locked because you have completed the required duty hours for this period.');
         redirectTo(BASE_URL . 'public/scholar/duty-submission.php');
     }
 
@@ -278,6 +291,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 flash('success', 'Your duty submission was deleted.');
             }
+        } catch (RuntimeException $exception) {
+            flash('error', $exception->getMessage());
         } catch (PDOException $exception) {
             error_log('Duty submission deletion database error: ' . $exception->getMessage());
             flash('error', 'Unable to delete this duty submission right now. Please try again.');
@@ -348,7 +363,7 @@ require __DIR__ . '/../../app/views/components/header.php';
     <section class="duty-records-content">
         <div class="page-head duty-page-head">
             <div>
-                <h1><?= $scholarPeriodContext['can_transact'] && !$dutyTransactionsLocked ? 'Submit Weekly Duty' : 'Duty Submission History' ?></h1>
+                <h1><?= $scholarPeriodContext['can_transact'] && !$dutyTransactionsLocked && !$dutyHoursComplete ? 'Submit Weekly Duty' : 'Duty Submission History' ?></h1>
             </div>
         </div>
 
@@ -368,17 +383,21 @@ require __DIR__ . '/../../app/views/components/header.php';
         <section class="records-card duty-submission-card" aria-labelledby="submit-duty-title">
             <div class="records-head">
                 <div>
-                    <h2 id="submit-duty-title"><?= $scholarPeriodContext['can_transact'] && !$dutyTransactionsLocked ? 'Submit Duty Proof' : 'Period Transactions' ?></h2>
-                    <p class="sub-small"><?= $scholarPeriodContext['can_transact'] && !$dutyTransactionsLocked
+                    <h2 id="submit-duty-title"><?= $scholarPeriodContext['can_transact'] && !$dutyTransactionsLocked && !$dutyHoursComplete ? 'Submit Duty Proof' : 'Period Transactions' ?></h2>
+                    <p class="sub-small"><?= $scholarPeriodContext['can_transact'] && !$dutyTransactionsLocked && !$dutyHoursComplete
                         ? 'PDF, JPG, or PNG; up to 5 files, 5 MB each.'
-                        : 'This period is closed. Existing transactions are shown below as read-only.' ?></p>
+                        : ($dutyHoursComplete
+                            ? 'Your duty requirement is complete. Existing transactions are shown below as read-only.'
+                            : 'This period is closed. Existing transactions are shown below as read-only.') ?></p>
                 </div>
                <a class="duty-weekly-submit-button duty-back-button" href="<?= BASE_URL ?>public/scholar/duty-records.php">
                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                    Back to Duty Hours
                </a>
             </div>
-            <?php if ($workPeriod): ?>
+            <?php if ($dutyHoursComplete): ?>
+                <p class="requirement-form-note">You have completed the required <?= e(number_format((float) $workPeriod['required_duty_hours'], 2)) ?> duty hours for this period. New duty submissions and changes to existing submissions are locked.</p>
+            <?php elseif ($workPeriod): ?>
                 <form method="post" enctype="multipart/form-data" class="duty-submission-form" data-confirm-duty-submit>
                     <input type="hidden" name="action" value="submit-duty">
                     <input type="hidden" name="csrf_token" value="<?= e(csrfToken()) ?>">
@@ -439,6 +458,7 @@ require __DIR__ . '/../../app/views/components/header.php';
                     <p class="sub-small">Pending and reviewed submissions. Only approved hours count toward your total.</p>
                 </div>
                 <div class="duty-records-actions">
+                    <span class="record-count" id="duty-submission-count" aria-live="polite"><?= e(count($submissions)) ?> submissions</span>
                     <label class="duty-record-filter">
                         <span>Show</span>
                         <select id="duty-submission-date-filter" aria-label="Filter duty submissions by date">
@@ -448,7 +468,6 @@ require __DIR__ . '/../../app/views/components/header.php';
                             <option value="last-month">Last month</option>
                         </select>
                     </label>
-                    <span class="record-count" id="duty-submission-count" aria-live="polite"><?= e(count($submissions)) ?> submissions</span>
                 </div>
             </div>
             <div class="table-scroll duty-submissions-table-scroll scholar-duty-submissions-scroll">
@@ -496,7 +515,7 @@ require __DIR__ . '/../../app/views/components/header.php';
                     </div>
                     <?php
                     $isApproved = $submission['status'] === 'approved';
-                    $isLocked = $isApproved || !$scholarPeriodContext['can_transact'] || $dutyTransactionsLocked;
+                    $isLocked = $isApproved || !$scholarPeriodContext['can_transact'] || $dutyTransactionsLocked || $dutyHoursComplete;
                     $editFileInputId = 'edit-submission-proof-files-' . $submission['id'];
                     $remainingFileSlots = max(0, 5 - count($submission['files']));
                     ?>
@@ -508,15 +527,19 @@ require __DIR__ . '/../../app/views/components/header.php';
                                 ? 'Approved submission'
                                 : ($dutyTransactionsLocked
                                     ? 'Duty transactions locked'
-                                    : ($isLocked ? 'Previous-period submission' : 'Edit submission')) ?></h3>
+                                    : ($dutyHoursComplete
+                                        ? 'Duty hours complete'
+                                        : ($isLocked ? 'Previous-period submission' : 'Edit submission'))) ?></h3>
                             <p class="duty-submission-edit-note">
                                 <?= $isApproved
                                     ? 'This submission has been approved and is locked from changes and deletion.'
                                     : ($dutyTransactionsLocked
                                         ? 'No duty hours are required for this period. This submission and its proof files are available for viewing only.'
-                                        : ($isLocked
-                                            ? 'This period has ended. This submission and its proof files are available for viewing only.'
-                                            : 'Review the details below. Saving changes sends this submission to your Coordinator for review.')) ?>
+                                        : ($dutyHoursComplete
+                                            ? 'You have completed the required duty hours. This submission and its proof files are available for viewing only.'
+                                            : ($isLocked
+                                                ? 'This period has ended. This submission and its proof files are available for viewing only.'
+                                                : 'Review the details below. Saving changes sends this submission to your Coordinator for review.'))) ?>
                             </p>
                             <div class="duty-submission-edit-summary">
                                 <div>
